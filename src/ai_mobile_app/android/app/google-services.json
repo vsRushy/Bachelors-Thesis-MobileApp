@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "924386727680",
+    "project_id": "bt-mobileapp",
+    "storage_bucket": "bt-mobileapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924386727680:android:c981a432cabf49f530c5e5",
+        "android_client_info": {
+          "package_name": "com.tfg.ai_mobile_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924386727680-o96if89nkb94lje80e9h5h4hbmvdomup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiTFuNQOJdjHDamIoIxb43zPoMzPB7owI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924386727680-o96if89nkb94lje80e9h5h4hbmvdomup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
