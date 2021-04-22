@@ -1,3 +1,4 @@
+import 'package:ai_mobile_app/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,41 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AI Learning App',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-      ),
-      home: MyHomePage(title: 'AI Learning App'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Welcome!',
-            ),
-          ],
-        ),
-      ),
+      home: Wrapper(),
     );
   }
 }
