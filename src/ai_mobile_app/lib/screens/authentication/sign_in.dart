@@ -25,7 +25,7 @@ class _SignInState extends State<SignIn> {
             dynamic result = await _auth.signInAnonymous();
             if(result != null) {
               print('Signed in anonimously');
-              print(result);
+              print(result.uid);
             } else {
               print('Error signing in');
             }
