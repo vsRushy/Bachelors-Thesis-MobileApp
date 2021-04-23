@@ -14,8 +14,8 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
         title: Text('Sign In'),
+        backgroundColor: Colors.lightBlue,
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -23,7 +23,7 @@ class _SignInState extends State<SignIn> {
           child: Text('Sign in as anonymous'),
           onPressed: () async {
             dynamic result = await _auth.signInAnonymous();
-            if(result != null) {
+            if (result != null) {
               print('Signed in anonimously');
               print(result.uid);
             } else {
