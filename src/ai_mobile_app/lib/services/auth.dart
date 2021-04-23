@@ -5,8 +5,13 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Create custom user
-  CustomUser? createCustomUser(User? user) {
-    return CustomUser(uid: user!.uid);
+  CustomUser? _createCustomUser(User? user) {
+    return CustomUser(uid: user?.uid);
+  }
+
+  // User authentication stream
+  Stream<CustomUser?> get user {
+    return _auth.authStateChanges().map(_createCustomUser);
   }
 
   // Anonymous sign-in
@@ -14,7 +19,7 @@ class AuthService {
     try {
       UserCredential credential = await _auth.signInAnonymously();
       User? user = credential.user;
-      return createCustomUser(user);
+      return _createCustomUser(user);
     } catch(e) {
       print(e.toString());
       return null;
