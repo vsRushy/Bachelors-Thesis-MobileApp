@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
   final Function toggleAuthenticationType;
-  SignUp({ required this.toggleAuthenticationType });
+  SignUp({required this.toggleAuthenticationType});
 
   @override
   _SignUpState createState() => _SignUpState();
@@ -11,9 +11,11 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   String email = '';
   String password = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +38,14 @@ class _SignUpState extends State<SignUp> {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
+          key: _formKey,
           child: Column(
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
+                validator: (value) {
+                  return (value!.isEmpty) ? 'Please, enter an e-mail.' : null;
+                },
                 onChanged: (value) {
                   setState(() {
                     email = value;
@@ -49,6 +55,11 @@ class _SignUpState extends State<SignUp> {
               SizedBox(height: 20.0),
               TextFormField(
                 obscureText: true,
+                validator: (value) {
+                  return (value!.length < 6)
+                      ? 'The password must be at least 6 characters long.'
+                      : null;
+                },
                 onChanged: (value) {
                   setState(() {
                     password = value;
@@ -62,9 +73,26 @@ class _SignUpState extends State<SignUp> {
                   primary: Colors.blueAccent,
                 ),
                 onPressed: () async {
-                  print(email);
-                  print(password);
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Processing data'),
+                      ),
+                    );
+
+                    dynamic result = await _auth.signInEmail(email, password);
+                    if (result == null) {
+                      setState(() {
+                        error = 'Please, enter a valid e-mail.';
+                      });
+                    }
+                  }
                 },
+              ),
+              SizedBox(height: 20.0),
+              Text(
+                error,
+                style: TextStyle(color: Colors.red),
               ),
             ],
           ),

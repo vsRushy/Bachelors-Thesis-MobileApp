@@ -20,23 +20,32 @@ class AuthService {
       UserCredential credential = await _auth.signInAnonymously();
       User? user = credential.user;
       return _createCustomUser(user);
-    } catch(e) {
+    } catch (e) {
       print(e.toString());
       return null;
     }
   }
 
   // E-mail sign-in
-  
 
   // E-mail register
-  
+  Future signInEmail(String email, String password) async {
+    try {
+      UserCredential credential = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      User? user = credential.user;
+      return _createCustomUser(user);
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
 
   // Sign out
   Future signOut() async {
     try {
       return await _auth.signOut();
-    } catch(e) {
+    } catch (e) {
       print(e.toString());
       return null;
     }
