@@ -1,12 +1,12 @@
 import 'package:ai_mobile_app/services/auth.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _SignInState createState() => _SignInState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   final AuthService _auth = AuthService();
 
   String email = '';
@@ -44,7 +44,7 @@ class _SignInState extends State<SignIn> {
               ),
               SizedBox(height: 20.0),
               ElevatedButton(
-                child: Text('Sign in'),
+                child: Text('Sign up'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blueAccent,
                 ),
