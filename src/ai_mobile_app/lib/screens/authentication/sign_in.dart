@@ -2,6 +2,9 @@ import 'package:ai_mobile_app/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
+  final Function toggleAuthenticationType;
+  SignIn({required this.toggleAuthenticationType});
+
   @override
   _SignInState createState() => _SignInState();
 }
@@ -19,6 +22,16 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         title: Text('Sign In'),
         backgroundColor: Colors.lightBlue,
+        actions: <Widget>[
+          TextButton.icon(
+            label: Text('Sign up'),
+            icon: Icon(Icons.person),
+            style: TextButton.styleFrom(primary: Colors.white),
+            onPressed: () {
+              widget.toggleAuthenticationType();
+            },
+          ),
+        ],
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),

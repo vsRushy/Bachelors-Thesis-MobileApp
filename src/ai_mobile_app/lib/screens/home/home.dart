@@ -13,8 +13,8 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.lightBlue,
         actions: <Widget>[
           TextButton.icon(
-              icon: Icon(Icons.logout),
               label: Text('Log out'),
+              icon: Icon(Icons.logout),
               style: TextButton.styleFrom(primary: Colors.white),
               onPressed: () async {
                 await _auth.signOut();
