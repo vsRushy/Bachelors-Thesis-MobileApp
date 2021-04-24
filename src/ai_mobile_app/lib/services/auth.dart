@@ -27,9 +27,20 @@ class AuthService {
   }
 
   // E-mail sign-in
+  Future signInEmail(String email, String password) async {
+    try {
+      UserCredential credential = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      User? user = credential.user;
+      return _createCustomUser(user);
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
 
   // E-mail register
-  Future signInEmail(String email, String password) async {
+  Future signUpEmail(String email, String password) async {
     try {
       UserCredential credential = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);

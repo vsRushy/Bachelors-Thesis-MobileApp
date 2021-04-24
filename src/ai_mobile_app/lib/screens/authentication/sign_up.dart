@@ -80,7 +80,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     );
 
-                    dynamic result = await _auth.signInEmail(email, password);
+                    dynamic result = await _auth.signUpEmail(email, password);
                     if (result == null) {
                       setState(() {
                         error = 'Please, enter a valid e-mail.';
