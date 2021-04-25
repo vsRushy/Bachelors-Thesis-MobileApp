@@ -1,4 +1,5 @@
 import 'package:ai_mobile_app/models/custom_user.dart';
+import 'package:ai_mobile_app/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
@@ -45,6 +46,8 @@ class AuthService {
       UserCredential credential = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = credential.user;
+
+      await DatabaseService(uid: user!.uid).updateUserData('no name');
       return _createCustomUser(user);
     } catch (e) {
       print(e.toString());

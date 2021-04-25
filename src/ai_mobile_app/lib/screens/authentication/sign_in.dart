@@ -1,5 +1,6 @@
 import 'package:ai_mobile_app/services/auth.dart';
 import 'package:ai_mobile_app/shared/constants.dart';
+import 'package:ai_mobile_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -14,13 +15,15 @@ class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
+  bool isLoading = false;
+
   String email = '';
   String password = '';
   String error = '';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return (isLoading) ? Loading() : Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Sign In'),
@@ -56,7 +59,8 @@ class _SignInState extends State<SignIn> {
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: customInputDecoration.copyWith(hintText: 'Password'),
+                decoration:
+                    customInputDecoration.copyWith(hintText: 'Password'),
                 obscureText: true,
                 validator: (value) {
                   return (value!.length < 6)
@@ -77,17 +81,15 @@ class _SignInState extends State<SignIn> {
                 ),
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('Processing data'),
-                      ),
-                    );
+                    setState(() {
+                      isLoading = true;
+                    });
 
                     dynamic result = await _auth.signInEmail(email, password);
                     if (result == null) {
                       setState(() {
-                        error =
-                            'An account with the credentials provided could not be found.';
+                        error = 'An account with the credentials provided could not be found.';
+                        isLoading = false;
                       });
                     }
                   }
