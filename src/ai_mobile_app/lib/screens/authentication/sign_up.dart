@@ -1,4 +1,5 @@
 import 'package:ai_mobile_app/services/auth.dart';
+import 'package:ai_mobile_app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -43,6 +44,7 @@ class _SignUpState extends State<SignUp> {
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
+                decoration: customInputDecoration.copyWith(hintText: 'E-mail'),
                 validator: (value) {
                   return (value!.isEmpty) ? 'Please, enter an e-mail.' : null;
                 },
@@ -54,6 +56,7 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 20.0),
               TextFormField(
+                decoration: customInputDecoration.copyWith(hintText: 'Password'),
                 obscureText: true,
                 validator: (value) {
                   return (value!.length < 6)

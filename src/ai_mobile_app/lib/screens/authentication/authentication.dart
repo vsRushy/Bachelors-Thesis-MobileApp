@@ -8,17 +8,17 @@ class Authentication extends StatefulWidget {
 }
 
 class _AuthenticationState extends State<Authentication> {
-  bool is_sign_in = true;
+  bool isSignIn = true;
 
   void toggleAuthenticationType() {
     setState(() {
-      is_sign_in = !is_sign_in;
+      isSignIn = !isSignIn;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return (is_sign_in) ? SignIn(toggleAuthenticationType: toggleAuthenticationType)
+    return (isSignIn) ? SignIn(toggleAuthenticationType: toggleAuthenticationType)
     : SignUp(toggleAuthenticationType: toggleAuthenticationType);
   }
 }
