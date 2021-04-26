@@ -1,6 +1,6 @@
+import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/screens/home/lessons.dart';
 import 'package:ai_mobile_app/services/auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:ai_mobile_app/services/database.dart';
 import 'package:provider/provider.dart';
@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot?>.value(
+    return StreamProvider<List<CustomTest>?>.value(
       value: DatabaseService().tests,
       initialData: null,
       child: Scaffold(

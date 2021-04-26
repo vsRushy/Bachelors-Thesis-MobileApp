@@ -1,3 +1,4 @@
+import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
@@ -13,7 +14,15 @@ class DatabaseService {
     });
   }
 
-  Stream<QuerySnapshot> get tests {
-    return collection.snapshots();
+  List<CustomTest> _testListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs.map((doc) {
+      return CustomTest(
+        name: doc.data()['name'] ?? '',
+      );
+    }).toList();
+  }
+
+  Stream<List<CustomTest>> get tests {
+    return collection.snapshots().map(_testListFromSnapshot);
   }
 }
