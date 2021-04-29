@@ -44,17 +44,31 @@ class _SignInState extends State<SignIn> {
             body: Column(
               children: [
                 Expanded(
-                  child: Stack(
-                    children: [
-                      Container(
-                        color: Colors.blue,
-                      ),
-                    ],
+                  child: Container(
+                    color: Colors.blue,
                   ),
                 ),
                 Expanded(
-                  child: Container(
-                    color: Colors.brown,
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(20.0),
+                        color: Colors.brown,
+                      ),
+                      Positioned(
+                        top: -10,
+                        left: 0,
+                        /*bottom: 0,
+                        right: 0,*/
+                        child: Container(
+                          width: 200,
+                          height: 200,
+                          margin: EdgeInsets.all(0.0),
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
