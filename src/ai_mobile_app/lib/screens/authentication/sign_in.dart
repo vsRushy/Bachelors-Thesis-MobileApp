@@ -56,16 +56,14 @@ class _SignInState extends State<SignIn> {
                         padding: EdgeInsets.all(20.0),
                         color: Colors.brown,
                       ),
-                      Positioned(
-                        top: -10,
-                        left: 0,
-                        /*bottom: 0,
-                        right: 0,*/
-                        child: Container(
-                          width: 200,
-                          height: 200,
-                          margin: EdgeInsets.all(0.0),
-                          color: Colors.white,
+                      Positioned.fill(
+                        top: -50,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            margin: EdgeInsets.all(20.0),
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
