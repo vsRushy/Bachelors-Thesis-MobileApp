@@ -23,23 +23,43 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    return (isLoading) ? Loading() : Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Sign In'),
-        backgroundColor: Colors.lightBlue,
-        actions: <Widget>[
-          TextButton.icon(
-            label: Text('Sign up'),
-            icon: Icon(Icons.person),
-            style: TextButton.styleFrom(primary: Colors.white),
-            onPressed: () {
-              widget.toggleAuthenticationType();
-            },
-          ),
-        ],
-      ),
-      body: Container(
+    return (isLoading)
+        ? Loading()
+        : Scaffold(
+            backgroundColor: Colors.white,
+            /*appBar: AppBar(
+              title: Text('Sign In'),
+              backgroundColor: Colors.lightBlue,
+              actions: <Widget>[
+                TextButton.icon(
+                  label: Text('Sign up'),
+                  icon: Icon(Icons.person),
+                  style: TextButton.styleFrom(primary: Colors.white),
+                  onPressed: () {
+                    widget.toggleAuthenticationType();
+                  },
+                ),
+              ],
+            ),*/
+            body: Column(
+              children: [
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Container(
+                        color: Colors.blue,
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.brown,
+                  ),
+                ),
+              ],
+            ),
+            /*body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
           key: _formKey,
@@ -103,7 +123,7 @@ class _SignInState extends State<SignIn> {
             ],
           ),
         ),
-      ),
-    );
+      ),*/
+          );
   }
 }
