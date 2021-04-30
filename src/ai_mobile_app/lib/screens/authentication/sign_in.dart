@@ -63,8 +63,8 @@ class _SignInState extends State<SignIn> {
                         color: Colors.white,
                       ),
                       Positioned.fill(
-                        top: -50,
-                        bottom: 70,
+                        top: -60,
+                        bottom: 0,
                         child: Align(
                           alignment: Alignment.center,
                           child: Container(
@@ -106,6 +106,9 @@ class _SignInState extends State<SignIn> {
                                       ),
                                     ),
                                   ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
                                   TextFormField(
                                     decoration: customInputDecoration.copyWith(
                                         hintText: 'e-mail'),
@@ -119,6 +122,21 @@ class _SignInState extends State<SignIn> {
                                         email = value;
                                       });
                                     },
+                                  ),
+                                  SizedBox(
+                                    height: 30.0,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'PASSWORD',
+                                      style: customTextTitleStyle.copyWith(
+                                        fontSize: 14.0,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
                                   ),
                                   TextFormField(
                                     decoration: customInputDecoration.copyWith(
@@ -135,10 +153,18 @@ class _SignInState extends State<SignIn> {
                                       });
                                     },
                                   ),
+                                  SizedBox(
+                                    height: 20.0,
+                                  ),
                                   ElevatedButton(
                                     child: Text('Sign in'),
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.blueAccent,
+                                      minimumSize: Size(140, 40),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                      ),
                                     ),
                                     onPressed: () async {
                                       if (_formKey.currentState!.validate()) {
@@ -158,8 +184,14 @@ class _SignInState extends State<SignIn> {
                                       }
                                     },
                                   ),
-                                  //SizedBox(height: 20.0),
-                                  //
+                                  SizedBox(height: 12.0),
+                                  Text(
+                                    error,
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 11,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -167,12 +199,6 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Text(
-                  error,
-                  style: TextStyle(
-                    color: Colors.red,
                   ),
                 ),
               ],
