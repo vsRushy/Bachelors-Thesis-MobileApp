@@ -63,6 +63,7 @@ class _SignInState extends State<SignIn> {
                           alignment: Alignment.center,
                           child: Container(
                             margin: EdgeInsets.all(30.0),
+                            padding: EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
@@ -77,6 +78,72 @@ class _SignInState extends State<SignIn> {
                                 ),
                               ],
                             ),
+                            child: Form(
+                              key: _formKey,
+                              child: Column(
+                                children: <Widget>[
+                                  TextFormField(
+                                    decoration: customInputDecoration.copyWith(
+                                        hintText: 'E-mail'),
+                                    validator: (value) {
+                                      return (value!.isEmpty)
+                                          ? 'Please, enter an e-mail.'
+                                          : null;
+                                    },
+                                    onChanged: (value) {
+                                      setState(() {
+                                        email = value;
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(height: 20.0),
+                                  TextFormField(
+                                    decoration: customInputDecoration.copyWith(
+                                        hintText: 'Password'),
+                                    obscureText: true,
+                                    validator: (value) {
+                                      return (value!.length < 6)
+                                          ? 'The password must be at least 6 characters long.'
+                                          : null;
+                                    },
+                                    onChanged: (value) {
+                                      setState(() {
+                                        password = value;
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(height: 20.0),
+                                  ElevatedButton(
+                                    child: Text('Sign in'),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.blueAccent,
+                                    ),
+                                    onPressed: () async {
+                                      if (_formKey.currentState!.validate()) {
+                                        setState(() {
+                                          isLoading = true;
+                                        });
+
+                                        dynamic result = await _auth
+                                            .signInEmail(email, password);
+                                        if (result == null) {
+                                          setState(() {
+                                            error =
+                                                'An account with the credentials provided could not be found.';
+                                            isLoading = false;
+                                          });
+                                        }
+                                      }
+                                    },
+                                  ),
+                                  SizedBox(height: 20.0),
+                                  Text(
+                                    error,
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -85,71 +152,6 @@ class _SignInState extends State<SignIn> {
                 ),
               ],
             ),
-            /*body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: <Widget>[
-              SizedBox(height: 20.0),
-              TextFormField(
-                decoration: customInputDecoration.copyWith(hintText: 'E-mail'),
-                validator: (value) {
-                  return (value!.isEmpty) ? 'Please, enter an e-mail.' : null;
-                },
-                onChanged: (value) {
-                  setState(() {
-                    email = value;
-                  });
-                },
-              ),
-              SizedBox(height: 20.0),
-              TextFormField(
-                decoration:
-                    customInputDecoration.copyWith(hintText: 'Password'),
-                obscureText: true,
-                validator: (value) {
-                  return (value!.length < 6)
-                      ? 'The password must be at least 6 characters long.'
-                      : null;
-                },
-                onChanged: (value) {
-                  setState(() {
-                    password = value;
-                  });
-                },
-              ),
-              SizedBox(height: 20.0),
-              ElevatedButton(
-                child: Text('Sign in'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blueAccent,
-                ),
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    setState(() {
-                      isLoading = true;
-                    });
-
-                    dynamic result = await _auth.signInEmail(email, password);
-                    if (result == null) {
-                      setState(() {
-                        error = 'An account with the credentials provided could not be found.';
-                        isLoading = false;
-                      });
-                    }
-                  }
-                },
-              ),
-              SizedBox(height: 20.0),
-              Text(
-                error,
-                style: TextStyle(color: Colors.red),
-              ),
-            ],
-          ),
-        ),
-      ),*/
           );
   }
 }
