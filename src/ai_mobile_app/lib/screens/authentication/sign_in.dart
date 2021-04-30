@@ -45,13 +45,19 @@ class _SignInState extends State<SignIn> {
               children: [
                 Expanded(
                   child: Container(
-                    color: Colors.blue,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      image: DecorationImage(
+                          image: AssetImage(
+                              "assets/images/icon_basic_white_1200.png"),
+                          fit: BoxFit.fitHeight),
+                    ),
                   ),
                 ),
                 Expanded(
                   child: Stack(
                     clipBehavior: Clip.none,
-                    children: [
+                    children: <Widget>[
                       Container(
                         padding: EdgeInsets.all(20.0),
                         color: Colors.white,
@@ -82,9 +88,27 @@ class _SignInState extends State<SignIn> {
                               key: _formKey,
                               child: Column(
                                 children: <Widget>[
+                                  Text(
+                                    'LOGIN',
+                                    style: customTextTitleStyle.copyWith(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20.0,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'E-MAIL',
+                                      style: customTextTitleStyle.copyWith(
+                                        fontSize: 14.0,
+                                      ),
+                                    ),
+                                  ),
                                   TextFormField(
                                     decoration: customInputDecoration.copyWith(
-                                        hintText: 'E-mail'),
+                                        hintText: 'e-mail'),
                                     validator: (value) {
                                       return (value!.isEmpty)
                                           ? 'Please, enter an e-mail.'
@@ -96,10 +120,9 @@ class _SignInState extends State<SignIn> {
                                       });
                                     },
                                   ),
-                                  SizedBox(height: 20.0),
                                   TextFormField(
                                     decoration: customInputDecoration.copyWith(
-                                        hintText: 'Password'),
+                                        hintText: 'password'),
                                     obscureText: true,
                                     validator: (value) {
                                       return (value!.length < 6)
@@ -112,7 +135,6 @@ class _SignInState extends State<SignIn> {
                                       });
                                     },
                                   ),
-                                  SizedBox(height: 20.0),
                                   ElevatedButton(
                                     child: Text('Sign in'),
                                     style: ElevatedButton.styleFrom(
@@ -136,11 +158,8 @@ class _SignInState extends State<SignIn> {
                                       }
                                     },
                                   ),
-                                  SizedBox(height: 20.0),
-                                  Text(
-                                    error,
-                                    style: TextStyle(color: Colors.red),
-                                  ),
+                                  //SizedBox(height: 20.0),
+                                  //
                                 ],
                               ),
                             ),
@@ -148,6 +167,12 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Text(
+                  error,
+                  style: TextStyle(
+                    color: Colors.red,
                   ),
                 ),
               ],

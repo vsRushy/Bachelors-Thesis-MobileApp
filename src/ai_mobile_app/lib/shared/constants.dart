@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+const customTextTitleStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w500,
+);
+
 const customInputDecoration = InputDecoration(
-  filled: true,
+    /*filled: true,
   fillColor: Colors.white,
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(
@@ -20,5 +25,5 @@ const customInputDecoration = InputDecoration(
     borderRadius: BorderRadius.all(
       Radius.circular(15.0),
     ),
-  ),
-);
+  )*/
+    );
