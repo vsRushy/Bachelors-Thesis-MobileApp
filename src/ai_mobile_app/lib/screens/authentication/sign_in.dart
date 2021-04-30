@@ -58,10 +58,11 @@ class _SignInState extends State<SignIn> {
                       ),
                       Positioned.fill(
                         top: -50,
+                        bottom: 70,
                         child: Align(
                           alignment: Alignment.center,
                           child: Container(
-                            margin: EdgeInsets.all(20.0),
+                            margin: EdgeInsets.all(30.0),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
@@ -73,7 +74,7 @@ class _SignInState extends State<SignIn> {
                                   blurRadius: 10.0,
                                   spreadRadius: 5.0,
                                   offset: Offset(0, 3),
-                                )
+                                ),
                               ],
                             ),
                           ),
