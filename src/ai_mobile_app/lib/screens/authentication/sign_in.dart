@@ -27,20 +27,6 @@ class _SignInState extends State<SignIn> {
         ? Loading()
         : Scaffold(
             backgroundColor: Colors.white,
-            /*appBar: AppBar(
-              title: Text('Sign In'),
-              backgroundColor: Colors.lightBlue,
-              actions: <Widget>[
-                TextButton.icon(
-                  label: Text('Sign up'),
-                  icon: Icon(Icons.person),
-                  style: TextButton.styleFrom(primary: Colors.white),
-                  onPressed: () {
-                    widget.toggleAuthenticationType();
-                  },
-                ),
-              ],
-            ),*/
             body: Column(
               children: [
                 Expanded(
@@ -215,7 +201,9 @@ class _SignInState extends State<SignIn> {
                           fontSize: 15,
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        widget.toggleAuthenticationType();
+                      },
                     ),
                   ],
                 ),
