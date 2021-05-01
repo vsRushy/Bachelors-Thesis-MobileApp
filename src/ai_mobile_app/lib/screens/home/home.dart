@@ -67,7 +67,7 @@ class _HomeState extends State<Home> {
                 haptic: true,
                 tabBorderRadius: 9,
                 tabActiveBorder: Border.all(
-                  color: Colors.black,
+                  color: Colors.blue,
                   width: 1,
                 ),
                 tabBorder: Border.all(
@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
                 color: Colors.lightBlue,
                 activeColor: Colors.blue,
                 iconSize: 24,
-                tabBackgroundColor: Colors.purple.withOpacity(0.1),
+                tabBackgroundColor: Colors.lightBlue.withOpacity(0.1),
                 padding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 5,
