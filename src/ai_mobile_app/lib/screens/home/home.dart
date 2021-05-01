@@ -7,8 +7,15 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   final AuthService _auth = AuthService();
+
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -91,6 +98,12 @@ class Home extends StatelessWidget {
                     text: 'Profile',
                   ),
                 ],
+                selectedIndex: _selectedIndex,
+                onTabChange: (index) {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
+                },
               ),
             ),
           ),
