@@ -59,7 +59,7 @@ class _SignUpState extends State<SignUp> {
                     clipBehavior: Clip.none,
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.all(20.0),
+                        padding: EdgeInsets.all(20),
                         color: Colors.white,
                       ),
                       Positioned.fill(
@@ -68,18 +68,18 @@ class _SignUpState extends State<SignUp> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Container(
-                            margin: EdgeInsets.all(30.0),
-                            padding: EdgeInsets.all(10.0),
+                            margin: EdgeInsets.all(30),
+                            padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
-                                Radius.circular(10.0),
+                                Radius.circular(10),
                               ),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.5),
-                                  blurRadius: 10.0,
-                                  spreadRadius: 5.0,
+                                  blurRadius: 10,
+                                  spreadRadius: 5,
                                   offset: Offset(0, 3),
                                 ),
                               ],
@@ -92,7 +92,7 @@ class _SignUpState extends State<SignUp> {
                                     Text(
                                       'SIGN UP',
                                       style: customTextTitleStyle.copyWith(
-                                        fontSize: 20.0,
+                                        fontSize: 20,
                                       ),
                                     ),
                                     SizedBox(
@@ -103,7 +103,7 @@ class _SignUpState extends State<SignUp> {
                                       child: Text(
                                         'E-MAIL',
                                         style: customTextTitleStyle.copyWith(
-                                          fontSize: 14.0,
+                                          fontSize: 14,
                                         ),
                                       ),
                                     ),

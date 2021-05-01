@@ -45,7 +45,7 @@ class _SignInState extends State<SignIn> {
                     clipBehavior: Clip.none,
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.all(20.0),
+                        padding: EdgeInsets.all(20),
                         color: Colors.white,
                       ),
                       Positioned.fill(
@@ -54,18 +54,18 @@ class _SignInState extends State<SignIn> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Container(
-                            margin: EdgeInsets.all(30.0),
-                            padding: EdgeInsets.all(10.0),
+                            margin: EdgeInsets.all(30),
+                            padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
-                                Radius.circular(10.0),
+                                Radius.circular(10),
                               ),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.5),
-                                  blurRadius: 10.0,
-                                  spreadRadius: 5.0,
+                                  blurRadius: 10,
+                                  spreadRadius: 5,
                                   offset: Offset(0, 3),
                                 ),
                               ],
@@ -210,7 +210,7 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
                 SizedBox(
-                  height: 40.0,
+                  height: 40,
                 ),
               ],
             ),
