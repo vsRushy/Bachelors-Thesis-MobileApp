@@ -201,18 +201,21 @@ class _SignInState extends State<SignIn> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "Don't have an account? Sign up",
+                      "Don't have an account? Sign up ",
                       style: TextStyle(
                         color: Colors.black45,
                         fontSize: 15,
                       ),
                     ),
-                    Text(
-                      " here",
-                      style: TextStyle(
-                        color: Colors.lightBlue,
-                        fontSize: 15,
+                    InkWell(
+                      child: Text(
+                        "here",
+                        style: TextStyle(
+                          color: Colors.lightBlue,
+                          fontSize: 15,
+                        ),
                       ),
+                      onTap: () {},
                     ),
                   ],
                 ),
