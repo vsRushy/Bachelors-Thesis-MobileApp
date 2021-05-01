@@ -43,33 +43,30 @@ class Home extends StatelessWidget {
           ),
           child: SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+              padding: EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 8,
+              ),
               child: GNav(
-                rippleColor: Colors.grey[800]!,
-                hoverColor: Colors.grey[700]!,
+                rippleColor: Colors.lightBlue,
+                hoverColor: Colors.lightBlue[100]!,
                 haptic: true,
-                tabBorderRadius: 15,
+                tabBorderRadius: 9,
                 tabActiveBorder: Border.all(
                   color: Colors.black,
                   width: 1,
                 ),
                 tabBorder: Border.all(
-                  color: Colors.grey,
+                  color: Colors.lightBlue,
                   width: 1,
                 ),
-                tabShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    blurRadius: 8,
-                  )
-                ],
                 curve: Curves.easeOutExpo,
                 duration: Duration(
                   milliseconds: 900,
                 ),
                 gap: 8,
-                color: Colors.grey[800],
-                activeColor: Colors.purple,
+                color: Colors.lightBlue,
+                activeColor: Colors.blue,
                 iconSize: 24,
                 tabBackgroundColor: Colors.purple.withOpacity(0.1),
                 padding: EdgeInsets.symmetric(
