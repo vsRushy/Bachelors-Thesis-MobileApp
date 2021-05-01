@@ -17,6 +17,13 @@ class _HomeState extends State<Home> {
 
   int _selectedIndex = 0;
 
+  static List<Widget> _bodyOptions = <Widget>[
+    Lessons(),
+    Lessons(),
+    Lessons(),
+    Lessons(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return StreamProvider<List<CustomTest>?>.value(
@@ -37,7 +44,7 @@ class _HomeState extends State<Home> {
                 })
           ],
         ),
-        body: Lessons(),
+        body: _bodyOptions.elementAt(_selectedIndex),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
             color: Colors.white,
