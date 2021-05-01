@@ -12,13 +12,239 @@ class Lessons extends StatefulWidget {
 class _LessonsState extends State<Lessons> {
   @override
   Widget build(BuildContext context) {
-    final lessons = Provider.of<List<CustomTest>?>(context);
+    /*final lessons = Provider.of<List<CustomTest>?>(context);
 
     return ListView.builder(
       itemCount: lessons!.length,
       itemBuilder: (context, index) {
         return LessonItem(test: lessons[index]);
       },
+    );*/
+
+    return ListView(
+      padding: EdgeInsets.all(10),
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(1),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 10,
+                spreadRadius: 5,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Card(
+            color: Colors.lightBlue,
+            shadowColor: Colors.black,
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.arrow_drop_down_circle),
+                  title: Text(
+                    'Lesson 1',
+                  ),
+                  subtitle: Text(
+                    'Secondary Text',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    'Lorem Ipsum Dolor Avet Sit Amet.',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                ButtonBar(
+                  alignment: MainAxisAlignment.start,
+                  children: [
+                    TextButton(
+                      child: Text('ACTION 1'),
+                      onPressed: () {},
+                    ),
+                    TextButton(
+                      child: Text('ACTION 2'),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(1),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 10,
+                spreadRadius: 5,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Card(
+            color: Colors.lightBlue,
+            shadowColor: Colors.black,
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.arrow_drop_down_circle),
+                  title: Text(
+                    'Lesson 2',
+                  ),
+                  subtitle: Text(
+                    'Secondary Text',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    'Lorem Ipsum Dolor Avet Sit Amet.',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                ButtonBar(
+                  alignment: MainAxisAlignment.start,
+                  children: [
+                    TextButton(
+                      child: Text('ACTION 1'),
+                      onPressed: () {},
+                    ),
+                    TextButton(
+                      child: Text('ACTION 2'),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(1),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 10,
+                spreadRadius: 5,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Card(
+            color: Colors.lightBlue,
+            shadowColor: Colors.black,
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.arrow_drop_down_circle),
+                  title: Text(
+                    'Lesson 3',
+                  ),
+                  subtitle: Text(
+                    'Secondary Text',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    'Lorem Ipsum Dolor Avet Sit Amet.',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                ButtonBar(
+                  alignment: MainAxisAlignment.start,
+                  children: [
+                    TextButton(
+                      child: Text('ACTION 1'),
+                      onPressed: () {},
+                    ),
+                    TextButton(
+                      child: Text('ACTION 2'),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(1),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 10,
+                spreadRadius: 5,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Card(
+            color: Colors.lightBlue,
+            shadowColor: Colors.black,
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.arrow_drop_down_circle),
+                  title: Text(
+                    'Lesson 4',
+                  ),
+                  subtitle: Text(
+                    'Secondary Text',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    'Lorem Ipsum Dolor Avet Sit Amet.',
+                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  ),
+                ),
+                ButtonBar(
+                  alignment: MainAxisAlignment.start,
+                  children: [
+                    TextButton(
+                      child: Text('ACTION 1'),
+                      onPressed: () {},
+                    ),
+                    TextButton(
+                      child: Text('ACTION 2'),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
