@@ -67,24 +67,24 @@ class _SignInState extends State<SignIn> {
                         bottom: 0,
                         child: Align(
                           alignment: Alignment.center,
-                          child: SingleChildScrollView(
-                            child: Container(
-                              margin: EdgeInsets.all(30.0),
-                              padding: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10.0),
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.5),
-                                    blurRadius: 10.0,
-                                    spreadRadius: 5.0,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
+                          child: Container(
+                            margin: EdgeInsets.all(30.0),
+                            padding: EdgeInsets.all(10.0),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10.0),
                               ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.5),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 5.0,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: SingleChildScrollView(
                               child: Form(
                                 key: _formKey,
                                 child: Column(
@@ -154,7 +154,9 @@ class _SignInState extends State<SignIn> {
                                         });
                                       },
                                     ),
-                                    
+                                    SizedBox(
+                                      height: 20.0,
+                                    ),
                                     ElevatedButton(
                                       child: Text('Sign in'),
                                       style: ElevatedButton.styleFrom(
