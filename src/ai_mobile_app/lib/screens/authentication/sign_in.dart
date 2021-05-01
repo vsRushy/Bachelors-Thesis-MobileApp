@@ -64,7 +64,7 @@ class _SignInState extends State<SignIn> {
                       ),
                       Positioned.fill(
                         top: -90,
-                        bottom: 0,
+                        bottom: -20,
                         child: Align(
                           alignment: Alignment.center,
                           child: Container(
@@ -107,9 +107,6 @@ class _SignInState extends State<SignIn> {
                                         ),
                                       ),
                                     ),
-                                    /*SizedBox(
-                                      height: 10,
-                                    ),*/
                                     TextFormField(
                                       decoration: customInputDecoration
                                           .copyWith(hintText: 'e-mail'),
@@ -136,9 +133,6 @@ class _SignInState extends State<SignIn> {
                                         ),
                                       ),
                                     ),
-                                    /*SizedBox(
-                                      height: 10,
-                                    ),*/
                                     TextFormField(
                                       decoration: customInputDecoration
                                           .copyWith(hintText: 'password'),
@@ -202,6 +196,28 @@ class _SignInState extends State<SignIn> {
                       ),
                     ],
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Don't have an account? Sign up",
+                      style: TextStyle(
+                        color: Colors.black45,
+                        fontSize: 15,
+                      ),
+                    ),
+                    Text(
+                      " here",
+                      style: TextStyle(
+                        color: Colors.lightBlue,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40.0,
                 ),
               ],
             ),
