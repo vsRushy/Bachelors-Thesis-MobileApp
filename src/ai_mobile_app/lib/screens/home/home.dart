@@ -86,12 +86,12 @@ class _HomeState extends State<Home> {
                     text: 'Home',
                   ),
                   GButton(
-                    icon: LineIcons.heart,
-                    text: 'Likes',
+                    icon: LineIcons.questionCircleAlt,
+                    text: 'Tests',
                   ),
                   GButton(
-                    icon: LineIcons.search,
-                    text: 'Search',
+                    icon: LineIcons.book,
+                    text: 'Summary',
                   ),
                   GButton(
                     icon: LineIcons.user,
