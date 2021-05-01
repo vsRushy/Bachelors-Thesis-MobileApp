@@ -76,20 +76,20 @@ class _SignInState extends State<SignIn> {
                                 child: Column(
                                   children: <Widget>[
                                     Text(
-                                      'LOGIN',
+                                      'SIGN IN',
                                       style: customTextTitleStyle.copyWith(
-                                        fontSize: 20.0,
+                                        fontSize: 20,
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 20.0,
+                                      height: 20,
                                     ),
                                     Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
                                         'E-MAIL',
                                         style: customTextTitleStyle.copyWith(
-                                          fontSize: 14.0,
+                                          fontSize: 14,
                                         ),
                                       ),
                                     ),
@@ -108,14 +108,14 @@ class _SignInState extends State<SignIn> {
                                       },
                                     ),
                                     SizedBox(
-                                      height: 30.0,
+                                      height: 30,
                                     ),
                                     Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
                                         'PASSWORD',
                                         style: customTextTitleStyle.copyWith(
-                                          fontSize: 14.0,
+                                          fontSize: 14,
                                         ),
                                       ),
                                     ),
@@ -135,7 +135,7 @@ class _SignInState extends State<SignIn> {
                                       },
                                     ),
                                     SizedBox(
-                                      height: 20.0,
+                                      height: 20,
                                     ),
                                     ElevatedButton(
                                       child: Text('Sign in'),
@@ -144,7 +144,7 @@ class _SignInState extends State<SignIn> {
                                         minimumSize: Size(140, 40),
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(30.0),
+                                              BorderRadius.circular(30),
                                         ),
                                       ),
                                       onPressed: () async {
@@ -165,7 +165,9 @@ class _SignInState extends State<SignIn> {
                                         }
                                       },
                                     ),
-                                    SizedBox(height: 12.0),
+                                    SizedBox(
+                                      height: 12,
+                                    ),
                                     Text(
                                       error,
                                       style: TextStyle(
