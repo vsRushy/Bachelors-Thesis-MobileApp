@@ -27,20 +27,6 @@ class _SignUpState extends State<SignUp> {
         ? Loading()
         : Scaffold(
             backgroundColor: Colors.white,
-            /*appBar: AppBar(
-        title: Text('Sign Up'),
-        backgroundColor: Colors.lightBlue,
-        actions: <Widget>[
-          TextButton.icon(
-            label: Text('Sign in'),
-            icon: Icon(Icons.person),
-            style: TextButton.styleFrom(primary: Colors.white),
-            onPressed: () {
-              widget.toggleAuthenticationType();
-            },
-          ),
-        ],
-      ),*/
             body: Column(
               children: [
                 Expanded(
