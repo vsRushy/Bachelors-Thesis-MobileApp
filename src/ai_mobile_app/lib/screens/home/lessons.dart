@@ -46,31 +46,75 @@ class _LessonsState extends State<Lessons> {
             child: Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.looks_one),
+                  leading: Icon(
+                    Icons.looks_one,
+                    color: Colors.white,
+                    size: 40,
+                  ),
                   title: Text(
                     'Lesson 1',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                    ),
                   ),
                   subtitle: Text(
-                    'Secondary Text',
-                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    'Environment setup',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(16),
                   child: Text(
                     'This is the first lesson.',
-                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-                ButtonBar(
-                  alignment: MainAxisAlignment.start,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    TextButton(
-                      child: Text('START'),
-                      onPressed: () {},
+                    ButtonBar(
+                      alignment: MainAxisAlignment.start,
+                      children: [
+                        ElevatedButton(
+                          child: Text(
+                            'START',
+                            style: TextStyle(color: Colors.lightBlue),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white,
+                            minimumSize: Size(140, 40),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ],
                     ),
                     TextButton(
-                      child: Text('More info'),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.info,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            'More info',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                       onPressed: () {},
                     ),
                   ],
