@@ -22,12 +22,12 @@ class _LessonsState extends State<Lessons> {
     );*/
 
     return ListView(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(25),
       children: <Widget>[
         Container(
           padding: EdgeInsets.all(1),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.blue,
             borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),
@@ -46,7 +46,7 @@ class _LessonsState extends State<Lessons> {
             child: Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.arrow_drop_down_circle),
+                  leading: Icon(Icons.looks_one),
                   title: Text(
                     'Lesson 1',
                   ),
@@ -58,7 +58,7 @@ class _LessonsState extends State<Lessons> {
                 Padding(
                   padding: EdgeInsets.all(16),
                   child: Text(
-                    'Lorem Ipsum Dolor Avet Sit Amet.',
+                    'This is the first lesson.',
                     style: TextStyle(color: Colors.black.withOpacity(0.6)),
                   ),
                 ),
@@ -66,11 +66,11 @@ class _LessonsState extends State<Lessons> {
                   alignment: MainAxisAlignment.start,
                   children: [
                     TextButton(
-                      child: Text('ACTION 1'),
+                      child: Text('START'),
                       onPressed: () {},
                     ),
                     TextButton(
-                      child: Text('ACTION 2'),
+                      child: Text('More info'),
                       onPressed: () {},
                     ),
                   ],
@@ -78,6 +78,9 @@ class _LessonsState extends State<Lessons> {
               ],
             ),
           ),
+        ),
+        SizedBox(
+          height: 25.0,
         ),
         Container(
           padding: EdgeInsets.all(1),
@@ -101,7 +104,7 @@ class _LessonsState extends State<Lessons> {
             child: Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.arrow_drop_down_circle),
+                  leading: Icon(Icons.looks_two),
                   title: Text(
                     'Lesson 2',
                   ),
@@ -134,6 +137,9 @@ class _LessonsState extends State<Lessons> {
             ),
           ),
         ),
+        SizedBox(
+          height: 25.0,
+        ),
         Container(
           padding: EdgeInsets.all(1),
           decoration: BoxDecoration(
@@ -156,7 +162,7 @@ class _LessonsState extends State<Lessons> {
             child: Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.arrow_drop_down_circle),
+                  leading: Icon(Icons.looks_3),
                   title: Text(
                     'Lesson 3',
                   ),
@@ -189,6 +195,9 @@ class _LessonsState extends State<Lessons> {
             ),
           ),
         ),
+        SizedBox(
+          height: 25.0,
+        ),
         Container(
           padding: EdgeInsets.all(1),
           decoration: BoxDecoration(
@@ -211,7 +220,7 @@ class _LessonsState extends State<Lessons> {
             child: Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.arrow_drop_down_circle),
+                  leading: Icon(Icons.looks_4),
                   title: Text(
                     'Lesson 4',
                   ),
