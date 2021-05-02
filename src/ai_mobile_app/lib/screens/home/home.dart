@@ -1,5 +1,6 @@
 import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/screens/home/lessons.dart';
+import 'package:ai_mobile_app/screens/home/profile.dart';
 import 'package:ai_mobile_app/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ai_mobile_app/services/database.dart';
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
     Lessons(),
     Lessons(),
     Lessons(),
-    Lessons(),
+    Profile(),
   ];
 
   @override
