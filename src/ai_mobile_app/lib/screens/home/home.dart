@@ -1,6 +1,8 @@
 import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/screens/home/lessons.dart';
 import 'package:ai_mobile_app/screens/home/profile.dart';
+import 'package:ai_mobile_app/screens/home/summary.dart';
+import 'package:ai_mobile_app/screens/home/tests.dart';
 import 'package:ai_mobile_app/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ai_mobile_app/services/database.dart';
@@ -20,8 +22,8 @@ class _HomeState extends State<Home> {
 
   static List<Widget> _bodyOptions = <Widget>[
     Lessons(),
-    Lessons(),
-    Lessons(),
+    Tests(),
+    Summary(),
     Profile(),
   ];
 
