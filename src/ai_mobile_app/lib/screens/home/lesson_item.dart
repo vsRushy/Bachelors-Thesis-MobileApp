@@ -56,87 +56,107 @@ class LessonItem extends StatelessWidget {
             offset: Offset(0, 3),
           ),
         ],
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment(0.8, 0.0),
+          colors: <Color>[Colors.white, Colors.lightBlue],
+          tileMode: TileMode.repeated,
+        ),
       ),
       child: Card(
         color: Colors.lightBlue,
         shadowColor: Colors.black,
-        child: Column(
-          children: [
-            ListTile(
-              leading: Icon(
-                icon,
-                color: Colors.white,
-                size: 40,
-              ),
-              title: Text(
-                title!,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 23,
-                ),
-              ),
-              subtitle: Text(
-                subTitle!,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
             ),
-            Padding(
-              padding: EdgeInsets.all(16),
-              child: Text(
-                description!,
-                style: TextStyle(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment(0.8, 0.0),
+              colors: <Color>[Colors.blue, Colors.lightBlue],
+              tileMode: TileMode.clamp,
+            ),
+          ),
+          child: Column(
+            children: [
+              ListTile(
+                leading: Icon(
+                  icon,
                   color: Colors.white,
+                  size: 40,
+                ),
+                title: Text(
+                  title!,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23,
+                  ),
+                ),
+                subtitle: Text(
+                  subTitle!,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ButtonBar(
-                  alignment: MainAxisAlignment.start,
-                  children: [
-                    ElevatedButton(
-                      child: Text(
-                        'START',
-                        style: TextStyle(color: Colors.lightBlue),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        minimumSize: Size(140, 40),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                      onPressed: () {},
-                    ),
-                  ],
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  description!,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-                TextButton(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.info,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'More info',
-                        style: TextStyle(
-                          color: Colors.white,
+                      ElevatedButton(
+                        child: Text(
+                          'START',
+                          style: TextStyle(color: Colors.lightBlue),
                         ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          minimumSize: Size(140, 40),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        onPressed: () {},
                       ),
                     ],
                   ),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ],
+                  TextButton(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.info,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          'More info',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
