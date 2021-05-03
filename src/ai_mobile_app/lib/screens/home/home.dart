@@ -20,6 +20,13 @@ class _HomeState extends State<Home> {
 
   int _selectedIndex = 0;
 
+  static List<Text> _appBarOptions = <Text>[
+    Text('Home'),
+    Text('Tests'),
+    Text('Summary'),
+    Text('Profile'),
+  ];
+
   static List<Widget> _bodyOptions = <Widget>[
     Lessons(),
     Tests(),
@@ -36,9 +43,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Center(
-            child: Text(
-              'AI Learning App',
-            ),
+            child: _appBarOptions.elementAt(_selectedIndex),
           ),
           backgroundColor: Colors.lightBlue,
         ),
