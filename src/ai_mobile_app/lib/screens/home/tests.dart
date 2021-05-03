@@ -1,5 +1,6 @@
 import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/screens/home/lesson_item.dart';
+import 'package:ai_mobile_app/screens/home/test_item.dart';
 import 'package:ai_mobile_app/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,31 +14,66 @@ class Tests extends StatefulWidget {
 class _TestsState extends State<Tests> {
   final AuthService _auth = AuthService();
 
+  List<TestItem> tests = [
+    TestItem(
+      name: 'First test',
+      number: 1,
+    ),
+    TestItem(
+      name: 'Second test',
+      number: 2,
+    ),
+    TestItem(
+      name: 'Third test',
+      number: 3,
+    ),
+    TestItem(
+      name: 'Fourth test',
+      number: 4,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(
-            height: 20,
+    return ListView.builder(
+      padding: EdgeInsets.all(25),
+      itemCount: tests.length,
+      itemBuilder: (context, index) {
+        return Container(
+          padding: EdgeInsets.only(
+            bottom: 20,
           ),
-          ElevatedButton(
-            child: Text('Tests'),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.blueAccent,
-              minimumSize: Size(140, 40),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
+          margin: EdgeInsets.only(bottom: 25),
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
             ),
-            onPressed: () async {
-              await _auth.signOut();
-            },
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 10,
+                spreadRadius: 5,
+                offset: Offset(0, 3),
+              ),
+            ],
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment(1.2, 0.0),
+              colors: <Color>[Colors.white, Colors.lightBlue],
+              tileMode: TileMode.repeated,
+            ),
           ),
-        ],
-      ),
+          child: ListTile(
+            leading: Icon(Icons.book),
+            title: Text(tests[index].name!),
+            subtitle: Text('Points: 10  Experience: 100'),
+            //trailing: Icon(Icons.expand_more), TODO on summary?
+            onTap: () {},
+            enabled: true, // TODO: change for locked tests
+          ),
+        );
+      },
     );
   }
 }
