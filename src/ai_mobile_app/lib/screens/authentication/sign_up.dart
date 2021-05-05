@@ -207,6 +207,13 @@ class _SignUpState extends State<SignUp> {
                         widget.toggleAuthenticationType();
                       },
                     ),
+                    Text(
+                      ".",
+                      style: TextStyle(
+                        color: Colors.black45,
+                        fontSize: 15,
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(
