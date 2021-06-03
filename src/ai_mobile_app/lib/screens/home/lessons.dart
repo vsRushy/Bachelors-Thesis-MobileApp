@@ -46,8 +46,8 @@ class _LessonsState extends State<Lessons> {
         LessonItem(
           icon: Icons.looks_3,
           title: 'Lesson 3',
-          subTitle: 'Car ANN movement #1',
-          description: 'This is the third lesson.',
+          subTitle: 'Autonomous car using checkpoints.',
+          description: 'A car that drives autonomously using the checkpoints training method.',
         ),
         SizedBox(
           height: 25.0,

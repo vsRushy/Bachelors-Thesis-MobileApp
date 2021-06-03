@@ -1,4 +1,5 @@
 import 'package:ai_mobile_app/models/custom_test.dart';
+import 'package:ai_mobile_app/screens/home/lesson_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ai_mobile_app/screens/home/lessons.dart';
 
@@ -133,7 +134,14 @@ class LessonItem extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LessonPage(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -165,7 +173,7 @@ class LessonItem extends StatelessWidget {
                           actions: <Widget>[
                             TextButton(
                               onPressed: () => Navigator.pop(context, 'Ok'),
-                              child: const Text('Ok'),
+                              child: Text('Ok'),
                             ),
                           ],
                         ),
