@@ -31,12 +31,14 @@ class LessonItem extends StatelessWidget {
   final String? title;
   final String? subTitle;
   final String? description;
+  final String? moreInfo;
 
   LessonItem({
     required IconData this.icon,
     required String this.title,
     required String this.subTitle,
     required String this.description,
+    this.moreInfo,
   });
 
   @override
@@ -135,23 +137,26 @@ class LessonItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                  TextButton(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.info,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          'More info',
-                          style: TextStyle(
+                  Visibility(
+                    visible: moreInfo != null,
+                    child: TextButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.info,
                             color: Colors.white,
                           ),
-                        ),
-                      ],
+                          Text(
+                            'More info',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      onPressed: () {},
                     ),
-                    onPressed: () {},
                   ),
                 ],
               ),

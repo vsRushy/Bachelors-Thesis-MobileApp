@@ -29,6 +29,7 @@ class _LessonsState extends State<Lessons> {
           title: 'Lesson 1',
           subTitle: 'Environment setup',
           description: 'This is the first lesson.',
+          moreInfo: "This lesson doesn't have a test.",
         ),
         SizedBox(
           height: 25.0,
