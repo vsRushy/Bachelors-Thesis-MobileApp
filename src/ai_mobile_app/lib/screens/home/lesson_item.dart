@@ -155,7 +155,21 @@ class LessonItem extends StatelessWidget {
                           ),
                         ],
                       ),
-                      onPressed: () {},
+                      onPressed: () => showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: Text(title.toString()),
+                          content: Text(
+                            "This lesson doesn't have a test.",
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Ok'),
+                              child: const Text('Ok'),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
