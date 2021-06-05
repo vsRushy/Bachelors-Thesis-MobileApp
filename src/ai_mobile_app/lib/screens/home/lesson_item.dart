@@ -28,6 +28,7 @@ import 'package:ai_mobile_app/screens/home/lessons.dart';
 }*/
 
 class LessonItem extends StatelessWidget {
+  final int? index;
   final IconData? icon;
   final String? title;
   final String? subTitle;
@@ -35,6 +36,7 @@ class LessonItem extends StatelessWidget {
   final String? moreInfo;
 
   LessonItem({
+    required int this.index,
     required IconData this.icon,
     required String this.title,
     required String this.subTitle,
@@ -138,7 +140,7 @@ class LessonItem extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LessonPage(),
+                              builder: (context) => LessonPage(index!),
                             ),
                           );
                         },

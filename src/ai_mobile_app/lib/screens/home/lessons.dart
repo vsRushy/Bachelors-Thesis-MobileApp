@@ -25,6 +25,7 @@ class _LessonsState extends State<Lessons> {
       padding: EdgeInsets.all(25),
       children: <Widget>[
         LessonItem(
+          index: 1,
           icon: Icons.looks_one,
           title: 'Lesson 1',
           subTitle: 'Environment setup',
@@ -35,6 +36,7 @@ class _LessonsState extends State<Lessons> {
           height: 25.0,
         ),
         LessonItem(
+          index: 2,
           icon: Icons.looks_two,
           title: 'Lesson 2',
           subTitle: 'Simple ANN movement',
@@ -44,6 +46,7 @@ class _LessonsState extends State<Lessons> {
           height: 25.0,
         ),
         LessonItem(
+          index: 3,
           icon: Icons.looks_3,
           title: 'Lesson 3',
           subTitle: 'Autonomous car using checkpoints.',
@@ -53,6 +56,7 @@ class _LessonsState extends State<Lessons> {
           height: 25.0,
         ),
         LessonItem(
+          index: 4,
           icon: Icons.looks_4,
           title: 'Lesson 4',
           subTitle: 'Car ANN movement #2',
@@ -62,6 +66,7 @@ class _LessonsState extends State<Lessons> {
           height: 25.0,
         ),
         LessonItem(
+          index: 5,
           icon: Icons.looks_5,
           title: 'Lesson 5',
           subTitle: 'Own Artificial Neural Network',
