@@ -1,10 +1,36 @@
+import 'package:ai_mobile_app/shared/lesson_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class LessonPage extends StatelessWidget {
-  int? index;
+  final int? index;
 
-  LessonPage(int idx) {
-    this.index = idx;
+  LessonPage(this.index);
+
+  SingleChildScrollView? _currentLessonPage() {
+    switch (index) {
+      case 1:
+        return SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              LessonTitle("Title"),
+              LessonSubtitle("Subtitle"),
+              LessonText("Text"),
+            ],
+          ),
+        );
+
+      case 2:
+        return SingleChildScrollView();
+
+      case 3:
+        return SingleChildScrollView();
+
+      case 4:
+        return SingleChildScrollView();
+
+      default:
+        return null;
+    }
   }
 
   @override
@@ -28,12 +54,7 @@ class LessonPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Text(
-          'This is the home page',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      body: _currentLessonPage(),
     );
   }
 }
