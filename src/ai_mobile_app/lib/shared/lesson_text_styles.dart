@@ -53,3 +53,21 @@ class LessonText extends StatelessWidget {
     );
   }
 }
+
+class LessonTextBold extends StatelessWidget {
+  final String text;
+
+  LessonTextBold(this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+        fontSize: 16,
+      ),
+    );
+  }
+}

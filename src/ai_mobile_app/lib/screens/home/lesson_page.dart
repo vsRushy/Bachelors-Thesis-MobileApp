@@ -36,7 +36,27 @@ class LessonPage extends StatelessWidget {
                 SizedBox(height: 15),
                 LessonSubtitle("Introduction"),
                 SizedBox(height: 15),
-                LessonText("The phase 1 consists in developing an agent that learns to find a defined target."),
+                LessonText(
+                    "The phase 1 consists in developing an agent that learns to find a defined target."),
+                SizedBox(height: 15),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase1/first_phase_individual.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
+                Row(children: [
+                  LessonTextBold("Algorithm used: "),
+                  LessonText("PPO.")
+                ]),
+                SizedBox(height: 15),
+                Row(children: [
+                  LessonTextBold("Difficulty: "),
+                  LessonText("Easy.")
+                ]),
+                SizedBox(height: 15),
+                LessonSubtitle("Development"),
+                SizedBox(height: 15),
               ],
             ),
           ),
@@ -50,9 +70,31 @@ class LessonPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                LessonTitle("Title"),
-                LessonSubtitle("Subtitle"),
-                LessonText("Text"),
+                LessonTitle("Phase 2: Car driving with checkpoints"),
+                SizedBox(height: 15),
+                LessonSubtitle("Introduction"),
+                SizedBox(height: 15),
+                LessonText(
+                    "The phase 2 consists in developing a car agent that learns to drive through a defined track using the checkpoint method."),
+                SizedBox(height: 15),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase2/phase2_track.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
+                Row(children: [
+                  LessonTextBold("Algorithm used: "),
+                  LessonText("PPO.")
+                ]),
+                SizedBox(height: 15),
+                Row(children: [
+                  LessonTextBold("Difficulty: "),
+                  LessonText("Medium.")
+                ]),
+                SizedBox(height: 15),
+                LessonSubtitle("Development"),
+                SizedBox(height: 15),
               ],
             ),
           ),
@@ -66,9 +108,31 @@ class LessonPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                LessonTitle("Title"),
-                LessonSubtitle("Subtitle"),
-                LessonText("Text"),
+                LessonTitle("Phase 3: Car driving without checkpoints"),
+                SizedBox(height: 15),
+                LessonSubtitle("Introduction"),
+                SizedBox(height: 15),
+                LessonText(
+                    "The phase 3 consists in developing a car agent that learns to drive through a defined track without checkpoints."),
+                SizedBox(height: 15),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase3/phase3_track.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
+                Row(children: [
+                  LessonTextBold("Algorithm used: "),
+                  LessonText("SAC.")
+                ]),
+                SizedBox(height: 15),
+                Row(children: [
+                  LessonTextBold("Difficulty: "),
+                  LessonText("Hard.")
+                ]),
+                SizedBox(height: 15),
+                LessonSubtitle("Development"),
+                SizedBox(height: 15),
               ],
             ),
           ),
