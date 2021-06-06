@@ -10,9 +10,9 @@ class LessonTitle extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: Colors.black,
+        color: Colors.lightBlue,
         fontWeight: FontWeight.bold,
-        fontSize: 40,
+        fontSize: 32,
       ),
     );
   }
@@ -30,7 +30,7 @@ class LessonSubtitle extends StatelessWidget {
       style: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,
-        fontSize: 32,
+        fontSize: 28,
       ),
     );
   }
@@ -48,7 +48,7 @@ class LessonText extends StatelessWidget {
       style: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.normal,
-        fontSize: 20,
+        fontSize: 16,
       ),
     );
   }
