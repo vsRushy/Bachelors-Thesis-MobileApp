@@ -10,23 +10,83 @@ class LessonPage extends StatelessWidget {
     switch (index) {
       case 1:
         return SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              LessonTitle("Title"),
-              LessonSubtitle("Subtitle"),
-              LessonText("Text"),
-            ],
+          child: Padding(
+            padding: EdgeInsets.all(26.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                LessonTitle("Title"),
+                LessonSubtitle("Subtitle"),
+                LessonText("Text"),
+              ],
+            ),
           ),
         );
 
       case 2:
-        return SingleChildScrollView();
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(26.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                LessonTitle("Title"),
+                LessonSubtitle("Subtitle"),
+                LessonText("Text"),
+              ],
+            ),
+          ),
+        );
 
       case 3:
-        return SingleChildScrollView();
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(26.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                LessonTitle("Title"),
+                LessonSubtitle("Subtitle"),
+                LessonText("Text"),
+              ],
+            ),
+          ),
+        );
 
       case 4:
-        return SingleChildScrollView();
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(26.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                LessonTitle("Title"),
+                LessonSubtitle("Subtitle"),
+                LessonText("Text"),
+              ],
+            ),
+          ),
+        );
+
+      case 5:
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(26.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                LessonTitle("Title"),
+                LessonSubtitle("Subtitle"),
+                LessonText("Text"),
+              ],
+            ),
+          ),
+        );
 
       default:
         return null;

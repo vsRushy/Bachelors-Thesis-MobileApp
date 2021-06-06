@@ -7,7 +7,14 @@ class LessonTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text);
+    return Text(
+      text,
+      style: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+        fontSize: 40,
+      ),
+    );
   }
 }
 
@@ -18,7 +25,14 @@ class LessonSubtitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text);
+    return Text(
+      text,
+      style: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+        fontSize: 32,
+      ),
+    );
   }
 }
 
@@ -29,6 +43,13 @@ class LessonText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text);
+    return Text(
+      text,
+      style: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.normal,
+        fontSize: 20,
+      ),
+    );
   }
 }
