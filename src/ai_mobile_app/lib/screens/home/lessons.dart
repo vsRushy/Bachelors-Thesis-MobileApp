@@ -28,8 +28,8 @@ class _LessonsState extends State<Lessons> {
           index: 1,
           icon: Icons.looks_one,
           title: 'Lesson 1',
-          subTitle: 'Environment setup',
-          description: 'This is the first lesson.',
+          subTitle: 'AI & ML concepts and Environment setup',
+          description: 'Learn the main concepts of Artificial Intelligence and Machine Learning at the same time of setting up the Environment.',
           moreInfo: "This lesson doesn't have a test.",
         ),
         SizedBox(
@@ -39,8 +39,8 @@ class _LessonsState extends State<Lessons> {
           index: 2,
           icon: Icons.looks_two,
           title: 'Lesson 2',
-          subTitle: 'Simple ANN movement',
-          description: 'This is the second lesson.',
+          subTitle: 'Phase 1: Target finder',
+          description: 'Development of an agent that finds a defined target in any direction.',
         ),
         SizedBox(
           height: 25.0,
@@ -49,8 +49,8 @@ class _LessonsState extends State<Lessons> {
           index: 3,
           icon: Icons.looks_3,
           title: 'Lesson 3',
-          subTitle: 'Autonomous car using checkpoints.',
-          description: 'A car that drives autonomously using the checkpoints training method.',
+          subTitle: 'Phase 2: Autonomous car using checkpoints.',
+          description: 'Create a car that drives autonomously using the checkpoints training method.',
         ),
         SizedBox(
           height: 25.0,
@@ -59,18 +59,11 @@ class _LessonsState extends State<Lessons> {
           index: 4,
           icon: Icons.looks_4,
           title: 'Lesson 4',
-          subTitle: 'Car ANN movement #2',
-          description: 'This is the fourth lesson.',
+          subTitle: 'Phase 3: Autonomous car without checkpoints.',
+          description: 'Develop a car that drives autonomously without the necessity of using checkpoints.',
         ),
         SizedBox(
           height: 25.0,
-        ),
-        LessonItem(
-          index: 5,
-          icon: Icons.looks_5,
-          title: 'Lesson 5',
-          subTitle: 'Own Artificial Neural Network',
-          description: 'This is the fifth lesson.',
         ),
       ],
     );
