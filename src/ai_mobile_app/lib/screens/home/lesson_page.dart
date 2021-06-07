@@ -174,21 +174,7 @@ class LessonPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Lesson $index'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add_alert),
-            tooltip: 'Show Snackbar',
-            onPressed: () {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text('This is a snackbar')));
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.navigate_next),
-            tooltip: 'Go to the next page',
-            onPressed: () {},
-          ),
-        ],
+        actions: <Widget>[],
       ),
       body: _currentLessonPage(),
     );

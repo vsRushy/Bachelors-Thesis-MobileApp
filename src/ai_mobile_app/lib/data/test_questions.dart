@@ -35,12 +35,12 @@ final List<CustomQuestion> questionLibrary = [
       CustomOption(
         identifier: "AA",
         text: "This is the first question.",
-        isCorrect: true,
+        isCorrect: false,
       ),
       CustomOption(
         identifier: "BB",
         text: "This is the second question.",
-        isCorrect: false,
+        isCorrect: true,
       ),
       CustomOption(
         identifier: "CC",
