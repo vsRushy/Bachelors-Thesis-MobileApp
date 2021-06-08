@@ -1,3 +1,4 @@
+import 'package:ai_mobile_app/custom_widgets/options.dart';
 import 'package:ai_mobile_app/models/custom_question.dart';
 import 'package:ai_mobile_app/models/question_category.dart';
 import 'package:flutter/material.dart';
@@ -19,18 +20,32 @@ class _QuestionsState extends State<Questions> {
   final _pageController = PageController();
   final _currentPageNotifier = ValueNotifier<int>(0);
 
-  Widget _buildQuestion({required CustomQuestion question}) {
+  Widget _createQuestion({required CustomQuestion question}) {
     return Padding(
       padding: EdgeInsets.all(26),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Text(
             question.question!,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 32,
+            ),
+          ),
+          SizedBox(height: 16),
+          Text(
+            "Choose the correct or most correct answer below.",
+            style: TextStyle(
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          SizedBox(height: 32),
+          Expanded(
+            child: Options(
+              question: question,
+              onClickedOption: (question) {},
             ),
           ),
         ],
@@ -49,7 +64,7 @@ class _QuestionsState extends State<Questions> {
             itemBuilder: (context, index) {
               final question = widget.category!.questions![index];
 
-              return _buildQuestion(question: question);
+              return _createQuestion(question: question);
             },
             onPageChanged: (int index) {
               _currentPageNotifier.value = index;
