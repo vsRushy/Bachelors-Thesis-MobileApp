@@ -11,18 +11,21 @@ class Questions extends StatelessWidget {
   }) : super(key: key);
 
   Widget _buildQuestion({required CustomQuestion question}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Text(
-          question.question!,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 32,
+    return Padding(
+      padding: EdgeInsets.all(26),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(
+            question.question!,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

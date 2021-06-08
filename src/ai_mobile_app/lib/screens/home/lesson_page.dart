@@ -11,7 +11,7 @@ class LessonPage extends StatelessWidget {
       case 1:
         return SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(26.0),
+            padding: EdgeInsets.all(26),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
