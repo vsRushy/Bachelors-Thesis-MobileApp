@@ -73,7 +73,7 @@ class _TestsState extends State<Tests> {
             subtitle: Text('Points: 10  Experience: 100'),
             //trailing: Icon(Icons.expand_more), TODO on summary?
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => TestPage(category: QuestionCategory(name: "Test $index", questions: questionLibrary),)));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TestPage(category: QuestionCategory(name: "Test $index", questions: questionLibrary[index]),)));
             },
             enabled: true, // TODO: change for locked tests
           ),
