@@ -31,7 +31,7 @@ class Options extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(8),
         child: Container(
-          padding: EdgeInsets.all(12),
+          padding: EdgeInsets.all(6),
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(12),
@@ -68,7 +68,7 @@ class Options extends StatelessWidget {
     if (!isOptionSelected) {
       return Colors.lightBlue[100];
     } else {
-      return option.isCorrect! ? Colors.lightGreen : Colors.red;
+      return option.isCorrect! ? Colors.lightGreen[500] : Colors.red[500];
     }
   }
 
