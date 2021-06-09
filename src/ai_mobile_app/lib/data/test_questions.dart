@@ -26,7 +26,7 @@ final List<CustomQuestion> questionLibrary = [
         isCorrect: false,
       ),
     ],
-    solution: "This is the correct response.",
+    solution: "The correct response is option 1.",
   ),
 
   CustomQuestion(
@@ -53,6 +53,6 @@ final List<CustomQuestion> questionLibrary = [
         isCorrect: false,
       ),
     ],
-    solution: "This is the correct response.",
+    solution: "The correct response is option 2.",
   ),
 ];

@@ -36,7 +36,13 @@ class Options extends StatelessWidget {
             color: color,
             borderRadius: BorderRadius.circular(12),
           ),
-          child: _createAnswer(option),
+          child: Column(
+            children: [
+              _createAnswer(option),
+              if (question!.currentOption != null)
+                _createSolution(question!.currentOption!, option),
+            ],
+          ),
         ),
       ),
     );
@@ -63,6 +69,17 @@ class Options extends StatelessWidget {
       return Colors.lightBlue[100];
     } else {
       return option.isCorrect! ? Colors.lightGreen : Colors.red;
+    }
+  }
+
+  Widget _createSolution(
+      CustomOption currentOption, CustomOption correctOption) {
+    if (currentOption == correctOption) {
+      return Text(
+        question!.solution!,
+      );
+    } else {
+      return Container();
     }
   }
 }
