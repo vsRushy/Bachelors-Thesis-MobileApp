@@ -16,18 +16,38 @@ class Options extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       physics: BouncingScrollPhysics(),
-      children: question!.options!.map((option) => _createOption(context, option)).toList(),
+      children: question!.options!
+          .map((option) => _createOption(context, option))
+          .toList(),
     );
   }
 
   Widget _createOption(BuildContext context, CustomOption option) {
-    return _createAnswer(option);
+    final color = _getColor(question!, option);
+
+    return GestureDetector(
+      onTap: () {
+        return onClickedOption!(option);
+      },
+      child: Padding(
+        padding: EdgeInsets.all(8),
+        child: Container(
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: _createAnswer(option),
+        ),
+      ),
+    );
   }
 
   Widget _createAnswer(CustomOption option) {
     return Container(
       height: 60,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Text(option.identifier!),
           SizedBox(width: 32),
@@ -35,5 +55,15 @@ class Options extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Color? _getColor(CustomQuestion question, CustomOption option) {
+    bool isOptionSelected = option == question.currentOption;
+
+    if (!isOptionSelected) {
+      return Colors.lightBlue[100];
+    } else {
+      return option.isCorrect! ? Colors.lightGreen : Colors.red;
+    }
   }
 }
