@@ -15,7 +15,6 @@ class Options extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      physics: BouncingScrollPhysics(),
       children: question!.options!
           .map((option) => _createOption(context, option))
           .toList(),

@@ -48,7 +48,7 @@ class _QuestionsState extends State<Questions> {
           Expanded(
             child: Options(
               question: question,
-              onClickedOption: (option) {},
+              onClickedOption: widget.onClickedOption,
             ),
           ),
         ],
