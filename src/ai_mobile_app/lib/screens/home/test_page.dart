@@ -22,6 +22,7 @@ class _TestPageState extends State<TestPage> {
   void initState() {
     super.initState();
 
+    _pageController = PageController();
     question = widget.category!.questions!.first;
   }
 
@@ -36,20 +37,32 @@ class _TestPageState extends State<TestPage> {
       ),
       body: Questions(
         category: widget.category,
+        pageController: _pageController,
         onClickedOption: _selectOption,
+        onChangedPage: (index) {
+          return _nextQuestion(index!);
+        },
       ),
     );
   }
 
   void _selectOption(CustomOption? option) {
-    if(question!.isLocked!) {
+    if (question!.isLocked!) {
       return;
-    }
-    else {
+    } else {
       setState(() {
         question!.isLocked = true;
         question!.currentOption = option;
       });
     }
+  }
+
+  void _nextQuestion(int? index) {
+    final nextPage = _pageController!.page! + 1;
+    final indexPage = index ?? nextPage.toInt();
+
+    setState(() {
+      question = widget.category!.questions![indexPage];
+    });
   }
 }

@@ -7,12 +7,16 @@ import 'package:page_view_indicators/step_page_indicator.dart';
 
 class Questions extends StatefulWidget {
   final QuestionCategory? category;
+  final PageController? pageController;
   final ValueChanged<CustomOption?>? onClickedOption;
+  final ValueChanged<int?>? onChangedPage;
 
   const Questions({
     Key? key,
     required this.category,
+    required this.pageController,
     required this.onClickedOption,
+    required this.onChangedPage,
   }) : super(key: key);
 
   @override
@@ -20,7 +24,6 @@ class Questions extends StatefulWidget {
 }
 
 class _QuestionsState extends State<Questions> {
-  final _pageController = PageController();
   final _currentPageNotifier = ValueNotifier<int>(0);
 
   Widget _createQuestion({required CustomQuestion question}) {
@@ -62,7 +65,7 @@ class _QuestionsState extends State<Questions> {
       children: <Widget>[
         Expanded(
           child: PageView.builder(
-            controller: _pageController,
+            controller: widget.pageController,
             itemCount: widget.category!.questions!.length,
             itemBuilder: (context, index) {
               final question = widget.category!.questions![index];
@@ -71,6 +74,7 @@ class _QuestionsState extends State<Questions> {
             },
             onPageChanged: (int index) {
               _currentPageNotifier.value = index;
+              widget.onChangedPage!(index);
             },
           ),
         ),
@@ -83,7 +87,7 @@ class _QuestionsState extends State<Questions> {
             size: 16,
             onPageSelected: (int index) {
               if (_currentPageNotifier.value > index)
-                _pageController.jumpToPage(index);
+                widget.pageController!.jumpToPage(index);
             },
           ),
         ),
