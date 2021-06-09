@@ -1,4 +1,5 @@
 import 'package:ai_mobile_app/custom_widgets/options.dart';
+import 'package:ai_mobile_app/models/custom_option.dart';
 import 'package:ai_mobile_app/models/custom_question.dart';
 import 'package:ai_mobile_app/models/question_category.dart';
 import 'package:flutter/material.dart';
@@ -6,10 +7,12 @@ import 'package:page_view_indicators/step_page_indicator.dart';
 
 class Questions extends StatefulWidget {
   final QuestionCategory? category;
+  final ValueChanged<CustomOption?>? onClickedOption;
 
   const Questions({
     Key? key,
     required this.category,
+    required this.onClickedOption,
   }) : super(key: key);
 
   @override
@@ -45,7 +48,7 @@ class _QuestionsState extends State<Questions> {
           Expanded(
             child: Options(
               question: question,
-              onClickedOption: (question) {},
+              onClickedOption: (option) {},
             ),
           ),
         ],
