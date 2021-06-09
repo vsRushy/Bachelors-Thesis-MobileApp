@@ -72,7 +72,7 @@ class _QuestionsState extends State<Questions> {
           ),
         ),
         Container(
-          color: Colors.white,
+          color: Colors.white10,
           padding: EdgeInsets.all(8),
           child: StepPageIndicator(
             itemCount: 2,
