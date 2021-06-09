@@ -1,4 +1,6 @@
+import 'package:ai_mobile_app/data/test_questions.dart';
 import 'package:ai_mobile_app/models/custom_test.dart';
+import 'package:ai_mobile_app/models/question_category.dart';
 import 'package:ai_mobile_app/screens/home/lesson_item.dart';
 import 'package:ai_mobile_app/screens/home/test_page.dart';
 import 'package:ai_mobile_app/models/test_item.dart';
@@ -71,7 +73,7 @@ class _TestsState extends State<Tests> {
             subtitle: Text('Points: 10  Experience: 100'),
             //trailing: Icon(Icons.expand_more), TODO on summary?
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => TestPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TestPage(category: QuestionCategory(name: "Test $index", questions: questionLibrary),)));
             },
             enabled: true, // TODO: change for locked tests
           ),

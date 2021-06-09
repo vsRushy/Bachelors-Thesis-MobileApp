@@ -30,7 +30,7 @@ class _TestPageState extends State<TestPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Test",
+          widget.category!.name!,
         ),
         actions: [],
       ),
