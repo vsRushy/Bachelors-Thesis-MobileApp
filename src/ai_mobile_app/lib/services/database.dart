@@ -22,10 +22,10 @@ class DatabaseService {
   List<CustomTest> _testListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       return CustomTest(
-        testId: doc.data()['testId'] ?? '',
-        mark: doc.data()['mark'] ?? '',
-        correctAnswers: doc.data()['correctAnswers'] ?? '',
-        incorrectAnswers: doc.data()['incorrectAnswers'] ?? '',
+        testId: doc.data()['testId'] ?? 1,
+        mark: doc.data()['mark'] ?? 0.0,
+        correctAnswers: doc.data()['correctAnswers'] ?? 0,
+        incorrectAnswers: doc.data()['incorrectAnswers'] ?? 0,
       );
     }).toList();
   }

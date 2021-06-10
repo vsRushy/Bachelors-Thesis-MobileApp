@@ -16,8 +16,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final AuthService _auth = AuthService();
-
   int _selectedIndex = 0;
 
   static List<Text> _appBarOptions = <Text>[
