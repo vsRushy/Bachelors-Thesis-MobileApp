@@ -14,15 +14,9 @@ class _SummaryListState extends State<SummaryList> {
   @override
   Widget build(BuildContext context) {
     final tests = Provider.of<List<CustomTest>?>(context);
-    tests!.forEach((test) {
-      print(test.testId);
-      print(test.mark);
-      print(test.correctAnswers);
-      print(test.incorrectAnswers);
-    });
 
     return ListView.builder(
-      itemCount: tests.length,
+      itemCount: tests!.length,
       itemBuilder: (context, index) {
         return SummaryTestTile(test: tests[index]);
       },
