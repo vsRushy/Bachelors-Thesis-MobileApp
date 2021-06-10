@@ -4,20 +4,28 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class DatabaseService {
   final String? uid;
 
-  DatabaseService({ this.uid });
+  DatabaseService({this.uid});
 
-  final CollectionReference collection = FirebaseFirestore.instance.collection('test');
+  final CollectionReference collection =
+      FirebaseFirestore.instance.collection('tests');
 
-  Future updateUserData(String name) async {
+  Future updateUserData(
+      int testId, double mark, int correctAnswers, int incorrectAnswers) async {
     return await collection.doc(uid).set({
-      'name': name,
+      'testId': testId,
+      'mark': mark,
+      'correctAnswers': correctAnswers,
+      'incorrectAnswers': incorrectAnswers,
     });
   }
 
   List<CustomTest> _testListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       return CustomTest(
-        name: doc.data()['name'] ?? '',
+        testId: doc.data()['testId'] ?? '',
+        mark: doc.data()['mark'] ?? '',
+        correctAnswers: doc.data()['correctAnswers'] ?? '',
+        incorrectAnswers: doc.data()['incorrectAnswers'] ?? '',
       );
     }).toList();
   }
