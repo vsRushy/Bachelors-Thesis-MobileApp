@@ -13,12 +13,11 @@ class SummaryTestTile extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.fromLTRB(20, 8, 20, 8),
         child: ListTile(
-          leading: CircleAvatar(
-            radius: 25,
-            backgroundColor: Colors.lightBlue,
-          ),
           title: Text(
             "Test ${test.testId.toString()}",
+          ),
+          subtitle: Text(
+            "Mark: ${test.mark}   Correct answers: ${test.correctAnswers}   Incorrect answers: ${test.incorrectAnswers}",
           ),
         ),
       ),

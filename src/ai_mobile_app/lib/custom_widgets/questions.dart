@@ -28,7 +28,7 @@ class _QuestionsState extends State<Questions> {
 
   Widget _createQuestion({required CustomQuestion question}) {
     return Padding(
-      padding: EdgeInsets.all(26),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -78,6 +78,18 @@ class _QuestionsState extends State<Questions> {
             },
           ),
         ),
+        ElevatedButton(
+          child: Text('Deliver test'),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.blueAccent,
+            minimumSize: Size(140, 40),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+          ),
+          onPressed: () {},
+        ),
+        SizedBox(height: 10),
         Container(
           color: Colors.white10,
           padding: EdgeInsets.all(8),
