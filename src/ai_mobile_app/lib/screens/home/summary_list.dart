@@ -13,10 +13,10 @@ class SummaryList extends StatefulWidget {
 class _SummaryListState extends State<SummaryList> {
   @override
   Widget build(BuildContext context) {
-    final tests = Provider.of<List<CustomTest>?>(context);
+    final tests = Provider.of<List<CustomTest>?>(context) ?? [];
 
     return ListView.builder(
-      itemCount: tests!.length,
+      itemCount: tests.length,
       itemBuilder: (context, index) {
         return SummaryTestTile(test: tests[index]);
       },
