@@ -47,7 +47,7 @@ class AuthService {
           email: email, password: password);
       User? user = credential.user;
 
-      await DatabaseService(uid: user!.uid).updateUserData(1, 0.0, 0, 0);
+      //await DatabaseService(uid: user!.uid).updateUserData(1, 0.0, 0, 0);
       return _createCustomUser(user);
     } catch (e) {
       print(e.toString());

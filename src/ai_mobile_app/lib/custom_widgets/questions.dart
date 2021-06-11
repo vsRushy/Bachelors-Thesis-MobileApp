@@ -1,9 +1,12 @@
 import 'package:ai_mobile_app/custom_widgets/options.dart';
 import 'package:ai_mobile_app/models/custom_option.dart';
 import 'package:ai_mobile_app/models/custom_question.dart';
+import 'package:ai_mobile_app/models/custom_user.dart';
 import 'package:ai_mobile_app/models/question_category.dart';
+import 'package:ai_mobile_app/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_indicators/step_page_indicator.dart';
+import 'package:provider/provider.dart';
 
 class Questions extends StatefulWidget {
   final QuestionCategory? category;
@@ -61,6 +64,8 @@ class _QuestionsState extends State<Questions> {
 
   @override
   Widget build(BuildContext context) {
+      final user = Provider.of<CustomUser?>(context);
+
     return Column(
       children: <Widget>[
         Expanded(
@@ -87,7 +92,9 @@ class _QuestionsState extends State<Questions> {
               borderRadius: BorderRadius.circular(30),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            DatabaseService(uid: user!.uid).updateUserData(1, 0.0, 0, 0);
+          },
         ),
         SizedBox(height: 10),
         Container(

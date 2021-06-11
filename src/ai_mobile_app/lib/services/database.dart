@@ -8,7 +8,7 @@ class DatabaseService {
   DatabaseService({this.uid});
 
   final CollectionReference collection =
-      FirebaseFirestore.instance.collection('tests');
+      FirebaseFirestore.instance.collection('users');
 
   Future updateUserData(
       int testId, double mark, int correctAnswers, int incorrectAnswers) async {
