@@ -52,9 +52,6 @@ class DatabaseService {
   }
 
   Stream<List<CustomTest>> get tests {
-    //return collection.snapshots().map(_testListFromSnapshot);
-    //return collection.doc(uid).collection('tests').snapshots().map(_testListFromSnapshot);
-    print("User id: $uid");
     return collection.doc(uid).collection('tests').snapshots().map(_testListFromSnapshot);
   }
 
