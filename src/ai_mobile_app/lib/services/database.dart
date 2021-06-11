@@ -10,6 +10,16 @@ class DatabaseService {
   final CollectionReference collection =
       FirebaseFirestore.instance.collection('users');
 
+  Future createUserData(
+      int testId, double mark, int correctAnswers, int incorrectAnswers) async {
+    return await collection.doc(uid).collection('tests').doc().set({
+      'testId': testId,
+      'mark': mark,
+      'correctAnswers': correctAnswers,
+      'incorrectAnswers': incorrectAnswers,
+    });
+  }
+
   Future updateUserData(
       int testId, double mark, int correctAnswers, int incorrectAnswers) async {
     return await collection.doc(uid).set({
@@ -42,7 +52,10 @@ class DatabaseService {
   }
 
   Stream<List<CustomTest>> get tests {
-    return collection.snapshots().map(_testListFromSnapshot);
+    //return collection.snapshots().map(_testListFromSnapshot);
+    //return collection.doc(uid).collection('tests').snapshots().map(_testListFromSnapshot);
+    print("User id: $uid");
+    return collection.doc(uid).collection('tests').snapshots().map(_testListFromSnapshot);
   }
 
   Stream<UserData> get userData {

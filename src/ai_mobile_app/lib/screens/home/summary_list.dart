@@ -14,6 +14,7 @@ class _SummaryListState extends State<SummaryList> {
   @override
   Widget build(BuildContext context) {
     final tests = Provider.of<List<CustomTest>?>(context) ?? [];
+    print(tests);
 
     return ListView.builder(
       itemCount: tests.length,

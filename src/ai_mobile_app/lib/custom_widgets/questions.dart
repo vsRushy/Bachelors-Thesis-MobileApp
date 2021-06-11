@@ -64,7 +64,7 @@ class _QuestionsState extends State<Questions> {
 
   @override
   Widget build(BuildContext context) {
-      final user = Provider.of<CustomUser?>(context);
+    final user = Provider.of<CustomUser?>(context);
 
     return Column(
       children: <Widget>[
@@ -93,7 +93,7 @@ class _QuestionsState extends State<Questions> {
             ),
           ),
           onPressed: () {
-            DatabaseService(uid: user!.uid).updateUserData(1, 0.0, 0, 0);
+            DatabaseService(uid: user!.uid).createUserData(1, 0.0, 0, 0);
           },
         ),
         SizedBox(height: 10),
