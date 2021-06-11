@@ -1,6 +1,7 @@
 import 'package:ai_mobile_app/custom_widgets/options.dart';
 import 'package:ai_mobile_app/models/custom_option.dart';
 import 'package:ai_mobile_app/models/custom_question.dart';
+import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/models/custom_user.dart';
 import 'package:ai_mobile_app/models/question_category.dart';
 import 'package:ai_mobile_app/services/database.dart';
@@ -29,9 +30,11 @@ class Questions extends StatefulWidget {
 class _QuestionsState extends State<Questions> {
   final _currentPageNotifier = ValueNotifier<int>(0);
 
+  CustomTest? currentTest;
+
   Widget _createQuestion({required CustomQuestion question}) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -64,8 +67,6 @@ class _QuestionsState extends State<Questions> {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<CustomUser?>(context);
-
     return Column(
       children: <Widget>[
         Expanded(
@@ -82,19 +83,6 @@ class _QuestionsState extends State<Questions> {
               widget.onChangedPage!(index);
             },
           ),
-        ),
-        ElevatedButton(
-          child: Text('Deliver test'),
-          style: ElevatedButton.styleFrom(
-            primary: Colors.blueAccent,
-            minimumSize: Size(140, 40),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
         ),
         SizedBox(height: 10),
         Container(

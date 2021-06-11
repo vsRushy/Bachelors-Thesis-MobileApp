@@ -35,13 +35,35 @@ class _TestPageState extends State<TestPage> {
         ),
         actions: [],
       ),
-      body: Questions(
-        category: widget.category,
-        pageController: _pageController,
-        onClickedOption: _selectOption,
-        onChangedPage: (index) {
-          return _nextQuestion(index!);
-        },
+      body: Column(
+        children: [
+          Expanded(
+            child: Questions(
+              category: widget.category,
+              pageController: _pageController,
+              onClickedOption: _selectOption,
+              onChangedPage: (index) {
+                return _nextQuestion(index!);
+              },
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(12),
+            child: ElevatedButton(
+              child: Text('Deliver test'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blueAccent,
+                minimumSize: Size(140, 40),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

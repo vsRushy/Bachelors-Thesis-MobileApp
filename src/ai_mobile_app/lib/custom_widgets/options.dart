@@ -29,9 +29,9 @@ class Options extends StatelessWidget {
         return onClickedOption!(option);
       },
       child: Padding(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(6),
         child: Container(
-          padding: EdgeInsets.all(6),
+          padding: EdgeInsets.all(3),
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(12),
