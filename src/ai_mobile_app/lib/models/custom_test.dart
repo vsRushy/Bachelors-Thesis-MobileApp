@@ -1,8 +1,8 @@
 class CustomTest {
-  final int testId;
-  final double mark;
-  final int correctAnswers;
-  final int incorrectAnswers;
+  int? testId;
+  double? mark;
+  int? correctAnswers;
+  int? incorrectAnswers;
 
   CustomTest({
     required this.testId,
