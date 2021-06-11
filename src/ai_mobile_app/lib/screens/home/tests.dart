@@ -1,10 +1,12 @@
 import 'package:ai_mobile_app/data/test_questions.dart';
 import 'package:ai_mobile_app/models/custom_test.dart';
+import 'package:ai_mobile_app/models/custom_user.dart';
 import 'package:ai_mobile_app/models/question_category.dart';
 import 'package:ai_mobile_app/screens/home/lesson_item.dart';
 import 'package:ai_mobile_app/screens/home/test_page.dart';
 import 'package:ai_mobile_app/models/test_item.dart';
 import 'package:ai_mobile_app/services/auth.dart';
+import 'package:ai_mobile_app/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
@@ -38,6 +40,8 @@ class _TestsState extends State<Tests> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<CustomUser?>(context);
+
     return ListView.builder(
       padding: EdgeInsets.all(25),
       itemCount: tests.length,
@@ -73,7 +77,25 @@ class _TestsState extends State<Tests> {
             subtitle: Text('Points: 10  Experience: 100'),
             //trailing: Icon(Icons.expand_more), TODO on summary?
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => TestPage(category: QuestionCategory(name: "Test $index", questions: questionLibrary[index]),)));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TestPage(
+                    category: QuestionCategory(
+                      name: "Test $index",
+                      questions: questionLibrary[index],
+                    ),
+                  ),
+                ),
+              ).then((receivedTest) {
+                CustomTest t = receivedTest;
+                DatabaseService(uid: user!.uid).createUserData(
+                  t.testId,
+                  t.mark,
+                  t.correctAnswers,
+                  t.incorrectAnswers,
+                );
+              });
             },
             enabled: true, // TODO: change for locked tests
           ),

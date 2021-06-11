@@ -93,7 +93,7 @@ class _QuestionsState extends State<Questions> {
             ),
           ),
           onPressed: () {
-            DatabaseService(uid: user!.uid).createUserData(1, 0.0, 0, 0);
+            Navigator.of(context).pop();
           },
         ),
         SizedBox(height: 10),
