@@ -8,8 +8,13 @@ import 'package:flutter/material.dart';
 
 class TestPage extends StatefulWidget {
   final QuestionCategory? category;
+  final int? testIndex;
 
-  const TestPage({Key? key, required this.category});
+  const TestPage({
+    Key? key,
+    required this.category,
+    required this.testIndex,
+  });
 
   @override
   _TestPageState createState() => _TestPageState();
@@ -63,8 +68,10 @@ class _TestPageState extends State<TestPage> {
                 ),
               ),
               onPressed: () {
+                currentTest!.testId = widget.testIndex! + 1;
                 int? numQuestions = widget.category!.questions!.length;
-                double? fractionScore = currentTest!.correctAnswers! / numQuestions;
+                double? fractionScore =
+                    currentTest!.correctAnswers! / numQuestions;
                 currentTest!.mark = fractionScore * 100.0;
                 Navigator.of(context).pop(currentTest);
               },

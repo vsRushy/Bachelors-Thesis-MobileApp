@@ -85,6 +85,7 @@ class _TestsState extends State<Tests> {
                       name: "Test $index",
                       questions: questionLibrary[index],
                     ),
+                    testIndex: index,
                   ),
                 ),
               ).then((receivedTest) {
