@@ -1,10 +1,10 @@
 import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:flutter/material.dart';
 
-class SummaryTestTile extends StatelessWidget {
+class SummaryIndividualTestTile extends StatelessWidget {
   final CustomTest test;
 
-  SummaryTestTile({required this.test});
+  SummaryIndividualTestTile({required this.test});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class SummaryTestTile extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.fromLTRB(20, 8, 20, 8),
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: EdgeInsets.all(12),
           child: ListTile(
             leading: Icon(Icons.ac_unit_outlined),
             title: Text(
