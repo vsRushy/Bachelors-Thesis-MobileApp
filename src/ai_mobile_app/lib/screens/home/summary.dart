@@ -4,6 +4,7 @@ import 'package:ai_mobile_app/screens/home/summary_list.dart';
 import 'package:ai_mobile_app/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 
 class Summary extends StatefulWidget {
   @override
@@ -13,12 +14,40 @@ class Summary extends StatefulWidget {
 class _SummaryState extends State<Summary> {
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<CustomUser?>(context);
+    /*final user = Provider.of<CustomUser?>(context);
 
     return StreamProvider<List<CustomTest>?>.value(
       value: DatabaseService(uid: user!.uid).tests,
       initialData: [],
       child: SummaryList(),
+    );*/
+
+    return Padding(
+      padding: EdgeInsets.all(20),
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            FlutterToggleTab(
+              width: 90,
+              borderRadius: 26,
+              height: 50,
+              initialIndex: 0,
+              selectedBackgroundColors: [Colors.lightBlue],
+              selectedTextStyle: TextStyle(
+                  color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+              unSelectedTextStyle: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+              labels: ["Individual", "Collective"],
+              selectedLabelIndex: (index) {
+                print("Selected Index $index");
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
