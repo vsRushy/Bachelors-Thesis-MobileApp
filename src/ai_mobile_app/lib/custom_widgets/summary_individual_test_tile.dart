@@ -30,16 +30,13 @@ class SummaryIndividualTestTile extends StatelessWidget {
         ),
       ),
       child: Card(
-        child: Padding(
-          padding: EdgeInsets.all(12),
-          child: ListTile(
-            leading: Icon(Icons.ac_unit_outlined),
-            title: Text(
-              "Test ${test.testId.toString()}",
-            ),
-            subtitle: Text(
-              "Mark: ${test.mark}/100.0   Correct answers: ${test.correctAnswers}   Incorrect answers: ${test.incorrectAnswers}",
-            ),
+        child: ListTile(
+          leading: Icon(Icons.ac_unit_outlined),
+          title: Text(
+            "Test ${test.testId.toString()}",
+          ),
+          subtitle: Text(
+            "Mark: ${test.mark}/100.0   Correct answers: ${test.correctAnswers}   Incorrect answers: ${test.incorrectAnswers}",
           ),
         ),
       ),

@@ -30,16 +30,13 @@ class SummaryCollectiveTestTile extends StatelessWidget {
         ),
       ),
       child: Card(
-        child: Padding(
-          padding: EdgeInsets.all(12),
-          child: ListTile(
-            leading: Icon(Icons.ac_unit_outlined),
-            title: Text(
-              "Test ${test.testId.toString()}",
-            ),
-            subtitle: Text(
-              "Average mark: ${test.mark}/100.0   Average correct answers: ${test.correctAnswers}   Average incorrect answers: ${test.incorrectAnswers}",
-            ),
+        child: ListTile(
+          leading: Icon(Icons.ac_unit_outlined),
+          title: Text(
+            "Test ${test.testId.toString()}",
+          ),
+          subtitle: Text(
+            "Average mark: ${test.mark}/100.0   Average correct answers: ${test.correctAnswers}   Average incorrect answers: ${test.incorrectAnswers}",
           ),
         ),
       ),
