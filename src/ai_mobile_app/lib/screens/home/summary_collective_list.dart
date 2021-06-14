@@ -54,7 +54,7 @@ class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
 
       _averaged[i] = CustomTest(
         testId: i + 1,
-        mark: (averageMark / grouped[i].length),
+        mark: num.parse((averageMark / grouped[i].length).toStringAsFixed(2)).toDouble(),
         correctAnswers: (correctAnswers ~/ grouped[i].length).toInt(),
         incorrectAnswers: (incorrectAnswers ~/ grouped[i].length).toInt(),
       );
