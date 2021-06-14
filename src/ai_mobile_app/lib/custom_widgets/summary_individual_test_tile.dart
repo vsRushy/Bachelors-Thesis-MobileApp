@@ -14,18 +14,10 @@ class SummaryIndividualTestTile extends StatelessWidget {
         borderRadius: BorderRadius.all(
           Radius.circular(10),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.5),
-            blurRadius: 10,
-            spreadRadius: 5,
-            offset: Offset(0, 3),
-          ),
-        ],
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment(1.2, 0.0),
-          colors: <Color>[Colors.white, Colors.lightBlue],
+          colors: <Color>[Colors.lightBlue, Colors.blue],
           tileMode: TileMode.repeated,
         ),
       ),

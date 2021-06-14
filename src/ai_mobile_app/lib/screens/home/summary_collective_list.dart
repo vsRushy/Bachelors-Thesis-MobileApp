@@ -19,7 +19,9 @@ class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
     List<List<CustomTest?>> groupedTests = _groupTestsByTestId(tests);
     List<CustomTest?> averagedTests = _averageTests(groupedTests);
 
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (BuildContext context, int index) =>
+          SizedBox(height: 16),
       itemCount: questionLibrary.length,
       itemBuilder: (context, index) {
         return SummaryCollectiveTestTile(test: averagedTests[index]!);
@@ -29,7 +31,8 @@ class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
 
   List<List<CustomTest?>> _groupTestsByTestId(
       List<CustomTest>? individualTests) {
-    List<List<CustomTest?>> _groupedTests = List.generate(questionLibrary.length, (index) => []);
+    List<List<CustomTest?>> _groupedTests =
+        List.generate(questionLibrary.length, (index) => []);
 
     for (CustomTest t in individualTests!) {
       _groupedTests.elementAt(t.testId! - 1).add(t);
@@ -54,7 +57,8 @@ class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
 
       _averaged[i] = CustomTest(
         testId: i + 1,
-        mark: num.parse((averageMark / grouped[i].length).toStringAsFixed(2)).toDouble(),
+        mark: num.parse((averageMark / grouped[i].length).toStringAsFixed(2))
+            .toDouble(),
         correctAnswers: (correctAnswers ~/ grouped[i].length).toInt(),
         incorrectAnswers: (incorrectAnswers ~/ grouped[i].length).toInt(),
       );

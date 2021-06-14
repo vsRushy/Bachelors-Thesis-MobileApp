@@ -15,7 +15,9 @@ class _SummaryIndividualListState extends State<SummaryIndividualList> {
   Widget build(BuildContext context) {
     final tests = Provider.of<List<CustomTest>?>(context) ?? [];
 
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (BuildContext context, int index) =>
+          SizedBox(height: 16),
       itemCount: tests.length,
       itemBuilder: (context, index) {
         return SummaryIndividualTestTile(test: tests[index]);

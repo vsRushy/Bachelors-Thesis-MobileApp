@@ -19,51 +19,39 @@ class _SummaryState extends State<Summary> {
   Widget build(BuildContext context) {
     final user = Provider.of<CustomUser?>(context);
 
-    /*return StreamProvider<List<CustomTest>?>.value(
-      value: DatabaseService(uid: user!.uid).tests,
-      initialData: [],
-      child: SummaryList(),
-    );*/
-
     return Padding(
       padding: EdgeInsets.all(20),
-      child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            FlutterToggleTab(
-              width: 90,
-              borderRadius: 26,
-              height: 50,
-              initialIndex: 0,
-              selectedBackgroundColors: [Colors.lightBlue],
-              selectedTextStyle: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-              unSelectedTextStyle: TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
-              labels: ["Individual", "Collective"],
-              selectedLabelIndex: (index) {
-                setState(() {
-                  widget._selectedIndex = index;
-                });
-              },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          FlutterToggleTab(
+            width: 90,
+            borderRadius: 26,
+            height: 50,
+            initialIndex: 0,
+            selectedBackgroundColors: [Colors.lightBlue],
+            selectedTextStyle: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+            unSelectedTextStyle: TextStyle(
+                color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
+            labels: ["Individual", "Collective"],
+            selectedLabelIndex: (index) {
+              setState(() {
+                widget._selectedIndex = index;
+              });
+            },
+          ),
+          SizedBox(height: 20),
+          StreamProvider<List<CustomTest>?>.value(
+            value: DatabaseService(uid: user!.uid).tests,
+            initialData: [],
+            child: Expanded(
+              child: (widget._selectedIndex == 0)
+                  ? SummaryIndividualList()
+                  : SummaryCollectiveList(),
             ),
-            SizedBox(height: 20),
-            StreamProvider<List<CustomTest>?>.value(
-              value: DatabaseService(uid: user!.uid).tests,
-              initialData: [],
-              child: Expanded(
-                child: (widget._selectedIndex == 0)
-                    ? SummaryIndividualList()
-                    : SummaryCollectiveList(),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
