@@ -8,10 +8,28 @@ class SummaryCollectiveTestTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(10),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            blurRadius: 10,
+            spreadRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment(1.2, 0.0),
+          colors: <Color>[Colors.white, Colors.lightBlue],
+          tileMode: TileMode.repeated,
+        ),
+      ),
       child: Card(
-        margin: EdgeInsets.fromLTRB(20, 8, 20, 8),
         child: Padding(
           padding: EdgeInsets.all(12),
           child: ListTile(
