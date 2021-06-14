@@ -23,7 +23,15 @@ class SummaryCollectiveTestTile extends StatelessWidget {
       ),
       child: Card(
         child: ListTile(
-          leading: Icon(Icons.ac_unit_outlined),
+          leading: (test.mark! >= 50.0)
+              ? Icon(
+                  Icons.check,
+                  color: Colors.green,
+                )
+              : Icon(
+                  Icons.close,
+                  color: Colors.red,
+                ),
           title: Text(
             "Test ${test.testId.toString()}",
           ),
