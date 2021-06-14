@@ -35,8 +35,39 @@ class SummaryCollectiveTestTile extends StatelessWidget {
           title: Text(
             "Test ${test.testId.toString()}",
           ),
-          subtitle: Text(
-            "Average mark: ${test.mark}/100.0   Average correct answers: ${test.correctAnswers}   Average incorrect answers: ${test.incorrectAnswers}",
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichText(
+                text: TextSpan(
+                  text: null,
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "Average mark: ",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    TextSpan(
+                      text: "${test.mark}",
+                      style: (test.mark! >= 50.0)
+                          ? TextStyle(color: Colors.green)
+                          : TextStyle(color: Colors.red),
+                    ),
+                    TextSpan(
+                      text: "/100.0",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                "Average correct answers: ${test.correctAnswers}",
+                style: TextStyle(color: Colors.black),
+              ),
+              Text(
+                "Average incorrect answers: ${test.incorrectAnswers}",
+                style: TextStyle(color: Colors.black),
+              ),
+            ],
           ),
         ),
       ),
