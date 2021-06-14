@@ -17,47 +17,49 @@ class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
   Widget build(BuildContext context) {
     final tests = Provider.of<List<CustomTest>?>(context) ?? [];
     List<List<CustomTest?>> groupedTests = _groupTestsByTestId(tests);
+    List<CustomTest?> averagedTests = _averageTests(groupedTests);
 
     return ListView.builder(
       itemCount: questionLibrary.length,
       itemBuilder: (context, index) {
-        return SummaryCollectiveTestTile(test: tests[index]);
+        return SummaryCollectiveTestTile(test: averagedTests[index]!);
       },
     );
   }
 
-  List<List<CustomTest?>> _groupTestsByTestId(List<CustomTest>? tests) {
-    List<List<CustomTest?>> _groupedTests = [[]];
+  List<List<CustomTest?>> _groupTestsByTestId(
+      List<CustomTest>? individualTests) {
+    List<List<CustomTest?>> _groupedTests = List.generate(questionLibrary.length, (index) => []);
 
-    for (CustomTest t in tests!) {
-      switch (t.testId!) {
-        case 1:
-          {
-            _groupedTests[0].add(t);
-          }
-          break;
-        case 2:
-          {
-            _groupedTests[1].add(t);
-          }
-          break;
-        case 3:
-          {
-            _groupedTests[2].add(t);
-          }
-          break;
-        case 4:
-          {
-            _groupedTests[3].add(t);
-          }
-          break;
-
-        default:
-          {}
-          break;
-      }
+    for (CustomTest t in individualTests!) {
+      _groupedTests.elementAt(t.testId! - 1).add(t);
     }
 
     return _groupedTests;
+  }
+
+  List<CustomTest?> _averageTests(List<List<CustomTest?>> grouped) {
+    List<CustomTest?> _averaged = List.filled(questionLibrary.length, null);
+
+    for (int i = 0; i < questionLibrary.length; ++i) {
+      double averageMark = 0.0;
+      int correctAnswers = 0;
+      int incorrectAnswers = 0;
+
+      for (CustomTest? cTest in grouped[i]) {
+        averageMark += cTest!.mark!;
+        correctAnswers += cTest.correctAnswers!;
+        incorrectAnswers += cTest.incorrectAnswers!;
+      }
+
+      _averaged[i] = CustomTest(
+        testId: i + 1,
+        mark: (averageMark / grouped[i].length),
+        correctAnswers: (correctAnswers ~/ grouped[i].length).toInt(),
+        incorrectAnswers: (incorrectAnswers ~/ grouped[i].length).toInt(),
+      );
+    }
+
+    return _averaged;
   }
 }
