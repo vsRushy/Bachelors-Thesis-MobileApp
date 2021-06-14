@@ -35,8 +35,39 @@ class SummaryIndividualTestTile extends StatelessWidget {
           title: Text(
             "Test ${test.testId.toString()}",
           ),
-          subtitle: Text(
-            "Mark: ${test.mark}/100.0   Correct answers: ${test.correctAnswers}   Incorrect answers: ${test.incorrectAnswers}",
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichText(
+                text: TextSpan(
+                  text: null,
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "Mark: ",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    TextSpan(
+                      text: "${test.mark}",
+                      style: (test.mark! >= 50.0)
+                          ? TextStyle(color: Colors.green)
+                          : TextStyle(color: Colors.red),
+                    ),
+                    TextSpan(
+                      text: "/100.0",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                "Correct answers: ${test.correctAnswers}",
+                style: TextStyle(color: Colors.black),
+              ),
+              Text(
+                "Incorrect answers: ${test.incorrectAnswers}",
+                style: TextStyle(color: Colors.black),
+              ),
+            ],
           ),
         ),
       ),
