@@ -29,38 +29,24 @@ class _ProfileState extends State<Profile> {
           return Container(
             alignment: Alignment.center,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                SizedBox(
-                  height: 20,
-                ),
-                Text(userData.experience.toString()),
-                Text(userData.points.toString()),
-                ElevatedButton(
-                  child: Text('More experience'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blueAccent,
-                    minimumSize: Size(140, 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Text("Experience"),
+                        Text(userData.experience.toString()),
+                      ],
                     ),
-                  ),
-                  onPressed: () async {
-                    await DatabaseService(uid: user.uid).updateUserData(10, 20);
-                  },
-                ),
-                ElevatedButton(
-                  child: Text('More points'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blueAccent,
-                    minimumSize: Size(140, 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                    Column(
+                      children: <Widget>[
+                        Text("Points"),
+                        Text(userData.points.toString()),
+                      ],
                     ),
-                  ),
-                  onPressed: () async {
-                    await DatabaseService(uid: user.uid).updateUserData(20, 10);
-                  },
+                  ],
                 ),
                 ElevatedButton(
                   child: Text('Log out'),
