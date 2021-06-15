@@ -37,6 +37,32 @@ class _ProfileState extends State<Profile> {
                 Text(userData.experience.toString()),
                 Text(userData.points.toString()),
                 ElevatedButton(
+                  child: Text('More experience'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blueAccent,
+                    minimumSize: Size(140, 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  onPressed: () async {
+                    await DatabaseService(uid: user.uid).updateUserData(10, 20);
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('More points'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blueAccent,
+                    minimumSize: Size(140, 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  onPressed: () async {
+                    await DatabaseService(uid: user.uid).updateUserData(20, 10);
+                  },
+                ),
+                ElevatedButton(
                   child: Text('Log out'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.blueAccent,

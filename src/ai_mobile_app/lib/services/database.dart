@@ -27,13 +27,10 @@ class DatabaseService {
     });
   }
 
-  Future updateCustomTest(
-      int testId, double mark, int correctAnswers, int incorrectAnswers) async {
+  Future updateUserData(int experience, int points) async {
     return await collection.doc(uid).set({
-      'testId': testId,
-      'mark': mark,
-      'correctAnswers': correctAnswers,
-      'incorrectAnswers': incorrectAnswers,
+      'experience': experience,
+      'points': points,
     });
   }
 
