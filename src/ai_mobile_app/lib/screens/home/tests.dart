@@ -108,7 +108,7 @@ class _TestsState extends State<Tests> {
                       );
                     });
                   },
-                  enabled: true, // TODO: change for locked tests
+                  enabled: true, // TODO
                 ),
               );
             },
