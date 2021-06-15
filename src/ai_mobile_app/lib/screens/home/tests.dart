@@ -90,7 +90,7 @@ class _TestsState extends State<Tests> {
                 ),
               ).then((receivedTest) {
                 CustomTest t = receivedTest;
-                DatabaseService(uid: user!.uid).createUserData(
+                DatabaseService(uid: user!.uid).createCustomTest(
                   t.testId!,
                   t.mark!,
                   t.correctAnswers!,

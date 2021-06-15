@@ -17,7 +17,7 @@ class DatabaseService {
     });
   }
 
-  Future createUserData(
+  Future createCustomTest(
       int testId, double mark, int correctAnswers, int incorrectAnswers) async {
     return await collection.doc(uid).collection('tests').doc().set({
       'testId': testId,
@@ -27,7 +27,7 @@ class DatabaseService {
     });
   }
 
-  Future updateUserData(
+  Future updateCustomTest(
       int testId, double mark, int correctAnswers, int incorrectAnswers) async {
     return await collection.doc(uid).set({
       'testId': testId,
@@ -48,25 +48,11 @@ class DatabaseService {
     }).toList();
   }
 
-  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
-    return UserData(
-      uid: uid!,
-      testId: snapshot.data()!['testId'],
-      mark: snapshot.data()!['mark'],
-      correctAnswers: snapshot.data()!['correctAnswers'],
-      incorrectAnswers: snapshot.data()!['incorrectAnswers'],
-    );
-  }
-
   Stream<List<CustomTest>> get tests {
     return collection
         .doc(uid)
         .collection('tests')
         .snapshots()
         .map(_testListFromSnapshot);
-  }
-
-  Stream<UserData> get userData {
-    return collection.doc(uid).snapshots().map(_userDataFromSnapshot);
   }
 }
