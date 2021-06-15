@@ -11,7 +11,10 @@ class DatabaseService {
       FirebaseFirestore.instance.collection('users');
 
   Future createUser() async {
-    return await collection.doc(uid).set({});
+    return await collection.doc(uid).set({
+      'experience': 0,
+      'points': 0,
+    });
   }
 
   Future createUserData(
