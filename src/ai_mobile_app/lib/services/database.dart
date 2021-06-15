@@ -48,11 +48,23 @@ class DatabaseService {
     }).toList();
   }
 
+  UserData? _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      uid: uid!,
+      experience: snapshot.data()!['experience'],
+      points: snapshot.data()!['points'],
+    );
+  }
+
   Stream<List<CustomTest>> get tests {
     return collection
         .doc(uid)
         .collection('tests')
         .snapshots()
         .map(_testListFromSnapshot);
+  }
+
+  Stream<UserData?> get userData {
+    return collection.doc(uid).snapshots().map(_userDataFromSnapshot);
   }
 }

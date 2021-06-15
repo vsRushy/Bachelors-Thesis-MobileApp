@@ -7,16 +7,12 @@ class CustomUser {
 class UserData {
   final String uid;
 
-  final int testId;
-  final double mark;
-  final int correctAnswers;
-  final int incorrectAnswers;
+  int experience;
+  int points;
 
   UserData({
     required this.uid,
-    required this.testId,
-    required this.mark,
-    required this.correctAnswers,
-    required this.incorrectAnswers,
+    required this.experience,
+    required this.points,
   });
 }
