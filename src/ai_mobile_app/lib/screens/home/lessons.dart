@@ -12,15 +12,6 @@ class Lessons extends StatefulWidget {
 class _LessonsState extends State<Lessons> {
   @override
   Widget build(BuildContext context) {
-    /*final lessons = Provider.of<List<CustomTest>?>(context);
-
-    return ListView.builder(
-      itemCount: lessons!.length,
-      itemBuilder: (context, index) {
-        return LessonItem(test: lessons[index]);
-      },
-    );*/
-
     return ListView(
       padding: EdgeInsets.all(25),
       children: <Widget>[

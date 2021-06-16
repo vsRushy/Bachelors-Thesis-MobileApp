@@ -42,7 +42,7 @@ class _SummaryState extends State<Summary> {
             },
           ),
           SizedBox(height: 20),
-          StreamProvider<List<CustomTest>?>.value(
+          StreamProvider<List<CustomTest?>?>.value(
             value: DatabaseService(uid: user!.uid).tests,
             initialData: [],
             child: Expanded(

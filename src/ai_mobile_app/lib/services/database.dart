@@ -30,7 +30,7 @@ class DatabaseService {
     });
   }
 
-  List<CustomTest> _testListFromSnapshot(QuerySnapshot snapshot) {
+  List<CustomTest?>? _testListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       return CustomTest(
         testId: doc.data()['testId'] ?? 1,
@@ -51,7 +51,7 @@ class DatabaseService {
     );
   }
 
-  Stream<List<CustomTest>> get tests {
+  Stream<List<CustomTest?>?> get tests {
     return collection.doc(uid).collection('tests').snapshots().map(_testListFromSnapshot);
   }
 

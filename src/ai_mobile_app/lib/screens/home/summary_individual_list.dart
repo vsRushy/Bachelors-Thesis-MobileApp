@@ -13,15 +13,15 @@ class SummaryIndividualList extends StatefulWidget {
 class _SummaryIndividualListState extends State<SummaryIndividualList> {
   @override
   Widget build(BuildContext context) {
-    final tests = Provider.of<List<CustomTest>?>(context) ?? [];
+    final tests = Provider.of<List<CustomTest?>?>(context) ?? null;
 
-    return (tests.length > 0)
+    return (tests != null)
         ? ListView.separated(
             separatorBuilder: (BuildContext context, int index) =>
                 SizedBox(height: 16),
             itemCount: tests.length,
             itemBuilder: (context, index) {
-              return SummaryIndividualTestTile(test: tests[index]);
+              return SummaryIndividualTestTile(test: tests[index]!);
             },
           )
         : Center(
