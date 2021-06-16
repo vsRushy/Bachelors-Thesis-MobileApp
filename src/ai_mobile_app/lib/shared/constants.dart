@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 const customTextTitleStyle = TextStyle(
@@ -27,3 +29,15 @@ const customInputDecoration = InputDecoration(
     ),
   )*/
     );
+
+const profileElementTextStyle = TextStyle(
+  color: Colors.lightBlue,
+  fontSize: 36,
+  fontWeight: FontWeight.bold,
+);
+
+const profileElementNumberStyle = TextStyle(
+  color: Colors.lightBlue,
+  fontSize: 60,
+  fontWeight: FontWeight.bold,
+);

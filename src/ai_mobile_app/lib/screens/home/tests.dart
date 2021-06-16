@@ -22,19 +22,19 @@ class _TestsState extends State<Tests> {
 
   List<TestItem> tests = [
     TestItem(
-      name: 'First test',
+      name: 'First test: Target finder',
       number: 1,
     ),
     TestItem(
-      name: 'Second test',
+      name: 'Second test: Autonomous car using checkpoints',
       number: 2,
     ),
     TestItem(
-      name: 'Third test',
+      name: 'Third test: Autonomous car without checkpoints',
       number: 3,
     ),
     TestItem(
-      name: 'Fourth test',
+      name: 'Fourth test: - Coming soon -',
       number: 4,
     ),
   ];
@@ -81,14 +81,14 @@ class _TestsState extends State<Tests> {
                 child: ListTile(
                   leading: Icon(Icons.book),
                   title: Text(tests[index].name!),
-                  subtitle: Text('Points: 10  Experience: 100'),
+                  subtitle: Text('Max points: 10  Experience: 100'),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => TestPage(
                           category: QuestionCategory(
-                            name: "Test $index",
+                            name: "Test ${index + 1}",
                             questions: questionLibrary[index],
                           ),
                           testIndex: index,

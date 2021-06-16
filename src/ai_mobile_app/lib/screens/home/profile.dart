@@ -3,6 +3,7 @@ import 'package:ai_mobile_app/models/custom_user.dart';
 import 'package:ai_mobile_app/screens/home/lesson_item.dart';
 import 'package:ai_mobile_app/services/auth.dart';
 import 'package:ai_mobile_app/services/database.dart';
+import 'package:ai_mobile_app/shared/constants.dart';
 import 'package:ai_mobile_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -31,20 +32,27 @@ class _ProfileState extends State<Profile> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                Column(
                   children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Text("Experience"),
-                        Text(userData.experience.toString()),
-                      ],
+                    Text(
+                      "Experience",
+                      style: profileElementTextStyle,
                     ),
-                    Column(
-                      children: <Widget>[
-                        Text("Points"),
-                        Text(userData.points.toString()),
-                      ],
+                    Text(
+                      userData.experience.toString(),
+                      style: profileElementNumberStyle,
+                    ),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      "Points",
+                      style: profileElementTextStyle,
+                    ),
+                    Text(
+                      userData.points.toString(),
+                      style: profileElementNumberStyle,
                     ),
                   ],
                 ),
