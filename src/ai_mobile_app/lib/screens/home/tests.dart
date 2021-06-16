@@ -103,12 +103,12 @@ class _TestsState extends State<Tests> {
                         t.incorrectAnswers!,
                       );
                       await DatabaseService(uid: user.uid).updateUserData(
-                        userData.experience += 50,
+                        userData.experience += 100,
                         userData.points += (t.mark! ~/ 10).toInt(),
                       );
                     });
                   },
-                  enabled: true, // TODO
+                  enabled: (userData.experience >= index * 100),
                 ),
               );
             },
