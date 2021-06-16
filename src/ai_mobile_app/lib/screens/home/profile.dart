@@ -21,61 +21,66 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     final user = Provider.of<CustomUser?>(context);
 
-    return StreamBuilder<UserData?>(
-      stream: DatabaseService(uid: user!.uid).userData,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          UserData userData = snapshot.data!;
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        StreamBuilder<UserData?>(
+          stream: DatabaseService(uid: user!.uid).userData,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              UserData userData = snapshot.data!;
 
-          return Container(
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
+              return Container(
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Text(
-                      "Experience",
-                      style: profileElementTextStyle,
+                    Column(
+                      children: <Widget>[
+                        Text(
+                          "Experience",
+                          style: profileElementTextStyle,
+                        ),
+                        Text(
+                          userData.experience.toString(),
+                          style: profileElementNumberStyle,
+                        ),
+                      ],
                     ),
-                    Text(
-                      userData.experience.toString(),
-                      style: profileElementNumberStyle,
+                    Column(
+                      children: <Widget>[
+                        Text(
+                          "Points",
+                          style: profileElementTextStyle,
+                        ),
+                        Text(
+                          userData.points.toString(),
+                          style: profileElementNumberStyle,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                Column(
-                  children: <Widget>[
-                    Text(
-                      "Points",
-                      style: profileElementTextStyle,
-                    ),
-                    Text(
-                      userData.points.toString(),
-                      style: profileElementNumberStyle,
-                    ),
-                  ],
-                ),
-                ElevatedButton(
-                  child: Text('Log out'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blueAccent,
-                    minimumSize: Size(140, 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  onPressed: () async {
-                    await _auth.signOut();
-                  },
-                ),
-              ],
+              );
+            } else {
+              return Loading();
+            }
+          },
+        ),
+        ElevatedButton(
+          child: Text('Log out'),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.blueAccent,
+            minimumSize: Size(140, 40),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
             ),
-          );
-        } else {
-          return Loading();
-        }
-      },
+          ),
+          onPressed: () async {
+            await _auth.signOut();
+          },
+        ),
+      ],
     );
   }
 }
