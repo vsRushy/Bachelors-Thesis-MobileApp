@@ -46,10 +46,14 @@ class _TestPageState extends State<TestPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.category!.name!,
+        title: Text(widget.category!.name!),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            _resetCurrentTestOptions(widget.category!);
+            Navigator.of(context).pop(currentTest);
+          },
         ),
-        actions: [],
       ),
       body: Column(
         children: [
