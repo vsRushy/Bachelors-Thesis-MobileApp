@@ -51,7 +51,7 @@ class _TestPageState extends State<TestPage> {
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             _resetCurrentTestOptions(widget.category!);
-            Navigator.of(context).pop(currentTest);
+            Navigator.of(context).pop();
           },
         ),
       ),
