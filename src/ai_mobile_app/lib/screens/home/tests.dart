@@ -22,19 +22,19 @@ class _TestsState extends State<Tests> {
 
   List<TestItem> tests = [
     TestItem(
-      name: 'First test: Target finder',
+      name: '1. Target finder',
       number: 1,
     ),
     TestItem(
-      name: 'Second test: Autonomous car using checkpoints',
+      name: '2. Autonomous car using checkpoints',
       number: 2,
     ),
     TestItem(
-      name: 'Third test: Autonomous car without checkpoints',
+      name: '3. Autonomous car without checkpoints',
       number: 3,
     ),
     TestItem(
-      name: 'Fourth test: - Coming soon -',
+      name: '4. Artificial Neural Networks',
       number: 4,
     ),
   ];
