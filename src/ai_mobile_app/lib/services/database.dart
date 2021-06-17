@@ -10,7 +10,14 @@ class DatabaseService {
   final CollectionReference collection =
       FirebaseFirestore.instance.collection('users');
 
-  Future createUserData(
+  Future createUser() async {
+    return await collection.doc(uid).set({
+      'experience': 0,
+      'points': 0,
+    });
+  }
+
+  Future createCustomTest(
       int testId, double mark, int correctAnswers, int incorrectAnswers) async {
     return await collection.doc(uid).collection('tests').doc().set({
       'testId': testId,
@@ -20,17 +27,14 @@ class DatabaseService {
     });
   }
 
-  Future updateUserData(
-      int testId, double mark, int correctAnswers, int incorrectAnswers) async {
+  Future updateUserData(int experience, int points) async {
     return await collection.doc(uid).set({
-      'testId': testId,
-      'mark': mark,
-      'correctAnswers': correctAnswers,
-      'incorrectAnswers': incorrectAnswers,
+      'experience': experience,
+      'points': points,
     });
   }
 
-  List<CustomTest?>? _testListFromSnapshot(QuerySnapshot snapshot) {
+  List<CustomTest> _testListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       return CustomTest(
         testId: doc.data()['testId'] ?? 1,
@@ -41,21 +45,23 @@ class DatabaseService {
     }).toList();
   }
 
-  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+  UserData? _userDataFromSnapshot(DocumentSnapshot snapshot) {
     return UserData(
       uid: uid!,
-      testId: snapshot.data()!['testId'],
-      mark: snapshot.data()!['mark'],
-      correctAnswers: snapshot.data()!['correctAnswers'],
-      incorrectAnswers: snapshot.data()!['incorrectAnswers'],
+      experience: snapshot.data()!['experience'],
+      points: snapshot.data()!['points'],
     );
   }
 
-  Stream<List<CustomTest?>?> get tests {
-    return collection.doc(uid).collection('tests').snapshots().map(_testListFromSnapshot);
+  Stream<List<CustomTest>> get tests {
+    return collection
+        .doc(uid)
+        .collection('tests')
+        .snapshots()
+        .map(_testListFromSnapshot);
   }
 
-  Stream<UserData> get userData {
+  Stream<UserData?> get userData {
     return collection.doc(uid).snapshots().map(_userDataFromSnapshot);
   }
 }

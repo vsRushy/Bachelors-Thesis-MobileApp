@@ -10,7 +10,7 @@ class TestPage extends StatefulWidget {
   final QuestionCategory? category;
   final int? testIndex;
 
-  const TestPage({
+  TestPage({
     Key? key,
     required this.category,
     required this.testIndex,
@@ -27,6 +27,13 @@ class _TestPageState extends State<TestPage> {
   CustomTest? currentTest =
       CustomTest(testId: 1, mark: 0.0, correctAnswers: 0, incorrectAnswers: 0);
 
+  void _resetCurrentTestOptions(QuestionCategory questionCategory) {
+    for (CustomQuestion current in questionCategory.questions!) {
+      current.currentOption = null;
+      current.isLocked = false;
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -39,10 +46,14 @@ class _TestPageState extends State<TestPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.category!.name!,
+        title: Text(widget.category!.name!),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            _resetCurrentTestOptions(widget.category!);
+            Navigator.of(context).pop(currentTest);
+          },
         ),
-        actions: [],
       ),
       body: Column(
         children: [
@@ -73,6 +84,7 @@ class _TestPageState extends State<TestPage> {
                 double? fractionScore =
                     currentTest!.correctAnswers! / numQuestions;
                 currentTest!.mark = fractionScore * 100.0;
+                _resetCurrentTestOptions(widget.category!);
                 Navigator.of(context).pop(currentTest);
               },
             ),
