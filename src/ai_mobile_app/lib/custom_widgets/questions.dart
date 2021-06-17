@@ -1,4 +1,5 @@
 import 'package:ai_mobile_app/custom_widgets/options.dart';
+import 'package:ai_mobile_app/data/test_questions.dart';
 import 'package:ai_mobile_app/models/custom_option.dart';
 import 'package:ai_mobile_app/models/custom_question.dart';
 import 'package:ai_mobile_app/models/custom_test.dart';
@@ -89,7 +90,7 @@ class _QuestionsState extends State<Questions> {
           color: Colors.white10,
           padding: EdgeInsets.all(8),
           child: StepPageIndicator(
-            itemCount: 2,
+            itemCount: 10,
             currentPageNotifier: _currentPageNotifier,
             size: 16,
             onPageSelected: (int index) {
