@@ -37,7 +37,7 @@ class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
   List<List<CustomTest?>?>? _groupTestsByTestId(
       List<CustomTest?>? individualTests) {
     List<List<CustomTest?>?>? _groupedTests =
-        List.generate(questionLibrary.length, (index) => null);
+        List.generate(questionLibrary.length, (index) => []);
 
     if (individualTests != null && individualTests.length > 0) {
       for (CustomTest? t in individualTests) {
