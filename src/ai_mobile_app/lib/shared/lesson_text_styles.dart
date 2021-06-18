@@ -7,13 +7,18 @@ class LessonTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: Colors.lightBlue,
-        fontWeight: FontWeight.bold,
-        fontSize: 32,
-      ),
+    return Column(
+      children: [
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.lightBlue,
+            fontWeight: FontWeight.bold,
+            fontSize: 32,
+          ),
+        ),
+        SizedBox(height: 15),
+      ],
     );
   }
 }
@@ -25,13 +30,41 @@ class LessonSubtitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: Colors.black,
-        fontWeight: FontWeight.bold,
-        fontSize: 28,
-      ),
+    return Column(
+      children: [
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 28,
+          ),
+        ),
+        SizedBox(height: 15),
+      ],
+    );
+  }
+}
+
+class LessonSubtitleSmall extends StatelessWidget {
+  final String text;
+
+  LessonSubtitleSmall(this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
+        SizedBox(height: 15),
+      ],
     );
   }
 }
@@ -43,13 +76,18 @@ class LessonText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: Colors.black,
-        fontWeight: FontWeight.normal,
-        fontSize: 16,
-      ),
+    return Column(
+      children: [
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            fontSize: 16,
+          ),
+        ),
+        SizedBox(height: 15),
+      ],
     );
   }
 }
