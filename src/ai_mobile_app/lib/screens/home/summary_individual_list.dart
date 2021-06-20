@@ -15,7 +15,7 @@ class _SummaryIndividualListState extends State<SummaryIndividualList> {
   Widget build(BuildContext context) {
     final tests = Provider.of<List<CustomTest?>?>(context) ?? null;
 
-    return (tests != null)
+    return (tests != null && tests.length > 0)
         ? ListView.separated(
             separatorBuilder: (BuildContext context, int index) =>
                 SizedBox(height: 16),
@@ -25,7 +25,7 @@ class _SummaryIndividualListState extends State<SummaryIndividualList> {
             },
           )
         : Center(
-            child: Text("Empty"),
+            child: Text("Complete a test first!"),
           );
   }
 }
