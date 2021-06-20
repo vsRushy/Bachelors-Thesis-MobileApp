@@ -18,7 +18,7 @@ class LessonTitle extends StatelessWidget {
             shadows: [
               Shadow(
                 blurRadius: 1.0,
-                color: Colors.black,  
+                color: Colors.black,
               ),
             ],
           ),
@@ -112,6 +112,30 @@ class LessonTextBold extends StatelessWidget {
         fontWeight: FontWeight.bold,
         fontSize: 16,
       ),
+    );
+  }
+}
+
+class LessonTextCursive extends StatelessWidget {
+  final String text;
+
+  LessonTextCursive(this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            fontSize: 16,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+        SizedBox(height: 15),
+      ],
     );
   }
 }

@@ -23,6 +23,7 @@ class LessonPage extends StatelessWidget {
                 LessonSubtitle("Requirements"),
                 LessonText("Unity 2020.3.0f1 LTS."),
                 LessonText("ML-Agents 2.0.0."),
+                LessonTextCursive("Note: To install the software above, please click "),
                 LessonSubtitle("What is Machine Learning?"),
                 LessonText(
                     "Machine learning is a subset or branch of Artificial Intelligence that imitate the way humans learn making use of data and algorithms."),
@@ -38,7 +39,9 @@ class LessonPage extends StatelessWidget {
                 LessonText(""),
                 LessonSubtitle("Types of actions"),
                 LessonSubtitleSmall("Continuous"),
+                LessonText(""),
                 LessonSubtitleSmall("Discrete"),
+                LessonText(""),
                 LessonSubtitle("Types of algorithms"),
                 LessonSubtitleSmall("Proximal Policy Optimization"),
                 LessonText(
