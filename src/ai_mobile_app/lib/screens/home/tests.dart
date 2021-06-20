@@ -108,7 +108,7 @@ class _TestsState extends State<Tests> {
                       );
                     });
                   },
-                  enabled: (userData.experience >= index * 100),
+                  enabled: (userData.points >= index * 10),
                 ),
               );
             },
