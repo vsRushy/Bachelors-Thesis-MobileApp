@@ -118,8 +118,9 @@ class LessonTextBold extends StatelessWidget {
 
 class LessonTextCursive extends StatelessWidget {
   final String text;
+  final bool? newLine;
 
-  LessonTextCursive(this.text);
+  LessonTextCursive(this.text, [this.newLine = true]);
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +135,7 @@ class LessonTextCursive extends StatelessWidget {
             fontStyle: FontStyle.italic,
           ),
         ),
-        SizedBox(height: 15),
+        if (newLine!) SizedBox(height: 15),
       ],
     );
   }
