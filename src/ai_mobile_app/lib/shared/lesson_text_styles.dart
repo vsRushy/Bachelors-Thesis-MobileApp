@@ -15,6 +15,12 @@ class LessonTitle extends StatelessWidget {
             color: Colors.lightBlue,
             fontWeight: FontWeight.bold,
             fontSize: 32,
+            shadows: [
+              Shadow(
+                blurRadius: 1.0,
+                color: Colors.black,  
+              ),
+            ],
           ),
         ),
         SizedBox(height: 15),
