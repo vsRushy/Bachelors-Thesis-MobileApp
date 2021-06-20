@@ -55,7 +55,7 @@ class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
 
     if (grouped != null) {
       for (int i = 0; i < questionLibrary.length; ++i) {
-        if (grouped[i] != null) {
+        if (grouped[i] != null && grouped[i]!.length > 0) {
           double averageMark = 0.0;
           int correctAnswers = 0;
           int incorrectAnswers = 0;
