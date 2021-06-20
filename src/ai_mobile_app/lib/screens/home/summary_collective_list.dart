@@ -15,22 +15,26 @@ class SummaryCollectiveList extends StatefulWidget {
 class _SummaryCollectiveListState extends State<SummaryCollectiveList> {
   @override
   Widget build(BuildContext context) {
-    final tests = Provider.of<List<CustomTest?>?>(context) ?? null;
+    final tests = Provider.of<List<CustomTest?>?>(context);
     List<List<CustomTest?>?>? groupedTests = _groupTestsByTestId(tests);
     List<CustomTest?>? averagedTests = _averageTests(groupedTests);
 
-    return (tests != null)
+    return (tests != null && tests.length > 0)
         ? ListView.separated(
             separatorBuilder: (BuildContext context, int index) =>
                 SizedBox(height: 16),
             itemCount: questionLibrary.length,
             itemBuilder: (context, index) {
-              return (averagedTests != null)
-                  ? SummaryCollectiveTestTile(test: averagedTests[index]!)
-                  : Container();
+              if (averagedTests != null) {
+                return (averagedTests[index] != null)
+                    ? SummaryCollectiveTestTile(test: averagedTests[index]!)
+                    : Container();
+              } else {
+                return Container();
+              }
             })
         : Center(
-            child: Text("Empty"),
+            child: Text("Complete a test first!"),
           );
   }
 
