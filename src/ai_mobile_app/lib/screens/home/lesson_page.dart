@@ -58,11 +58,12 @@ class LessonPage extends StatelessWidget {
                     "An agent is the entity that has to go through the training process in order to do some tasks. An agent, because of the training, should be capable to know how to act in front of any situation."),
                 LessonSubtitle("The concept of an agent"),
                 LessonText(
-                    "An agent, which is the training entity, is divided into three parts."),
+                    "An agent, which is the training entity, has three main properties that affect its behaviour. They are as follows:"),
                 LessonSubtitleSmall("Actions"),
                 LessonText(""),
                 LessonSubtitleSmall("Observations"),
-                LessonText(""),
+                LessonText(
+                    "An agent stores a Vector Observation Space: Because an agent needs to decide what action to take, before hand it needs to collect information about the environment. This is made by observing the state of the world. An agent has a vector of floating point numbers that containt the information about the enironment. For instance, in a 2-dimensional world, let's say an agent wants to collect its position and also the position of an enemy. The observations vector lenght would equal 4, because it contains the x and y coordinates of said entities."),
                 LessonSubtitleSmall("Rewards"),
                 LessonText(""),
                 LessonSubtitle("Types of actions"),
