@@ -1,6 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+void launchUrl(String url) {
+  final encodedUrl = Uri.encodeFull(url);
+  launch(encodedUrl);
+}
 
 const customTextTitleStyle = TextStyle(
   color: Colors.black,

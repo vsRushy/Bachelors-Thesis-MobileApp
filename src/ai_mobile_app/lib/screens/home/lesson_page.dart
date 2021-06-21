@@ -1,4 +1,6 @@
+import 'package:ai_mobile_app/shared/constants.dart';
 import 'package:ai_mobile_app/shared/lesson_text_styles.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LessonPage extends StatelessWidget {
@@ -23,9 +25,27 @@ class LessonPage extends StatelessWidget {
                 LessonSubtitle("Requirements"),
                 LessonText("Unity 2020.3.0f1 LTS."),
                 LessonText("ML-Agents 2.0.0."),
-                LessonTextCursive(
-                    "Note: To install the software above, please click "),
-                LessonTextUrl("here"),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                          text:
+                              "Note: To install the software above, please click ",
+                          style: LessonTextCursive.style),
+                      TextSpan(
+                        text: "here",
+                        style: LessonTextUrl.style,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            launchUrl(
+                                "https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Installation.md");
+                          },
+                      ),
+                      TextSpan(text: ".", style: LessonTextCursive.style),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 15),
                 LessonSubtitle("What is Machine Learning?"),
                 LessonText(
                     "Machine learning is a subset or branch of Artificial Intelligence that imitate the way humans learn making use of data and algorithms."),

@@ -1,3 +1,4 @@
+import 'package:ai_mobile_app/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,23 +7,25 @@ class LessonTitle extends StatelessWidget {
 
   LessonTitle(this.text);
 
+  static final TextStyle style = TextStyle(
+    color: Colors.lightBlue,
+    fontWeight: FontWeight.bold,
+    fontSize: 32,
+    shadows: [
+      Shadow(
+        blurRadius: 1.0,
+        color: Colors.black,
+      ),
+    ],
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
           text,
-          style: TextStyle(
-            color: Colors.lightBlue,
-            fontWeight: FontWeight.bold,
-            fontSize: 32,
-            shadows: [
-              Shadow(
-                blurRadius: 1.0,
-                color: Colors.black,
-              ),
-            ],
-          ),
+          style: style,
         ),
         SizedBox(height: 15),
       ],
@@ -35,17 +38,19 @@ class LessonSubtitle extends StatelessWidget {
 
   LessonSubtitle(this.text);
 
+  static final TextStyle style = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+    fontSize: 28,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
           text,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 28,
-          ),
+          style: style,
         ),
         SizedBox(height: 15),
       ],
@@ -58,17 +63,19 @@ class LessonSubtitleSmall extends StatelessWidget {
 
   LessonSubtitleSmall(this.text);
 
+  static final TextStyle style = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
           text,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
+          style: style,
         ),
         SizedBox(height: 15),
       ],
@@ -81,17 +88,19 @@ class LessonText extends StatelessWidget {
 
   LessonText(this.text);
 
+  static final TextStyle style = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
           text,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.normal,
-            fontSize: 16,
-          ),
+          style: style,
         ),
         SizedBox(height: 15),
       ],
@@ -104,15 +113,17 @@ class LessonTextBold extends StatelessWidget {
 
   LessonTextBold(this.text);
 
+  static final TextStyle style = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        color: Colors.black,
-        fontWeight: FontWeight.bold,
-        fontSize: 16,
-      ),
+      style: style,
     );
   }
 }
@@ -123,18 +134,20 @@ class LessonTextCursive extends StatelessWidget {
 
   LessonTextCursive(this.text, [this.newLine = true]);
 
+  static final TextStyle style = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
+    fontStyle: FontStyle.italic,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
           text,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.normal,
-            fontSize: 16,
-            fontStyle: FontStyle.italic,
-          ),
+          style: style,
         ),
         if (newLine!) SizedBox(height: 15),
       ],
@@ -144,9 +157,16 @@ class LessonTextCursive extends StatelessWidget {
 
 class LessonTextUrl extends StatelessWidget {
   final String text;
+  final String url;
   final bool? newLine;
 
-  LessonTextUrl(this.text, [this.newLine = true]);
+  LessonTextUrl(this.text, this.url, [this.newLine = true]);
+
+  static final TextStyle style = TextStyle(
+    color: Colors.lightBlue,
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -154,17 +174,11 @@ class LessonTextUrl extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            String url = Uri.encodeFull(
-                "https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Installation.md");
-            launch(url);
+            launchUrl(url);
           },
           child: Text(
             text,
-            style: TextStyle(
-              color: Colors.lightBlue,
-              fontWeight: FontWeight.normal,
-              fontSize: 16,
-            ),
+            style: style,
           ),
         ),
         if (newLine!) SizedBox(height: 15),
