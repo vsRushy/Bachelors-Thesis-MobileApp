@@ -186,3 +186,36 @@ class LessonTextUrl extends StatelessWidget {
     );
   }
 }
+
+class LessonTextUrlCursive extends StatelessWidget {
+  final String text;
+  final String url;
+  final bool? newLine;
+
+  LessonTextUrlCursive(this.text, this.url, [this.newLine = true]);
+
+  static final TextStyle style = TextStyle(
+    color: Colors.lightBlue,
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
+    fontStyle: FontStyle.italic,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () {
+            launchUrl(url);
+          },
+          child: Text(
+            text,
+            style: style,
+          ),
+        ),
+        if (newLine!) SizedBox(height: 15),
+      ],
+    );
+  }
+}

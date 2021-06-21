@@ -34,7 +34,7 @@ class LessonPage extends StatelessWidget {
                           style: LessonTextCursive.style),
                       TextSpan(
                         text: "here",
-                        style: LessonTextUrl.style,
+                        style: LessonTextUrlCursive.style,
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             launchUrl(
