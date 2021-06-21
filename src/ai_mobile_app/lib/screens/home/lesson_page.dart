@@ -29,8 +29,11 @@ class LessonPage extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                          text:
-                              "Note: To install the software above, please click ",
+                        text: "Note: ",
+                        style: LessonTextBold.style,
+                      ),
+                      TextSpan(
+                          text: "To install the software above, please click ",
                           style: LessonTextCursive.style),
                       TextSpan(
                         text: "here",
@@ -41,7 +44,9 @@ class LessonPage extends StatelessWidget {
                                 "https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Installation.md");
                           },
                       ),
-                      TextSpan(text: ".", style: LessonTextCursive.style),
+                      TextSpan(
+                          text: " and follow the instructions.",
+                          style: LessonTextCursive.style),
                     ],
                   ),
                 ),
