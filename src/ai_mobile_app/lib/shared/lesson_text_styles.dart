@@ -83,6 +83,31 @@ class LessonSubtitleSmall extends StatelessWidget {
   }
 }
 
+class LessonSubtitleVerySmall extends StatelessWidget {
+  final String text;
+
+  LessonSubtitleVerySmall(this.text);
+
+  static final TextStyle style = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+    fontSize: 18,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          text,
+          style: style,
+        ),
+        SizedBox(height: 15),
+      ],
+    );
+  }
+}
+
 class LessonText extends StatelessWidget {
   final String text;
 
