@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LessonTitle extends StatelessWidget {
   final String text;
@@ -133,6 +134,37 @@ class LessonTextCursive extends StatelessWidget {
             fontWeight: FontWeight.normal,
             fontSize: 16,
             fontStyle: FontStyle.italic,
+          ),
+        ),
+        if (newLine!) SizedBox(height: 15),
+      ],
+    );
+  }
+}
+
+class LessonTextUrl extends StatelessWidget {
+  final String text;
+  final bool? newLine;
+
+  LessonTextUrl(this.text, [this.newLine = true]);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () {
+            String url = Uri.encodeFull(
+                "https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Installation.md");
+            launch(url);
+          },
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Colors.lightBlue,
+              fontWeight: FontWeight.normal,
+              fontSize: 16,
+            ),
           ),
         ),
         if (newLine!) SizedBox(height: 15),

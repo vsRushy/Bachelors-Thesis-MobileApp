@@ -23,14 +23,17 @@ class LessonPage extends StatelessWidget {
                 LessonSubtitle("Requirements"),
                 LessonText("Unity 2020.3.0f1 LTS."),
                 LessonText("ML-Agents 2.0.0."),
-                LessonTextCursive("Note: To install the software above, please click "),
+                LessonTextCursive(
+                    "Note: To install the software above, please click "),
+                LessonTextUrl("here"),
                 LessonSubtitle("What is Machine Learning?"),
                 LessonText(
                     "Machine learning is a subset or branch of Artificial Intelligence that imitate the way humans learn making use of data and algorithms."),
                 LessonText(
                     "An agent is the entity that has to go through the training process in order to do some tasks. An agent, because of the training, should be capable to know how to act in front of any situation."),
                 LessonSubtitle("The concept of an agent"),
-                LessonText("An agent, which is the training entity, is divided into three parts."),
+                LessonText(
+                    "An agent, which is the training entity, is divided into three parts."),
                 LessonSubtitleSmall("Actions"),
                 LessonText(""),
                 LessonSubtitleSmall("Observations"),
@@ -47,14 +50,17 @@ class LessonPage extends StatelessWidget {
                 LessonText(
                     "PPO is a Deep Reinforcement Learning (DLR) algorithm mainly used on any physical-based activity. Even though it's very effective, reaching very high-quality results, it is not very efficient. The main reason for that is because it needs large amounts of training data and, thus, training time. PPO is an on-policy algorithm. Essentially, it implies that the agent's optimal policy value is calculated taking into account the agent's actions."),
                 LessonSubtitleSmall("Soft Actor-Critic"),
-                 LessonText("SAC is "),
-                LessonSubtitleSmall("Generative Adversarial Imitation Learning"),
+                LessonText("SAC is "),
+                LessonSubtitleSmall(
+                    "Generative Adversarial Imitation Learning"),
                 LessonSubtitleSmall("Behavioral Cloning"),
                 LessonSubtitle("Training concepts"),
                 LessonSubtitleSmall("Sample throughput"),
-                LessonText("It is the number of samples gathered in any period of time. It is generally measured in seconds. The higher, the better."),
+                LessonText(
+                    "It is the number of samples gathered in any period of time. It is generally measured in seconds. The higher, the better."),
                 LessonSubtitleSmall("Sample efficiency"),
-                LessonText("It is the number of samples required to learn good and correct behaviour. The lesser, the better."),
+                LessonText(
+                    "It is the number of samples required to learn good and correct behaviour. The lesser, the better."),
                 LessonSubtitle("Next steps"),
                 LessonText(
                     "On the following lessons, we will develop intelligent agents using Machine Learning and Artificial Neural Networks, so that we can actually put these concepts into practice."),
