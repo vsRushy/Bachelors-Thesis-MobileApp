@@ -53,9 +53,9 @@ class LessonPage extends StatelessWidget {
                 SizedBox(height: 15),
                 LessonSubtitle("What is Machine Learning?"),
                 LessonText(
-                    "Machine learning is a subset or branch of Artificial Intelligence that imitate the way humans learn making use of data and algorithms."),
+                    "Machine learning is a subset or branch of Artificial Intelligence that imitates the way humans learn making use of data and algorithms."),
                 LessonText(
-                    "An agent is the entity that has to go through the training process in order to do some tasks. An agent, because of the training, should be capable to know how to act in front of any situation."),
+                    "An agent is the entity that has to go through a training process in order to achieve some tasks. Because of the training, an agent should be capable to know how to act in front of any situation."),
                 LessonSubtitle("The concept of an agent"),
                 LessonText(
                     "An agent, which is the training entity, has three main properties that affect its behaviour. They are as follows:"),
@@ -72,20 +72,14 @@ class LessonPage extends StatelessWidget {
                 LessonText(
                     "An agent stores a Vector Observation Space: Because an agent needs to decide what action to take, before hand it needs to collect information about the environment. This is made by observing the state of the world. An agent has a vector of floating point numbers that containt the information about the enironment. For instance, in a 2-dimensional world, let's say an agent wants to collect its position and also the position of an enemy. The observations vector lenght would equal 4, because it contains the x and y coordinates of said entities."),
                 LessonSubtitleSmall("Rewards"),
-                LessonText("An agent needs to be given rewards in order to learn and train. Rewards can be either positive and negative. On the next lessons, we will see in more detail the usage of said concept."),
-                LessonSubtitleVerySmall("Positive"),
-                LessonText("If a positive reward is given to an agent, this means that the agent interprets that the action it has done is correct. By accumulating positive rewards, the agent, after many generations, will completely understand what are the correct actions to do based in the rewards it was given."),
-                LessonSubtitleVerySmall("Negative"),
-                LessonText("The negative rewards are the same as the positive ones, but viceversa. If an agent is given a negative reward, during the next generations it will avoid to do actions that lead to a negative reward."),
-                LessonSubtitle("Types of AI algorithms"),
-                LessonSubtitleSmall("Proximal Policy Optimization"),
                 LessonText(
-                    "PPO is a Deep Reinforcement Learning (DLR) algorithm mainly used on any physical-based activity. Even though it's very effective, reaching very high-quality results, it is not very efficient. The main reason for that is because it needs large amounts of training data and, thus, training time. PPO is an on-policy algorithm. Essentially, it implies that the agent's optimal policy value is calculated taking into account the agent's actions."),
-                LessonSubtitleSmall("Soft Actor-Critic"),
-                LessonText("SAC is "),
-                LessonSubtitleSmall(
-                    "Generative Adversarial Imitation Learning"),
-                LessonSubtitleSmall("Behavioral Cloning"),
+                    "An agent needs to be given rewards in order to learn and train. Rewards can be either positive and negative. On the next lessons, we will see in more detail the usage of said concept."),
+                LessonSubtitleVerySmall("Positive"),
+                LessonText(
+                    "If a positive reward is given to an agent, this means that the agent interprets that the action it has done is correct. By accumulating positive rewards, the agent, after many generations, will completely understand what are the correct actions to do based in the rewards it was given."),
+                LessonSubtitleVerySmall("Negative"),
+                LessonText(
+                    "The negative rewards are the same as the positive ones, but viceversa. If an agent is given a negative reward, during the next generations it will avoid to do actions that lead to a negative reward."),
                 LessonSubtitle("Training concepts"),
                 LessonSubtitleSmall("Sample throughput"),
                 LessonText(
@@ -93,6 +87,15 @@ class LessonPage extends StatelessWidget {
                 LessonSubtitleSmall("Sample efficiency"),
                 LessonText(
                     "It is the number of samples required to learn good and correct behaviour. The lesser, the better."),
+                LessonSubtitle("Deep Reinforcement Learning Algorithms"),
+                LessonSubtitleSmall("Proximal Policy Optimization"),
+                LessonText(
+                    "PPO is a DLR algorithm mainly used on any physical-based activity. Even though it's very effective, reaching very high-quality results, it is not very efficient. The main reason for that is because it needs large amounts of training data and, thus, training time. PPO is an on-policy algorithm. Essentially, it implies that the agent's optimal policy value is calculated taking into account the agent's actions. It is used as one of the main two algorithms for training an agent. Essentially, this algorithm is used if the user wants to reach a really high end product by sacrificing more training time."),
+                LessonSubtitleSmall("Soft Actor-Critic"),
+                LessonText("SAC is another DLR algorithm that is used mainly in robotics, but it can be also used in other fields. Just like the PPO algorithm, it is the other main algorithm to train an agent. In contrast with the previous algorithm, SAC is an off-policy algorithm, which means that the optimal policy value is calculated without taking into account the agent's actions. SAC stands out for its high sample-efficiency capabilities. Thus, without much training time, the results will be already really good."),
+                LessonSubtitleSmall(
+                    "Generative Adversarial Imitation Learning"),
+                LessonSubtitleSmall("Behavioral Cloning"),
                 LessonSubtitle("Next steps"),
                 LessonText(
                     "On the following lessons, we will develop intelligent agents using Machine Learning and Artificial Neural Networks, so that we can actually put these concepts into practice."),
