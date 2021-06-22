@@ -60,16 +60,23 @@ class LessonPage extends StatelessWidget {
                 LessonText(
                     "An agent, which is the training entity, has three main properties that affect its behaviour. They are as follows:"),
                 LessonSubtitleSmall("Actions"),
-                LessonText("An agent can do decisions on its own, given by the Actions Vector. Essentially, an agent has a vector that contains a value that refers to an acrtion. On the next two points, this is explained in more detail."),
+                LessonText(
+                    "An agent can do decisions on its own, given by the Actions Vector. Essentially, an agent has a vector that contains a value that refers to an acrtion. On the next two points, this is explained in more detail."),
                 LessonSubtitleVerySmall("Continuous"),
-                LessonText("The values stored in the Actions Vector are floating points. Each floating point value can vary continuously, defining and modifying the action. The clearest example is as follows: a spaceship that exists in a 3-dimensional space can move towards each axis. Thus, the Action Vector will be of size 3. For instance, the first value in the Action Vector could define the y-axis velocity. If it is positive, it means the spaceship is moving upwards, and the same happens in the inverse direction, if the value is negative. It is important to mention that each value varies in a continuous manner."),
+                LessonText(
+                    "The values stored in the Actions Vector are floating points. Each floating point value can vary continuously, defining and modifying the action. The clearest example is as follows: a spaceship that exists in a 3-dimensional space can move towards each axis. Thus, the Action Vector will be of size 3. For instance, the first value in the Action Vector could define the y-axis velocity. If it is positive, it means the spaceship is moving upwards, and the same happens in the inverse direction, if the value is negative. It is important to mention that each value varies in a continuous manner."),
                 LessonSubtitleVerySmall("Discrete"),
-                LessonText("The Actions Vector regarding the discrete actions contains branches. Each branch is another vector  with a predefined size that contains integers. Fundamentally, a branch defines an action. In order to visualize this, let's imagine an object that can move in a single axis and also jumping. One branch would refer to the movement, and the other one to the jumping. Furthermore, the movement branch would contain a vector with three integers, for instance: 0 for staying, 1 for moving forward, and 2 for moving backwards. Following the same manner, the jumping branch would contain the integer 0 for not jumping and the integer 1 for actually jumping."),
+                LessonText(
+                    "The Actions Vector regarding the discrete actions contains branches. Each branch is another vector  with a predefined size that contains integers. Fundamentally, a branch defines an action. In order to visualize this, let's imagine an object that can move in a single axis and also jumping. One branch would refer to the movement, and the other one to the jumping. Furthermore, the movement branch would contain a vector with three integers, for instance: 0 for staying, 1 for moving forward, and 2 for moving backwards. Following the same manner, the jumping branch would contain the integer 0 for not jumping and the integer 1 for actually jumping."),
                 LessonSubtitleSmall("Observations"),
                 LessonText(
                     "An agent stores a Vector Observation Space: Because an agent needs to decide what action to take, before hand it needs to collect information about the environment. This is made by observing the state of the world. An agent has a vector of floating point numbers that containt the information about the enironment. For instance, in a 2-dimensional world, let's say an agent wants to collect its position and also the position of an enemy. The observations vector lenght would equal 4, because it contains the x and y coordinates of said entities."),
                 LessonSubtitleSmall("Rewards"),
-                LessonText(""),
+                LessonText("An agent needs to be given rewards in order to learn and train. Rewards can be either positive and negative. On the next lessons, we will see in more detail the usage of said concept."),
+                LessonSubtitleVerySmall("Positive"),
+                LessonText("If a positive reward is given to an agent, this means that the agent interprets that the action it has done is correct. By accumulating positive rewards, the agent, after many generations, will completely understand what are the correct actions to do based in the rewards it was given."),
+                LessonSubtitleVerySmall("Negative"),
+                LessonText("The negative rewards are the same as the positive ones, but viceversa. If an agent is given a negative reward, during the next generations it will avoid to do actions that lead to a negative reward."),
                 LessonSubtitle("Types of AI algorithms"),
                 LessonSubtitleSmall("Proximal Policy Optimization"),
                 LessonText(
