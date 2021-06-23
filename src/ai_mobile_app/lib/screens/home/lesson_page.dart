@@ -96,9 +96,11 @@ class LessonPage extends StatelessWidget {
                     "SAC is another DLR algorithm that is used mainly in robotics, but it can be also used in other fields. Just like the PPO algorithm, it is the other main algorithm to train an agent. In contrast with the previous algorithm, SAC is an off-policy algorithm, which means that the optimal policy value is calculated without taking into account the agent's actions. SAC stands out for its high sample-efficiency capabilities. Thus, without much training time, the results will be already really good."),
                 LessonSubtitleSmall(
                     "Generative Adversarial Imitation Learning"),
-                LessonText("GAIL is an algorithm that can be used (or not) in combination with either the PPO or SAC algorithms. Beforehand, the user needs to record some demos by using heuristics, which will be explained in the oncoming sections. After that, GAIL will try to learn following the behaviour of the demos, so that it has an early and effective grasp of how the correct behaviours are. At the same time, GAIL tries to find different ways to improve the behaviour."),
+                LessonText(
+                    "GAIL is an algorithm that can be used (or not) in combination with either the PPO or SAC algorithms. Beforehand, the user needs to record some demos by using heuristics, which will be explained in the oncoming sections. After that, GAIL will try to learn following the behaviour of the demos, so that it has an early and effective grasp of how the correct behaviours are. At the same time, GAIL tries to find different ways to improve the behaviour."),
                 LessonSubtitleSmall("Behavioral Cloning"),
-                LessonText("BC is quite similar to GAIL, and it can also be used in combination with PPO, SAC, or even GAIL. As a matter of fact, the usual practice is to use either PPO or SAC with both the GAIL and BC algorithms. The main difference is that BC doesn't actually try to learn from the demos; instead it just communicates the agent what the behaviours are."),
+                LessonText(
+                    "BC is quite similar to GAIL, and it can also be used in combination with PPO, SAC, or even GAIL. As a matter of fact, the usual practice is to use either PPO or SAC with both the GAIL and BC algorithms. The main difference is that BC doesn't actually try to learn from the demos; instead it just communicates the agent what the behaviours are."),
                 LessonSubtitle("Next steps"),
                 LessonText(
                     "On the following lessons, we will develop intelligent agents using Machine Learning and Artificial Neural Networks, so that we can actually put these concepts into practice."),
@@ -116,30 +118,41 @@ class LessonPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 LessonTitle("Phase 1: Target finder"),
-                SizedBox(height: 15),
                 LessonSubtitle("Introduction"),
-                SizedBox(height: 15),
                 LessonText(
                     "The phase 1 consists in developing an agent that learns to find a defined target."),
-                SizedBox(height: 15),
                 Center(
                   child: Image.asset(
                     "assets/images/phase1/first_phase_individual.jpg",
                   ),
                 ),
                 SizedBox(height: 15),
-                Row(children: [
-                  LessonTextBold("Algorithm used: "),
-                  LessonText("PPO.")
-                ]),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Algorithm: ",
+                        style: LessonTextBold.style,
+                      ),
+                      TextSpan(text: "PPO.", style: LessonText.style),
+                    ],
+                  ),
+                ),
                 SizedBox(height: 15),
-                Row(children: [
-                  LessonTextBold("Difficulty: "),
-                  LessonText("Easy.")
-                ]),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Difficulty: ",
+                        style: LessonTextBold.style,
+                      ),
+                      TextSpan(text: "Easy.", style: LessonText.style),
+                    ],
+                  ),
+                ),
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
-                SizedBox(height: 15),
+                LessonText(""),
               ],
             ),
           ),
@@ -166,18 +179,32 @@ class LessonPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 15),
-                Row(children: [
-                  LessonTextBold("Algorithm used: "),
-                  LessonText("PPO.")
-                ]),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Algorithm: ",
+                        style: LessonTextBold.style,
+                      ),
+                      TextSpan(text: "PPO.", style: LessonText.style),
+                    ],
+                  ),
+                ),
                 SizedBox(height: 15),
-                Row(children: [
-                  LessonTextBold("Difficulty: "),
-                  LessonText("Medium.")
-                ]),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Difficulty: ",
+                        style: LessonTextBold.style,
+                      ),
+                      TextSpan(text: "Normal.", style: LessonText.style),
+                    ],
+                  ),
+                ),
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
-                SizedBox(height: 15),
+                LessonText(""),
               ],
             ),
           ),
@@ -204,18 +231,33 @@ class LessonPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 15),
-                Row(children: [
-                  LessonTextBold("Algorithm used: "),
-                  LessonText("SAC.")
-                ]),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Algorithm: ",
+                        style: LessonTextBold.style,
+                      ),
+                      TextSpan(text: "SAC.", style: LessonText.style),
+                    ],
+                  ),
+                ),
                 SizedBox(height: 15),
-                Row(children: [
-                  LessonTextBold("Difficulty: "),
-                  LessonText("Hard.")
-                ]),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Difficulty: ",
+                        style: LessonTextBold.style,
+                      ),
+                      TextSpan(text: "Hard.", style: LessonText.style),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 15),
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
-                SizedBox(height: 15),
+                LessonText(""),
               ],
             ),
           ),
