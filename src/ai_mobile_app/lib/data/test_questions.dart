@@ -266,47 +266,47 @@ final questionLibrary = [
   ],
   [
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "Why do we use about 10 cars for training in this case?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "Incorrect. We should use 100 cars at least, for faster training.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "It seems like a nice number.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "10 is too much. We should use as maximum, 5.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "10 is a number of training cars that an average computer can hold without problems.",
           isCorrect: true,
         ),
       ],
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "What is the advantage of using the PPO algorithm in this phase?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "PPO should not be used in this case. SAC is the one to go.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "The final ANN will achieve a very high precision and performance.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "Because it is the standard when training cars.",
           isCorrect: false,
         ),
         CustomOption(
@@ -790,27 +790,17 @@ final questionLibrary = [
   ],
   [
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "Neural Networks is exclusively an AI term.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "True. It is completely invented.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "False. Artificial Neural Networks are based on the NNs of the human brain.",
           isCorrect: true,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
-          isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
