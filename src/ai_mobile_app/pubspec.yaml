@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/images/icon_basic_lightblue_1200.png
     - assets/images/icon_basic_white_1200.png
+    - assets/images/ANN_basic.jpeg
     - assets/images/phase1/first_phase_individual.jpg
     - assets/images/phase1/first_phase_parallel.jpg
     - assets/images/phase1/phase1_behaviour_params_no_brain.jpg

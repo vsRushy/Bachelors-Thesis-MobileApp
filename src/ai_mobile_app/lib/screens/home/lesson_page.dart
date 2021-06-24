@@ -102,10 +102,14 @@ class LessonPage extends StatelessWidget {
                 LessonText(
                     "BC is quite similar to GAIL, and it can also be used in combination with PPO, SAC, or even GAIL. As a matter of fact, the usual practice is to use either PPO or SAC with both the GAIL and BC algorithms. The main difference is that BC doesn't actually try to learn from the demos; instead it just communicates the agent what the behaviours are."),
                 LessonSubtitle("What is an episode and maximum steps?"),
-                LessonText("The concept of an episode is very important, because it is related directly to an agent's training. An episode, by definition, is the time an agent is actively training on a single generation. Each time an episode begins, an agent starts to train from the starting parameters the user has set up. When an episode ends, if it is not the final episode, another episode begins, and thus a generation too."),
-                LessonText("A new concept appears, which is the max steps. A step is increased every time the FixedUpdate() function in Unity is called, which updates the physics module of the engine. The max steps can be divided into two parts:"),
-                LessonText("General max steps: the maximum number of steps in the whole training."),
-                LessonText("Agent's max steps: the maximum number of steps in an agent's generation. If we sum all the max steps of each agent's generation, it should be less or equal than the general max steps, as we can end the training before the general max steps number is reached."),
+                LessonText(
+                    "The concept of an episode is very important, because it is related directly to an agent's training. An episode, by definition, is the time an agent is actively training on a single generation. Each time an episode begins, an agent starts to train from the starting parameters the user has set up. When an episode ends, if it is not the final episode, another episode begins, and thus a generation too."),
+                LessonText(
+                    "A new concept appears, which is the max steps. A step is increased every time the FixedUpdate() function in Unity is called, which updates the physics module of the engine. The max steps can be divided into two parts:"),
+                LessonText(
+                    "General max steps: the maximum number of steps in the whole training."),
+                LessonText(
+                    "Agent's max steps: the maximum number of steps in an agent's generation. If we sum all the max steps of each agent's generation, it should be less or equal than the general max steps, as we can end the training before the general max steps number is reached."),
                 LessonSubtitle("Next steps"),
                 LessonText(
                     "On the following lessons, we will develop intelligent agents using Machine Learning and Artificial Neural Networks, so that we can actually put these concepts into practice."),
@@ -168,8 +172,10 @@ class LessonPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 15),
-                LessonText("It is possible that as a first though, we may think why is necessary to duplicate not only the agent, but the environment itself too, as it seems like a waste of resources. This is because if many agents and goals were placed together in one environment, it would be a total chaos. Thus, by creating only one environment for each agent individually, the agents can do their job correctly."),
-                LessonText("Furthermore, when training the agent, many generations are created. At the beginning of each generation, also called as episode, the position of the goal must be reset randomly. If this wasn't done, the agent would only learn to go towards one direction. By resetting the positions randomly, it will reach the point when the agent will be able to know how to go to any direction, towards the goal or target."),
+                LessonText(
+                    "It is possible that as a first though, we may think why is necessary to duplicate not only the agent, but the environment itself too, as it seems like a waste of resources. This is because if many agents and goals were placed together in one environment, it would be a total chaos. Thus, by creating only one environment for each agent individually, the agents can do their job correctly."),
+                LessonText(
+                    "Furthermore, when training the agent, many generations are created. At the beginning of each generation, also called as episode, the position of the goal must be reset randomly. If this wasn't done, the agent would only learn to go towards one direction. By resetting the positions randomly, it will reach the point when the agent will be able to know how to go to any direction, towards the goal or target."),
                 LessonSubtitleSmall("Configuration file"),
                 LessonText(
                     "The first phase doesn't have a configuration file. Please note that the configuration files will be explained and used in the next lessons."),
@@ -193,17 +199,23 @@ class LessonPage extends StatelessWidget {
                 LessonText("- The position of the agent."),
                 LessonText("- The position of the goal."),
                 LessonSubtitleSmall("Rewards"),
-                LessonText("The rewards are what will make the agent understand what is correct and incorrect. Hence, being not only the necessary rewards, but also the value of the reward, is a very crucial task to do. In this phase, there are two rewards:"),
-                LessonText("- Reward #1: Give a positive reward to the agent when colliding with the goal."),
-                LessonText("- Reward #2: Give a negative reward to the agent when colliding with the wall."),
-                LessonText("Note that when giving any of the two previous reward, the current episode is restarted in order to keep training. Because there are two rewards and the agent can either collide with the wall or the goal, the value of the reward should be equal, even though one must be positive and the other one negative. Further, the current episode shall end and restart if the agent reaches its max steps. The value of the max steps should not be very big, as it won't probably take much time to collide with any other object."),
+                LessonText(
+                    "The rewards are what will make the agent understand what is correct and incorrect. Hence, being not only the necessary rewards, but also the value of the reward, is a very crucial task to do. In this phase, there are two rewards:"),
+                LessonText(
+                    "- Reward #1: Give a positive reward to the agent when colliding with the goal."),
+                LessonText(
+                    "- Reward #2: Give a negative reward to the agent when colliding with the wall."),
+                LessonText(
+                    "Note that when giving any of the two previous reward, the current episode is restarted in order to keep training. Because there are two rewards and the agent can either collide with the wall or the goal, the value of the reward should be equal, even though one must be positive and the other one negative. Further, the current episode shall end and restart if the agent reaches its max steps. The value of the max steps should not be very big, as it won't probably take much time to collide with any other object."),
                 LessonSubtitleSmall("Actions"),
                 LessonText(
                     "The type of actions used in this agent are continuous. Therefore, the values of the actions are floating points. The Actions Vector has a length of 2, being the index 0 the velocity on the X-axis and being the index 1 the velocity on the Z-axis. This way, the agent will be able to move in these two directions. At the end of the training, the agent will move on these axis in the most effective way, accordingly reaching the targets."),
                 LessonSubtitle("Conclusion"),
-                LessonText("This exercise or phase is one of the simplest ways to start using ML-Agents and understanding how machine learning works. Also, the agents learn to reach the target very fast, so it's even better. On the next lesson, we will start training a car, configurating the training parameters, and even recording our own plays so that the AI can learn from a starting point!"),
+                LessonText(
+                    "This exercise or phase is one of the simplest ways to start using ML-Agents and understanding how machine learning works. Also, the agents learn to reach the target very fast, so it's even better. On the next lesson, we will start training a car, configurating the training parameters, and even recording our own plays so that the AI can learn from a starting point!"),
                 LessonSubtitle("Notes"),
-                LessonText("Make sure that when training the agent, the Behaviour Parameters component should look exactly like this:"),
+                LessonText(
+                    "Make sure that when training the agent, the Behaviour Parameters component should look exactly like this:"),
                 Center(
                   child: Image.asset(
                     "assets/images/phase1/phase1_behaviour_params_no_brain.jpg",
@@ -217,7 +229,8 @@ class LessonPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 15),
-                LessonText("When the training is finished, you can place the final brain or model file (.onnx) like this:"),
+                LessonText(
+                    "When the training is finished, you can place the final brain or model file (.onnx) like this:"),
                 Center(
                   child: Image.asset(
                     "assets/images/phase1/phase1_behaviour_params_brain.jpg",
@@ -363,9 +376,59 @@ class LessonPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                LessonTitle("Title"),
-                LessonSubtitle("Subtitle"),
-                LessonText("Text"),
+                LessonTitle("Artificial Neural Networks"),
+                LessonSubtitle("What is an ANN?"),
+                LessonSubtitleSmall("Definition"),
+                LessonText(
+                    "An Artificial Neural Network is based on the actual brain's biological Neural Network. Thus, an ANN is just a Neural Network, but simulated in a computer, abstracted into an algorithm."),
+                LessonText("An ANN is composed of:"),
+                LessonText("- Artificial neurons."),
+                LessonText("- Layers."),
+                LessonSubtitleSmall("Artificial neurons"),
+                LessonText(
+                    "The first element is the artificial neuron. Just like the ANN, it is based on a biological neuron. A single neuron doesn't have much use; in fact, it's totally useless. But when they are connected all together, they are extremely powerful."),
+                LessonText(
+                    "For more simplicity, we'll call an artificial neuron, a neuron. A neuron is used as an input and an output. For instance, the data of an image can be an input for the neurons, and an output of a neuron can be the result of the accomplished task, such as recognizing an image."),
+                LessonText(
+                    "Each neuron has a weight and a bias. On the one hand, by definition, the weight controls the connection between two neurons. Therefore, the input of a neuron will directly influence the output of the same neuron. It is not a constant value."),
+                LessonText(
+                    "On the other hand, the bias is a constant value, generally of value 1, that is used to add more precision on the final output of the ANN. It also guarantees that, even if the weight of the neuron is 0, the output will always be greater than 0, which means that the neuron can be activated through an activation function."),
+                LessonText(
+                    "The formula of the output of a neuron is as follows:"),
+                LessonTextCursive("Y = Σ(weight * input) + bias"),
+                LessonText(
+                    "It is very clear to see that the weights are affected by the input, while the bias is completely independent. Let's take a look now at how the neurons are joined together, forming an ANN."),
+                LessonSubtitleSmall("Layers"),
+                LessonText(
+                    "The second and final element are the layers. Each layer is composed of neurons. An ANN is divided into three types of layers:"),
+                LessonText("- Input layer."),
+                LessonText("- Hidden layer."),
+                LessonText("- Output layer."),
+                LessonText(
+                    "In the first place, the input layer is the actual input data, such as the pixels of an image. This data is normally pre-processed, by normalizing and scaling each value so that the output will be between 0 and 1, for instance."),
+                LessonText(
+                    "In the second place, the hidden layer is the layer(s) between the input and output layers. Normally, there are more than 1 hidden layer, like 3 hidden layers, for eaxmple. Each neuron in the hidden layer produces an output given the input of the previous layer, which can be either the input layer or another hidden layer. After applying the calculation using the function explained previously, each neuron produces the output via applying the activation function. The activation function decides whether a neuron should be activated or not, using a non-linear function. The purpose of the activation function is to introduce non-linearity to the output of a single neuron, so that it can achieve more complex tasks.The values of the weights of the neurons are either calculated randomly or fine-tuned using a method called backward propagation, which will be explained later. As the ANN starts to learn, these weights are modified so that the final ANN will be perfect for obtaining the desired result of the output."),
+                LessonText(
+                    "In the third and last place, the output layer takes as an input all the information learned by the network via the hidden layers to the outer world. For instance, with the information the output layer gives, we could know if an image is a dog or a cat."),
+                LessonText(
+                    "In the following image, it can be observed in a simplified way an ANN. Each circle is a neuron, located in its correspondent area."),
+                Center(
+                  child: Image.asset(
+                    "assets/images/ANN_basic.jpeg",
+                  ),
+                ),
+                SizedBox(height: 15),
+                LessonSubtitleSmall("How does an ANN learn?"),
+                LessonText("Essentially, there are two ways of learning, which are:"),
+                LessonText("- Forward Propagation."),
+                LessonText("- Backward Propagation."),
+                LessonText("On the one hand, forward propagation is the technical word for applying the formula explained above, for calculating the output of a single neuron."),
+                LessonText("On the other hand hand, backward propagation is the method used to adjust the weights of the neurons calculating the error amount of the calculations. The total loss is the difference between the expected output of a neuron (which can be obtained using a training set, such as already classified and recognized data) and the actual output value calculated with the forward propagation."),
+                LessonSubtitle("Learning Paradigms"),
+                LessonText("a"),
+                LessonText("- Supervised learning."),
+                LessonText("- Unsupervised learning."),
+                LessonText("- Reinforcement learning."),
               ],
             ),
           ),

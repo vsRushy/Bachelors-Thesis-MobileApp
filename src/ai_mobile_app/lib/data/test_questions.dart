@@ -114,7 +114,7 @@ final questionLibrary = [
     ),
     CustomQuestion(
       question:
-          "Select which are the most adequate observations for the agent to make.",
+          "5. Select which are the most adequate observations for the agent to make.",
       options: [
         CustomOption(
           identifier: "A",
@@ -140,7 +140,7 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "The absolute value of the reward should be the same.",
+      question: "6. The absolute value of the reward should be the same.",
       options: [
         CustomOption(
           identifier: "A",
@@ -156,7 +156,7 @@ final questionLibrary = [
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "It is better to use discrete actions in this particular case.",
+      question: "7. It is better to use discrete actions in this particular case.",
       options: [
         CustomOption(
           identifier: "A",
@@ -172,7 +172,7 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "Select the most adient max step of the agent.",
+      question: "8. Select the most adient max step of the agent.",
       options: [
         CustomOption(
           identifier: "A",
@@ -198,7 +198,7 @@ final questionLibrary = [
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "What is the most adequate number of actions for the agent?",
+      question: "9. What is the most adequate number of actions for the agent?",
       options: [
         CustomOption(
           identifier: "A",
@@ -224,7 +224,7 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "Is the Proximal Policy Oprimization algorithm on-policy or off-policy?",
+      question: "10. Is the Proximal Policy Oprimization algorithm on-policy or off-policy?",
       options: [
         CustomOption(
           identifier: "A",
@@ -995,26 +995,26 @@ final questionLibrary = [
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "10. What type of learning paradigm does ML-Agents use?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "Reinforcement learning.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "Supervised learning.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "Unsupervised learning.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "All of the above.",
           isCorrect: false,
         ),
       ],
