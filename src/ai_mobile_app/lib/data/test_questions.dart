@@ -198,56 +198,46 @@ final questionLibrary = [
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "What is the most adequate number of actions for the agent?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "2, one for moving on the X-axis, and the other one for moving on the Y-axis.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "2, one for moving on the X-axis, and the other one for moving on the Z-axis.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "1, for moving on any axis.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "None of the above are correct.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "Is the Proximal Policy Oprimization algorithm on-policy or off-policy?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
+          text: "On-policy.",
           isCorrect: true,
         ),
         CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          identifier: "B",
+          text: "Off-policy.",
           isCorrect: false,
         ),
       ],
-      solution: "The correct response is answer C.",
+      solution: "The correct response is answer A.",
     ),
   ],
   [
