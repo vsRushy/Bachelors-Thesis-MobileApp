@@ -152,11 +152,9 @@ class LessonPage extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
-                LessonSubtitleSmall("Objective"),
-                LessonText(
-                    "The main objective is to create an agent, represented by a box, that can reach any goal."),
                 LessonSubtitleSmall("Approaching the problem"),
-                LessonText("Approaching..."),
+                LessonText("As it can be seen in the image above, the objective is to make the agent, which is represented by a red box, to reach the goal, which is represented by a yellow sphere. Both elements are placed inside a locked place with walls on all sides."),
+                LessonText(""),
                 LessonSubtitleSmall("Configuration file"),
                 LessonText(
                     "The first phase doesn't have a configuration file. Please note that the configuration files will be explained and used in the next lessons."),
@@ -215,9 +213,6 @@ class LessonPage extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
-                LessonSubtitleSmall("Objective"),
-                LessonText(
-                    "The main objective is to create an agent, represented by a car, learn to drive using the checkpoints method."),
                 LessonSubtitleSmall("Approaching the problem"),
                 LessonText("Approaching..."),
                 LessonSubtitleSmall("Configuration file"),
@@ -281,14 +276,10 @@ class LessonPage extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
-                LessonSubtitleSmall("Objective"),
-                LessonText(
-                    "The main objective is to create an agent, represented by a car, that can learn to drive without using the checkpoints method."),
                 LessonSubtitleSmall("Approaching the problem"),
                 LessonText("Approaching..."),
                 LessonSubtitleSmall("Configuration file"),
-                LessonText(
-                    "Config..."),
+                LessonText("Config..."),
                 LessonSubtitleSmall("Observations"),
                 LessonText(""),
                 LessonSubtitleSmall("Rewards"),
