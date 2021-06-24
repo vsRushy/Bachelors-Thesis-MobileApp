@@ -156,7 +156,8 @@ final questionLibrary = [
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "7. It is better to use discrete actions in this particular case.",
+      question:
+          "7. It is better to use discrete actions in this particular case.",
       options: [
         CustomOption(
           identifier: "A",
@@ -202,12 +203,14 @@ final questionLibrary = [
       options: [
         CustomOption(
           identifier: "A",
-          text: "2, one for moving on the X-axis, and the other one for moving on the Y-axis.",
+          text:
+              "2, one for moving on the X-axis, and the other one for moving on the Y-axis.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "2, one for moving on the X-axis, and the other one for moving on the Z-axis.",
+          text:
+              "2, one for moving on the X-axis, and the other one for moving on the Z-axis.",
           isCorrect: true,
         ),
         CustomOption(
@@ -224,7 +227,8 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "10. Is the Proximal Policy Oprimization algorithm on-policy or off-policy?",
+      question:
+          "10. Is the Proximal Policy Oprimization algorithm on-policy or off-policy?",
       options: [
         CustomOption(
           identifier: "A",
@@ -770,7 +774,7 @@ final questionLibrary = [
   ],
   [
     CustomQuestion(
-      question: "Neural Networks is exclusively an AI term.",
+      question: "1. Neural Networks is exclusively an AI term.",
       options: [
         CustomOption(
           identifier: "A",
@@ -787,208 +791,203 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "2. How many types of layers there are in an ANN?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "5. The input layer, the hidden layer, another hidden layer, another hidden layer, and the output layer.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "2. The input layer, and the output layer.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text:
+              "4. The input layer, the hidden layer, the learning layer, and the output layer.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "3. The input layer, the hidden layer, and the output layer.",
           isCorrect: true,
         ),
       ],
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "3. What is the formula of the output of a single neuron?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "Y = Σ(weight * bias) + input",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "Y = Σ(weight * input) + bias",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "Y = weight * input + bias",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "Y = Σ(weight * input) - bias",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "4. What is the total loss when performing the backward propagation?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "The difference between the expected output of a neuron, and the actual value calculated via the forward propagation.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text:
+              "The difference of the bias of the current neuron and the sum of the ones in the previous layer.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text:
+              "The difference of the output of a neuron and the previous one in the same layer.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text:
+              "The difference between the weights of the neurons of a layer and the ones from the previous layer.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "5. Is it a good practice to normalize and scale the initial data of the input layer of an ANN?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
+          text: "Yes. In fact, it is always recommended.",
           isCorrect: true,
         ),
         CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          identifier: "B",
+          text: "No. It is not necessary at all.",
           isCorrect: false,
         ),
       ],
-      solution: "The correct response is answer C.",
+      solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "6. Each neuron has an input and output. Is it true or false?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
-          isCorrect: false,
+          text: "True.",
+          isCorrect: true,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "False.",
           isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
-          isCorrect: true,
         ),
       ],
-      solution: "The correct response is answer D.",
+      solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "7. The output layer is the layer that calculates the final result of an ANN.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "Incorrect. In fact, the input layer calculates the final result from the beginning.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text:
+              "Incorrect. The hidden layers are the layers that calculate the final result. The output layer just outputs this final result.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "Correct. The output layer calculates the whole final result.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text:
+              "Incorrect. The input and hidden layers are the ones that calculate the final result.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "8. Why are non-linear functions used on the activation function?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "It is not correct. Linear functions are used in the activation function.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text:
+              "Because adding non-linearity to a networks can achieve more complex tasks that if a linear function was used.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "To overcomplicate the process.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "All of the above are incorrect.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "9. What difference there is between a reinforcement learning algorithm and an supervised/unsupervised algorithm?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "A reinforcement learning algorithm doesn't use rewards; instead, supervised and unsupervised learning algorithms do.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "There are no differences at all; they are the same.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "A supervised learning algorithm uses labeled datasets, while an unsupervised learning algorithm doesn't.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "An reinforcement learning algorithm makes use of rewards.",
           isCorrect: true,
         ),
       ],
