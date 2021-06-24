@@ -419,16 +419,23 @@ class LessonPage extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 LessonSubtitleSmall("How does an ANN learn?"),
-                LessonText("Essentially, there are two ways of learning, which are:"),
+                LessonText(
+                    "Essentially, there are two ways of learning, which are:"),
                 LessonText("- Forward Propagation."),
                 LessonText("- Backward Propagation."),
-                LessonText("On the one hand, forward propagation is the technical word for applying the formula explained above, for calculating the output of a single neuron."),
-                LessonText("On the other hand hand, backward propagation is the method used to adjust the weights of the neurons calculating the error amount of the calculations. The total loss is the difference between the expected output of a neuron (which can be obtained using a training set, such as already classified and recognized data) and the actual output value calculated with the forward propagation."),
+                LessonText(
+                    "On the one hand, forward propagation is the technical word for applying the formula explained above, for calculating the output of a single neuron."),
+                LessonText(
+                    "On the other hand hand, backward propagation is the method used to adjust the weights of the neurons calculating the error amount of the calculations. The total loss is the difference between the expected output of a neuron (which can be obtained using a training set, such as already classified and recognized data) and the actual output value calculated with the forward propagation."),
                 LessonSubtitle("Learning Paradigms"),
-                LessonText("a"),
+                LessonText(
+                    "There are three paradigms or models that are used for the learning process. They are as follows:"),
                 LessonText("- Supervised learning."),
                 LessonText("- Unsupervised learning."),
                 LessonText("- Reinforcement learning."),
+                LessonText("Supervised learning is used when training an ANN with already labeled data. The machine learning algorithm iteratively learns the differences and similarities between all the data points. Hence, the final output to be learned is already specified in advance and, also, the learning process is supervised by matching the predictions."),
+                LessonText("Unsupervised learning is used when training an ANN with non-labeled data. If a very complex task wants to be achieved and it's too difficult to have labeled data, this is the way to go. It is especially useful for tasks that are unsolvable by hand. Unsupervised learning algorithms make use of two principles: the first one, which is clustering, groups the outputs that have similar values; and the second one, which is dimensional reduction, simplifies the obtained outputs representation by reducing the data from a high-dimensional space to a low-dimensional space."),
+                LessonText("Finally, reinforcement learning is the way ML-Agents work. It is particularly useful for video games. The agent that has the ANN receives reinforcements, or the so-called rewards, in order to describe the interaction with the environment. The reinforcements can be either positive or negative. Therefore, the agent must maximize the positive reinforcements and minimize the negative ones. The environment is used as a scenario for the agent to explore, constantly interacting with it, obtaining the rewards and reinforcing the learning progress."),
               ],
             ),
           ),
