@@ -4,7 +4,7 @@ import 'package:ai_mobile_app/models/custom_question.dart';
 final questionLibrary = [
   [
     CustomQuestion(
-      question: "Why are walls placed in the environment?",
+      question: "1. Why are walls placed in the environment?",
       options: [
         CustomOption(
           identifier: "A",
@@ -23,189 +23,175 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "D",
-          text: "To make the agent train faster. By placing walls, the episodes will last less time and the agent will go directly to the goal over time.",
+          text:
+              "To make the agent train faster. By placing walls, the episodes will last less time and the agent will go directly to the goal over time.",
           isCorrect: true,
         ),
       ],
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "2. Why do we create multiple environments for traning?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "It's useless; only one agent can be trained on a single brain.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "To have more environments.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "For a much faster training time.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "All of the above are incorrect.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "3. Why is the position of the goal reset randomly on each episode?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "So that the agent learns to go any direction towards the goal.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "It's just the standard when training.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "So that the agent knows how to go to a single direction.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "To confuse the agent.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "4. Select the correct command to overwrite an already created brain.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "mlagents-learn --run-id test --resume",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "mlagents-learn --run-id test --force",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "mlagents-learn --run-id test --overwrite",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "mlagents-learn --run-id test",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "Select which are the most adequate observations for the agent to make.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "Position of the agent.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "Position of the agent & position of the goal.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "Position of the goal.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "Position of the environment.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "The absolute value of the reward should be the same.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: true,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
-          isCorrect: false,
-        ),
-      ],
-      solution: "The correct response is answer C.",
-    ),
-    CustomQuestion(
-      question: "This is the first question. Would you answer?",
-      options: [
-        CustomOption(
-          identifier: "A",
-          text: "This is the first question.",
+          text: "True.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          text: "False.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "It is better to use discrete actions in this particular case.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "True.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "False.",
+          isCorrect: true,
+        ),
+      ],
+      solution: "The correct response is answer B.",
+    ),
+    CustomQuestion(
+      question: "Select the most adient max step of the agent.",
+      options: [
+        CustomOption(
+          identifier: "A",
+          text: "20000.",
+          isCorrect: false,
+        ),
+        CustomOption(
+          identifier: "B",
+          text: "7500.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "64.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "1000.",
           isCorrect: true,
         ),
       ],
@@ -270,7 +256,8 @@ final questionLibrary = [
       options: [
         CustomOption(
           identifier: "A",
-          text: "Incorrect. We should use 100 cars at least, for faster training.",
+          text:
+              "Incorrect. We should use 100 cars at least, for faster training.",
           isCorrect: false,
         ),
         CustomOption(
@@ -285,14 +272,16 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "D",
-          text: "10 is a number of training cars that an average computer can hold without problems.",
+          text:
+              "10 is a number of training cars that an average computer can hold without problems.",
           isCorrect: true,
         ),
       ],
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "What is the advantage of using the PPO algorithm in this phase?",
+      question:
+          "What is the advantage of using the PPO algorithm in this phase?",
       options: [
         CustomOption(
           identifier: "A",
@@ -301,7 +290,8 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "B",
-          text: "The final ANN will achieve a very high precision and performance.",
+          text:
+              "The final ANN will achieve a very high precision and performance.",
           isCorrect: true,
         ),
         CustomOption(
@@ -799,7 +789,8 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "B",
-          text: "False. Artificial Neural Networks are based on the NNs of the human brain.",
+          text:
+              "False. Artificial Neural Networks are based on the NNs of the human brain.",
           isCorrect: true,
         ),
       ],

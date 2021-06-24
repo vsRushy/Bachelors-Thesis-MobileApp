@@ -168,6 +168,8 @@ class LessonPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 15),
+                LessonText("It is possible that as a first though, we may think why is necessary to duplicate not only the agent, but the environment itself too, as it seems like a waste of resources. This is because if many agents and goals were placed together in one environment, it would be a total chaos. Thus, by creating only one environment for each agent individually, the agents can do their job correctly."),
+                LessonText("Furthermore, when training the agent, many generations are created. At the beginning of each generation, also called as episode, the position of the goal must be reset randomly. If this wasn't done, the agent would only learn to go towards one direction. By resetting the positions randomly, it will reach the point when the agent will be able to know how to go to any direction, towards the goal or target."),
                 LessonSubtitleSmall("Configuration file"),
                 LessonText(
                     "The first phase doesn't have a configuration file. Please note that the configuration files will be explained and used in the next lessons."),
