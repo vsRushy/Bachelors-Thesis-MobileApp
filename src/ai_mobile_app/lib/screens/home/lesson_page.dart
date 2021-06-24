@@ -101,6 +101,11 @@ class LessonPage extends StatelessWidget {
                 LessonSubtitleSmall("Behavioral Cloning"),
                 LessonText(
                     "BC is quite similar to GAIL, and it can also be used in combination with PPO, SAC, or even GAIL. As a matter of fact, the usual practice is to use either PPO or SAC with both the GAIL and BC algorithms. The main difference is that BC doesn't actually try to learn from the demos; instead it just communicates the agent what the behaviours are."),
+                LessonSubtitle("What is an episode and maximum steps?"),
+                LessonText("The concept of an episode is very important, because it is related directly to an agent's training. An episode, by definition, is the time an agent is actively training on a single generation. Each time an episode begins, an agent starts to train from the starting parameters the user has set up. When an episode ends, if it is not the final episode, another episode begins, and thus a generation too."),
+                LessonText("A new concept appears, which is the max steps. A step is increased every time the FixedUpdate() function in Unity is called, which updates the physics module of the engine. The max steps can be divided into two parts:"),
+                LessonText("General max steps: the maximum number of steps in the whole training."),
+                LessonText("Agent's max steps: the maximum number of steps in an agent's generation. If we sum all the max steps of each agent's generation, it should be less or equal than the general max steps, as we can end the training before the general max steps number is reached."),
                 LessonSubtitle("Next steps"),
                 LessonText(
                     "On the following lessons, we will develop intelligent agents using Machine Learning and Artificial Neural Networks, so that we can actually put these concepts into practice."),
@@ -153,15 +158,70 @@ class LessonPage extends StatelessWidget {
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
                 LessonSubtitleSmall("Approaching the problem"),
-                LessonText("As it can be seen in the image above, the objective is to make the agent, which is represented by a red box, to reach the goal, which is represented by a yellow sphere. Both elements are placed inside a locked place with walls on all sides."),
-                LessonText(""),
+                LessonText(
+                    "As it can be seen in the image above, the objective is to make the agent, which is represented by a red box, to reach the goal, which is represented by a yellow sphere. Both elements are placed inside a locked place with walls on all sides."),
+                LessonText(
+                    "In this exercise, we will make use of the PPO algorithm, as well as using the parallel training feature. The environment setup is quite simple: we just need the agent, the goal, a platform with walls, and that's all! Then, because we want to train as faster as possible, each environment is duplicated many times and placed in a kind of grid, to keep things organized."),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase1/first_phase_parallel.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
                 LessonSubtitleSmall("Configuration file"),
                 LessonText(
                     "The first phase doesn't have a configuration file. Please note that the configuration files will be explained and used in the next lessons."),
+                LessonSubtitleSmall("Training"),
+                LessonText(
+                    "In order to start training, it is necessary to open a command prompt from the root of the Unity project. The command to start training is as follows, and it has a local unique training ID:"),
+                LessonTextCursive("mlagents-learn --run-id phase01-test"),
+                LessonText(
+                    "With this command, we will start the training process for the first time. The next step is to press the Start button in the Unity scene. All of the agents will start to move and, as soon as they realize how to reach the goal, the Unity application can be closed. The final brain will be available to be used in its correspondant folder."),
+                LessonText(
+                    "If the training ends or is cancelled, the training can be continued by using the following command:"),
+                LessonTextCursive(
+                    "mlagents-learn --run-id phase01-test --resume"),
+                LessonText(
+                    "Or, if you wish to restart the training, you can force to train from zero on the same training ID (or simply, use a new training ID):"),
+                LessonTextCursive(
+                    "mlagents-learn --run-id phase01-test --force"),
                 LessonSubtitleSmall("Observations"),
+                LessonText(
+                    "When deciding what are the agent's observations, it is important to think about what is relevant from the agent's point of view. Thus, it can be clear that the agent will perform it's actions based on its position and also the position of the goal. Therefore, the observations are pretty straightforward:"),
+                LessonText("- The position of the agent."),
+                LessonText("- The position of the goal."),
                 LessonSubtitleSmall("Rewards"),
+                LessonText("The rewards are what will make the agent understand what is correct and incorrect. Hence, being not only the necessary rewards, but also the value of the reward, is a very crucial task to do. In this phase, there are two rewards:"),
+                LessonText("- Reward #1: Give a positive reward to the agent when colliding with the goal."),
+                LessonText("- Reward #2: Give a negative reward to the agent when colliding with the wall."),
+                LessonText("Note that when giving any of the two previous reward, the current episode is restarted in order to keep training. Because there are two rewards and the agent can either collide with the wall or the goal, the value of the reward should be equal, even though one must be positive and the other one negative. Further, the current episode shall end and restart if the agent reaches its max steps. The value of the max steps should not be very big, as it won't probably take much time to collide with any other object."),
                 LessonSubtitleSmall("Actions"),
+                LessonText(
+                    "The type of actions used in this agent are continuous. Therefore, the values of the actions are floating points. The Actions Vector has a length of 2, being the index 0 the velocity on the X-axis and being the index 1 the velocity on the Z-axis. This way, the agent will be able to move in these two directions. At the end of the training, the agent will move on these axis in the most effective way, accordingly reaching the targets."),
                 LessonSubtitle("Conclusion"),
+                LessonText("This exercise or phase is one of the simplest ways to start using ML-Agents and understanding how machine learning works. Also, the agents learn to reach the target very fast, so it's even better. On the next lesson, we will start training a car, configurating the training parameters, and even recording our own plays so that the AI can learn from a starting point!"),
+                LessonSubtitle("Notes"),
+                LessonText("Make sure that when training the agent, the Behaviour Parameters component should look exactly like this:"),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase1/phase1_behaviour_params_no_brain.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
+                LessonText("The agent's max steps:"),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase1/phase1_agent_max_steps.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
+                LessonText("When the training is finished, you can place the final brain or model file (.onnx) like this:"),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase1/phase1_behaviour_params_brain.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
               ],
             ),
           ),
@@ -222,7 +282,7 @@ class LessonPage extends StatelessWidget {
                 LessonSubtitleSmall("Rewards"),
                 LessonText(""),
                 LessonSubtitleSmall("Actions"),
-                LessonText(""),
+                LessonText("heuristics too"),
                 LessonSubtitle("Conclusion"),
                 LessonText(""),
               ],

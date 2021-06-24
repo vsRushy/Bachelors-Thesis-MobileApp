@@ -70,6 +70,9 @@ flutter:
     - assets/images/icon_basic_white_1200.png
     - assets/images/phase1/first_phase_individual.jpg
     - assets/images/phase1/first_phase_parallel.jpg
+    - assets/images/phase1/phase1_behaviour_params_no_brain.jpg
+    - assets/images/phase1/phase1_agent_max_steps.jpg
+    - assets/images/phase1/phase1_behaviour_params_brain.jpg
     - assets/images/phase2/phase2_track.jpg
     - assets/images/phase2/phase2_left_track.jpg
     - assets/images/phase2/phase2_right_track.jpg
