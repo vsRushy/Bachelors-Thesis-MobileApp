@@ -1,5 +1,6 @@
 import 'package:ai_mobile_app/models/custom_option.dart';
 import 'package:ai_mobile_app/models/custom_question.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class Options extends StatelessWidget {
@@ -50,13 +51,22 @@ class Options extends StatelessWidget {
 
   Widget _createAnswer(CustomOption option) {
     return Container(
-      height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Text(option.identifier!),
           SizedBox(width: 32),
-          Text(option.text!),
+          SizedBox(
+            width: 250,
+            height: 60,
+            child: Center(
+              child: AutoSizeText(
+                option.text!,
+                style: TextStyle(fontSize: 16),
+                maxLines: 3,
+              ),
+            ),
+          ),
         ],
       ),
     );
