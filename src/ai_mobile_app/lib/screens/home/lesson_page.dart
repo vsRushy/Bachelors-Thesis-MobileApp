@@ -193,6 +193,8 @@ class LessonPage extends StatelessWidget {
                     "Or, if you wish to restart the training, you can force to train from zero on the same training ID (or simply, use a new training ID):"),
                 LessonTextCursive(
                     "mlagents-learn --run-id phase01-test --force"),
+                LessonText(
+                    "The final already trained ANN is available at the results/ folder, just inside the root folder of the Unity project. An already trained ANN is located inside the Models/Phase1/test01/ folder. If it is trained by yourself, it will be locate at the results/ folder from the root."),
                 LessonSubtitleSmall("Observations"),
                 LessonText(
                     "When deciding what are the agent's observations, it is important to think about what is relevant from the agent's point of view. Thus, it can be clear that the agent will perform it's actions based on its position and also the position of the goal. Therefore, the observations are pretty straightforward:"),
@@ -251,12 +253,9 @@ class LessonPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 LessonTitle("Phase 2: Car driving with checkpoints"),
-                SizedBox(height: 15),
                 LessonSubtitle("Introduction"),
-                SizedBox(height: 15),
                 LessonText(
                     "The phase 2 consists in developing a car agent that learns to drive through a defined track using the checkpoint method."),
-                SizedBox(height: 15),
                 Center(
                   child: Image.asset(
                     "assets/images/phase2/phase2_track.jpg",
@@ -289,11 +288,36 @@ class LessonPage extends StatelessWidget {
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
                 LessonSubtitleSmall("Approaching the problem"),
-                LessonText("Approaching..."),
+                LessonText("The problem of training a car so that it can drive itself is much more complicated than the first phase. In this case, we have to think about how the car will be able to drive."),
+                LessonText("First of all, it is needed a checkpoint system so that the car can follow the correct path in the correct order. This is a solid way to control where the car goes. It can be quite a tough task to place so many checkpoints, but it is a very efficient method and it will be worth it."),
+                LessonText("Two new algorithms are put into practice here, already introduced in the first lesson, which are the GAIL and BC algorithms. In order to use them, it is needed a configuration file, which will be explained later. In order to train the agent and use these algorithms, we need to play the game for some minutes and record the demos."),
+                LessonText("On the phase 2 scene folder, there are three scenes. One is the full training track, and the other two are for training the car go to the left and go to the right."),
                 LessonSubtitleSmall("Configuration file"),
-                LessonText("Config..."),
+                LessonText("The configuration file is very important for this phase because it is needed to use the GAIL and BC algorithms. The location of the training file is Assets/Phase02/CheckpointDrivingSetup/"),
+                LessonText("The most important parameters to take into account are:"),
+                LessonText("- The trainer_type, which in this case is ppo, to use the PPO algorithm."),
+                LessonText("- The max_steps, which defines the maximum total steps for the training."),
+                LessonText("- The strength of the extrinsic, gail, and behavioral_cloning parameters."),
+                LessonText("- Note also the demo_path of the gail and behavioral_cloning parameters."),
                 LessonSubtitleSmall("Training"),
-                LessonText("Training..."),
+                LessonText(
+                    "In order to train the agent, the commands for using a configuration are a little bit different. Basically, the path of the configuration file is added. It is highly recommended to use the command from the root folder of the Unity project."),
+                LessonTextCursive("mlagents-learn Assets/Phase02/CheckpointDrivingSetup/CheckpointDriving.yaml --run-id phase02-test"),
+                LessonTextCursive("mlagents-learn Assets/Phase02/CheckpointDrivingSetup/CheckpointDriving.yaml --run-id phase02-test --force"),
+                LessonTextCursive("mlagents-learn Assets/Phase02/CheckpointDrivingSetup/CheckpointDriving.yaml --run-id phase02-test --resume"),
+                LessonText("In conclusion, what these commands do is to train the agent with your desired configuration file."),
+                LessonText("So that we can train the agent, we need to divide it into three parts:"),
+                LessonText("1) Firstly, record the demos for both the left and right tracks. For this, the Record checkbox on the Demonstration Recorder component on the agent needs to be checked. The, just drive a single car for about 5 minutes, for both tracks:"),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase2/phase2_demonstration_rec.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
+                LessonText("The path of the demos can be changed for the one that exists in the configuration file. Make sure to disable the previous checkbox after driving!"),
+                LessonText("2) Now, train the agent for the left circuit. It is important to add about 9 more agents at the same track for faster learning! For this, the strength of the extrinsic parameter should be about 0.2, and the strength of both the gail and behavioral_cloning parameters should be about 0.7. Like this, the agent will use more our recorded demos in order to learn faster. Furthermore, on the configuration file, the demos path should be the path to the exact demo. There is already an existing demo at Assets/Phase02/CheckpointDrivingDemos/CLeftDrive.demo"),
+                LessonText("3) Right now there will be a brain in the results/ folder. When executing the training command now, make sure to use the --resume flag. Do the same for the right circuit, but increase the extrinsic strength at 0.4 and reduce both the gail and behavioral_cloning strengths to 0.5. Remember to use the correct demo path. The existing one is Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo"),
+                LessonText("4) The final step is to train the agents on the final track. For this, change the strength of the extrinsic parameter to 0.9 and the gail and behavioral_cloning strenghts to 0.2. Like this, the agents will learn more by themselves, and they already know how to drive left and right."),
                 LessonSubtitleSmall("Observations"),
                 LessonText("Observations..."),
                 LessonSubtitleSmall("Rewards"),

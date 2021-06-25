@@ -987,7 +987,7 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "D",
-          text: "An reinforcement learning algorithm makes use of rewards.",
+          text: "A reinforcement learning algorithm makes use of rewards.",
           isCorrect: true,
         ),
       ],
