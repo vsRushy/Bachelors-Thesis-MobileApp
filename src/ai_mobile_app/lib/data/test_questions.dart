@@ -450,7 +450,7 @@ final questionLibrary = [
       options: [
         CustomOption(
           identifier: "A",
-          text: "To ",
+          text: "It doesn't have any important purpose, it's better not to use a configuration file.",
           isCorrect: false,
         ),
         CustomOption(
