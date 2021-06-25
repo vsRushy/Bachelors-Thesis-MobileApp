@@ -373,6 +373,7 @@ class LessonPage extends StatelessWidget {
                     "What the agent needs to do, essentially, is to reach checkpoints in the correct order. Thus, the only observation to be made is calculate something that can give the agent information that the agent can interpret as how close it is from a checkpoint. This is done by simply calculating the dot product between the forward vector of the agent and the forward vector of the next correct checkpoint:"),
                 LessonTextCursive(
                     "float direction_dot = Vector3.Dot(transform.forward, checkpoint_forward);"),
+                LessonText("Because the only observation is a floating point number, the size of the Vector Observation Space will be 1."),
                 LessonSubtitleSmall("Rewards"),
                 LessonText(
                     "There are some more rewards compared to the first phase. The rewards are the following:"),

@@ -302,33 +302,23 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "3. This is the first question. Would you answer?",
+      question: "3. The car agent should be set to Heuristics when having a brain in the component.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
-          isCorrect: true,
+          text: "True. Heuristics are used when having an already trained agent.",
+          isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
-          isCorrect: false,
+          text: "False. Inference should be used when having an already trained agent.",
+          isCorrect: true,
         ),
       ],
-      solution: "The correct response is answer A.",
+      solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "4. This is the second question. Would you answer?",
       options: [
         CustomOption(
           identifier: "A",
