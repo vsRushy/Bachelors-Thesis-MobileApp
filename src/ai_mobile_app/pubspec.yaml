@@ -82,6 +82,9 @@ flutter:
     - assets/images/phase2/phase2_heuristic.jpg
     - assets/images/phase2/phase2_ray_perception.jpg
     - assets/images/phase3/phase3_track.jpg
+    - assets/images/phase3/phase3_track_height.jpg
+    - assets/images/phase3/phase3_ray_perception.jpg
+    - assets/images/phase3/phase3_behaviour_params.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

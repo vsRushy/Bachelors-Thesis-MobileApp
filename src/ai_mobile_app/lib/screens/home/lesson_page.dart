@@ -312,7 +312,7 @@ class LessonPage extends StatelessWidget {
                 LessonText(
                     "- The trainer_type, which in this case is ppo, to use the PPO algorithm."),
                 LessonText(
-                    "- The max_steps, which defines the maximum total steps for the training."),
+                    "- The max_steps, which defines the maximum total steps for the training. It has a value of 15 million."),
                 LessonText(
                     "- The strength of the extrinsic, gail, and behavioral_cloning parameters."),
                 LessonText(
@@ -373,7 +373,8 @@ class LessonPage extends StatelessWidget {
                     "What the agent needs to do, essentially, is to reach checkpoints in the correct order. Thus, the only observation to be made is calculate something that can give the agent information that the agent can interpret as how close it is from a checkpoint. This is done by simply calculating the dot product between the forward vector of the agent and the forward vector of the next correct checkpoint:"),
                 LessonTextCursive(
                     "float direction_dot = Vector3.Dot(transform.forward, checkpoint_forward);"),
-                LessonText("Because the only observation is a floating point number, the size of the Vector Observation Space will be 1."),
+                LessonText(
+                    "Because the only observation is a floating point number, the size of the Vector Observation Space will be 1."),
                 LessonSubtitleSmall("Rewards"),
                 LessonText(
                     "There are some more rewards compared to the first phase. The rewards are the following:"),
@@ -440,6 +441,14 @@ class LessonPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 15),
+                LessonText(
+                    "Note that the height of the track has is irregular, unlike the previous track."),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase3/phase3_track_height.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
                 RichText(
                   text: TextSpan(
                     children: [
@@ -466,21 +475,72 @@ class LessonPage extends StatelessWidget {
                 SizedBox(height: 15),
                 LessonSubtitle("Development"),
                 LessonSubtitleSmall("Approaching the problem"),
-                LessonText("Approaching..."),
+                LessonText(
+                    "Training a car without checkpoints is a much more complicated task. The most adequate way to train a car like this, would be using computer vision, but it is not the main focus on this project, so it's not used. Then, a new rewards system is used in order to train the car. It is important to mention that the checkpoints method is much better and effective, and it doesn't take as much time as this case. Because SAC is very sample-efficient and the environment or track is quite complicated, as speed zones and obstacles are placed, it will be more a wiser choice so that we can obtain a result sooner. Only SAC is used, so unlike the phase 2, GAIL and BC aren't used, and so the demos neither."),
+                LessonText(
+                    "Because there are no checkpoints and speed zones are placed in the circuit, the Ray Perception 3D component must be changed, with new filtered tags and layers:"),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase3/phase3_ray_perception.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
                 LessonSubtitleSmall("Configuration file"),
-                LessonText("Config..."),
+                LessonText(
+                    "The configuration file for this lesson can be found at Assets/Phase03/DrivingSetup/. As explained above, SAC is the used algorithm. The most important parameters are the following:"),
+                LessonText("- The trainer_type, which is sac in this case."),
+                LessonText(
+                    "- The max_steps, which have been highly increased, reaching a value of 30 million. Because the environment is more complex, the agent may take more time to learn, thus needing more steps."),
+                LessonText(
+                    "- The strength of the extrinsic parameter is 1.0, as only SAC is used."),
+                LessonText(
+                    "- The hidden_units parameter is higher than before, with a value of 512, because the interaction with the environment is more complicated."),
+                LessonText(
+                    "- The num_layers parameter has been increased to 3, for the same reason as the hidden_units."),
                 LessonSubtitleSmall("Training"),
-                LessonText("Training..."),
+                LessonText(
+                    "The commands that need to be used are almost the same as the previous ones:"),
+                LessonTextCursive(
+                    "mlagents-learn Assets/Phase03/DrivingSetup/NoCheckpointDriving.yaml --run-id phase03-test"),
+                LessonTextCursive(
+                    "mlagents-learn Assets/Phase03/DrivingSetup/NoCheckpointDriving.yaml --run-id phase03-test --force"),
+                LessonTextCursive(
+                    "mlagents-learn Assets/Phase03/DrivingSetup/NoCheckpointDriving.yaml --run-id phase03-test --resume"),
+                LessonText("The only important thing to be cautious of is to choose the correct configuration file."),
                 LessonSubtitleSmall("Observations"),
-                LessonText("Observations..."),
+                LessonText("The observations is a key part of this training. The Vector Observation Space is increased to 7. That's quite lot of difference, compared to the size of 1 of the training with checkpoints. The observations that are done are:"),
+                LessonText(""),
+                LessonText(""),
+                LessonText(""),
+                LessonText(""),
+                LessonText(""),
+                LessonText(""),
                 LessonSubtitleSmall("Rewards"),
                 LessonText("Rewards..."),
                 LessonSubtitleSmall("Actions"),
-                LessonText("Actions... heuristics too"),
+                LessonText(
+                    "The actions of the agent are exactly the same as the ones in the previous lesson. As a recap, they are:"),
+                LessonText("The car acceleration branch has three values:"),
+                LessonTextCursive("1: Accelerate."),
+                LessonTextCursive("2: Break."),
+                LessonTextCursive("0: Idle."),
+                LessonText("The turning branch has these three values:"),
+                LessonTextCursive("1: Turn right."),
+                LessonTextCursive("2: Turn left."),
+                LessonTextCursive("0: Don't turn."),
+                LessonText(
+                    "Remember that the actions can be used both for training and heuristics."),
                 LessonSubtitle("Conclusion"),
                 LessonText("Conclusion..."),
                 LessonSubtitle("Notes"),
-                LessonText("Notes...")
+                LessonText(
+                    "Here is the Behaviour Parameters with the new Vector Observation Space:"),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase3/phase3_behaviour_params.jpg",
+                  ),
+                ),
+                SizedBox(height: 15),
               ],
             ),
           ),
