@@ -297,6 +297,8 @@ class LessonPage extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 LessonText(
+                    "The car has a ray perception system that allows it to make observations. In this case, each ray can detect any checkpoint or wall. The number of rays can vary, but take into account it will affect in the performance."),
+                LessonText(
                     "First of all, it is needed a checkpoint system so that the car can follow the correct path in the correct order. This is a solid way to control where the car goes. It can be quite a tough task to place so many checkpoints, but it is a very efficient method and it will be worth it."),
                 LessonText(
                     "Two new algorithms are put into practice here, already introduced in the first lesson, which are the GAIL and BC algorithms. In order to use them, it is needed a configuration file, which will be explained later. In order to train the agent and use these algorithms, we need to play the game for some minutes and record the demos."),
@@ -387,11 +389,30 @@ class LessonPage extends StatelessWidget {
                 LessonText(
                     "The two last rewards are used to urge the car to move and not stay quiet. The closest the angle of the agent towards the checkpoint's forward vector, the better. Almost exactly the same happens, but with the velocity of the agent's rigidbody. The values of these rewards must be a lot more small than the previous ones."),
                 LessonSubtitleSmall("Actions"),
-                LessonText("Actions... heuristics too"),
+                LessonText(
+                    "The car agent uses discrete actions. Therefore, each element of the Action Vector will have a branch. The size of the Action Vector is 2, being the index 0 for the car acceleration and being the index 1 for turning the car."),
+                LessonText("The car acceleration branch has three values:"),
+                LessonTextCursive("1: Accelerate."),
+                LessonTextCursive("2: Break."),
+                LessonTextCursive("0: Idle."),
+                LessonText(
+                    "In contrast, the turning branch has these three values:"),
+                LessonTextCursive("1: Turn right."),
+                LessonTextCursive("2: Turn left."),
+                LessonTextCursive("0: Don't turn."),
+                LessonText(
+                    "Having defined these actions, the AI is able to drive the car. Also, note that by using heuristics you can drive the car manually, and it should be disabled when training by setting it to Default, or to Inference if there is a brain placed in the agent."),
                 LessonSubtitle("Conclusion"),
-                LessonText("Conclusion..."),
+                LessonText(
+                    "Having explained all of that, this is definitely one of the best ways for traning a car that can drive autonomously! Even though it is used with checkpoints, and this can be a little bit too handy, the results are simply outstanding, with very little effort and time. The usage of GAIL and BC helps a lot in the initial training process and, because of the PPO algorithm, the final result is almost perfect."),
                 LessonSubtitle("Notes"),
-                LessonText("In order to change the agent "),
+                LessonText(
+                    "The Ray Perception 3D component of the agent looks like the following image, taking into account the tags and layers of the game objects need to be filtered, so that the rays can only collide with checkpoints and walls in this case:"),
+                Center(
+                  child: Image.asset(
+                    "assets/images/phase2/phase2_ray_perception.jpg",
+                  ),
+                ),
               ],
             ),
           ),

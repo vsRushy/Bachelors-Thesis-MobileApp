@@ -80,6 +80,7 @@ flutter:
     - assets/images/phase2/phase2_right_track.jpg
     - assets/images/phase2/phase2_demonstration_rec.jpg
     - assets/images/phase2/phase2_heuristic.jpg
+    - assets/images/phase2/phase2_ray_perception.jpg
     - assets/images/phase3/phase3_track.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
