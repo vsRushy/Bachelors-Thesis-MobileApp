@@ -1,8 +1,6 @@
 import 'package:ai_mobile_app/custom_widgets/summary_individual_test_tile.dart';
 import 'package:ai_mobile_app/models/custom_test.dart';
-import 'package:ai_mobile_app/services/database.dart';
 import 'package:flutter/material.dart';
-import 'package:ai_mobile_app/services/auth.dart';
 import 'package:provider/provider.dart';
 
 class SummaryIndividualList extends StatefulWidget {

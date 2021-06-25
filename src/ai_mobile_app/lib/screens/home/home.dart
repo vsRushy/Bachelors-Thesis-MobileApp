@@ -1,14 +1,10 @@
-import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/screens/home/lessons.dart';
 import 'package:ai_mobile_app/screens/home/profile.dart';
 import 'package:ai_mobile_app/screens/home/summary.dart';
 import 'package:ai_mobile_app/screens/home/tests.dart';
-import 'package:ai_mobile_app/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ai_mobile_app/services/database.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override

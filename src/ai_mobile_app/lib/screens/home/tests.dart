@@ -2,14 +2,11 @@ import 'package:ai_mobile_app/data/test_questions.dart';
 import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/models/custom_user.dart';
 import 'package:ai_mobile_app/models/question_category.dart';
-import 'package:ai_mobile_app/screens/home/lesson_item.dart';
 import 'package:ai_mobile_app/screens/home/test_page.dart';
 import 'package:ai_mobile_app/models/test_item.dart';
-import 'package:ai_mobile_app/services/auth.dart';
 import 'package:ai_mobile_app/services/database.dart';
 import 'package:ai_mobile_app/shared/loading.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 
 class Tests extends StatefulWidget {
@@ -18,8 +15,6 @@ class Tests extends StatefulWidget {
 }
 
 class _TestsState extends State<Tests> {
-  final AuthService _auth = AuthService();
-
   List<TestItem> tests = [
     TestItem(
       name: '1. Target finder',

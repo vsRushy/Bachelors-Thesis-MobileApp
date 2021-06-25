@@ -1,6 +1,5 @@
 import 'package:ai_mobile_app/shared/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class LessonTitle extends StatelessWidget {
   final String text;

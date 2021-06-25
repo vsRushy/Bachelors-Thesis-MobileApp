@@ -1,7 +1,5 @@
-import 'package:ai_mobile_app/models/custom_test.dart';
 import 'package:ai_mobile_app/screens/home/lesson_page.dart';
 import 'package:flutter/material.dart';
-import 'package:ai_mobile_app/screens/home/lessons.dart';
 
 class LessonItem extends StatelessWidget {
   final int? index;
