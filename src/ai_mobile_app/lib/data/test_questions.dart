@@ -246,7 +246,7 @@ final questionLibrary = [
   ],
   [
     CustomQuestion(
-      question: "Why do we use about 10 cars for training in this case?",
+      question: "1. Why do we use about 10 cars for training in this case?",
       options: [
         CustomOption(
           identifier: "A",
@@ -275,7 +275,7 @@ final questionLibrary = [
     ),
     CustomQuestion(
       question:
-          "What is the advantage of using the PPO algorithm in this phase?",
+          "2. What is the advantage of using the PPO algorithm in this phase?",
       options: [
         CustomOption(
           identifier: "A",
@@ -302,7 +302,7 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "3. This is the first question. Would you answer?",
       options: [
         CustomOption(
           identifier: "A",
