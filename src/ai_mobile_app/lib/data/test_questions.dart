@@ -450,7 +450,8 @@ final questionLibrary = [
       options: [
         CustomOption(
           identifier: "A",
-          text: "It doesn't have any important purpose, it's better not to use a configuration file.",
+          text:
+              "It doesn't have any important purpose, it's better not to use a configuration file.",
           isCorrect: false,
         ),
         CustomOption(
@@ -479,12 +480,14 @@ final questionLibrary = [
       options: [
         CustomOption(
           identifier: "A",
-          text: "True. The more, the better. If the number is too low, it won't work.",
+          text:
+              "True. The more, the better. If the number is too low, it won't work.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "False. The number needs to be balanced, according to the hardware used and the complexity of the environment.",
+          text:
+              "False. The number needs to be balanced, according to the hardware used and the complexity of the environment.",
           isCorrect: true,
         ),
       ],
@@ -493,33 +496,39 @@ final questionLibrary = [
   ],
   [
     CustomQuestion(
-      question: "1. What are the two main differences between this phase 3 and the phase 2?",
+      question:
+          "1. What are the two main differences between this phase 3 and the phase 2?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This phase uses the checkpoints method, and uses the SAC algorithm instead of the PPO.",
+          text:
+              "This phase uses the checkpoints method, and uses the SAC algorithm instead of the PPO.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This phase doesn't use the checkpoints method, and uses the SAC algorithm instead of the PPO.",
+          text:
+              "This phase doesn't use the checkpoints method, and uses the SAC algorithm instead of the PPO.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This phase uses the checkpoints method, and uses the PPO algorithm instead of the SAC.",
+          text:
+              "This phase uses the checkpoints method, and uses the PPO algorithm instead of the SAC.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This phase doesn't use the checkpoints method, and uses the PPO algorithm instead of the SAC.",
+          text:
+              "This phase doesn't use the checkpoints method, and uses the PPO algorithm instead of the SAC.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "2. What is the purpose of increasing the num_layers and hidden_units hyperparameters?",
+      question:
+          "2. What is the purpose of increasing the num_layers and hidden_units hyperparameters?",
       options: [
         CustomOption(
           identifier: "A",
@@ -545,7 +554,8 @@ final questionLibrary = [
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "3. Which are the most adequate observations for the agent to do?",
+      question:
+          "3. Which are the most adequate observations for the agent to do?",
       options: [
         CustomOption(
           identifier: "A",
@@ -559,7 +569,8 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "C",
-          text: "The turn value, the velocity, and the angular velocity of the car.",
+          text:
+              "The turn value, the velocity, and the angular velocity of the car.",
           isCorrect: true,
         ),
         CustomOption(
@@ -571,16 +582,19 @@ final questionLibrary = [
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "4. A value of the hyperparameter time_horizon 32 is good for this phase.",
+      question:
+          "4. A value of the hyperparameter time_horizon 32 is good for this phase.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "True. The lower the value, the agent will be able to learn from actions that happened long time ago.",
+          text:
+              "True. The lower the value, the agent will be able to learn from actions that happened long time ago.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "False. The higher the value, the agent will be able to learn from actions that happened long time ago.",
+          text:
+              "False. The higher the value, the agent will be able to learn from actions that happened long time ago.",
           isCorrect: true,
         ),
       ],
@@ -601,7 +615,8 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "C",
-          text: "Because a car agent can also learn without using them, even though it's more adequate to do so for faster training.",
+          text:
+              "Because a car agent can also learn without using them, even though it's more adequate to do so for faster training.",
           isCorrect: true,
         ),
         CustomOption(
@@ -613,134 +628,116 @@ final questionLibrary = [
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "6. This is the second question. Would you answer?",
+      question:
+          "6. Which tags and layers does the Ray Perception 3D component detect?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "Checkpoint and SpeedZone.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "Wall and Checkpoint.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "Wall and SpeedZone.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "It filters all the existing tags.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "7. The training time of this agent using SAC will be more than with PPO, GAIL, and BC.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "Correct. Using checkpoints, PPO, GAIL, BC all together outperforms SAC, even though this environment is more complex.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          text:
+              "Incorrect. Using checkpoints, PPO, GAIL, BC all together is slower SAC, even with such a complex environment like this.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "8. Why do we add a negative reward for the left and right rays of the agent?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "Because the lower the value is, the more far away from the track the car is.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text:
+              "Because the higher the value is, the more far away from the track the car is.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text:
+              "Because the higher the value is, the more close to the track the car is.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "None of the above are correct.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "9. The actions of the car are completely different than the previous phase.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "True. The car has been remade from scratch to have better mechanics.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          text:
+              "False. The car mechanics are exactly the same, and thus the actions.",
           isCorrect: true,
         ),
       ],
-      solution: "The correct response is answer D.",
+      solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "10. The training method used in phase 2 is better than this one.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
+          text: "True. It is much more optimized, fast, and efficient.",
           isCorrect: true,
         ),
         CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          identifier: "B",
+          text: "False. This one is more optimized, fast, and efficient.",
           isCorrect: false,
         ),
       ],
-      solution: "The correct response is answer C.",
+      solution: "The correct response is answer A.",
     ),
   ],
   [
