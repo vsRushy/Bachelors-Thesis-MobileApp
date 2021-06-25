@@ -497,6 +497,8 @@ class LessonPage extends StatelessWidget {
                     "- The hidden_units parameter is higher than before, with a value of 512, because the interaction with the environment is more complicated."),
                 LessonText(
                     "- The num_layers parameter has been increased to 3, for the same reason as the hidden_units."),
+                LessonText(
+                    "- The time_horizon parameter has also been increased, from 64 to 1000. It is necessary for the agent to associate a present reward to an action that happened a long time ago."),
                 LessonSubtitleSmall("Training"),
                 LessonText(
                     "The commands that need to be used are almost the same as the previous ones:"),
@@ -506,17 +508,36 @@ class LessonPage extends StatelessWidget {
                     "mlagents-learn Assets/Phase03/DrivingSetup/NoCheckpointDriving.yaml --run-id phase03-test --force"),
                 LessonTextCursive(
                     "mlagents-learn Assets/Phase03/DrivingSetup/NoCheckpointDriving.yaml --run-id phase03-test --resume"),
-                LessonText("The only important thing to be cautious of is to choose the correct configuration file."),
+                LessonText(
+                    "The only important thing to be cautious of is to choose the correct configuration file."),
                 LessonSubtitleSmall("Observations"),
-                LessonText("The observations is a key part of this training. The Vector Observation Space is increased to 7. That's quite lot of difference, compared to the size of 1 of the training with checkpoints. The observations that are done are:"),
-                LessonText(""),
-                LessonText(""),
-                LessonText(""),
-                LessonText(""),
-                LessonText(""),
-                LessonText(""),
+                LessonText(
+                    "The observations is a key part of this training. The Vector Observation Space is increased to 7. That's quite lot of difference, compared to the size of 1 of the training with checkpoints. The observations that are done are:"),
+                LessonText("- The steer or turn value of the car."),
+                LessonText("- The velocity of the car."),
+                LessonText("- The angular velocity of the car."),
+                LessonText(
+                    "The turn value is a float that can be either 1.0, 0.0, or -1.0. Next, both the velocity and angular velocity of the car are 3-dimensional vector. Hence, the total size is 7, and the agent will take actions taking into account these observations."),
                 LessonSubtitleSmall("Rewards"),
-                LessonText("Rewards..."),
+                LessonText(
+                    "Before explaining the rewards, it is important to mention a slight addition that it has been done to the car. Apart from the rays from the Ray Perception 3D component, the car also launches two rays individually, one to the left and one to the right. This is because this way, we can know the distance between the car and the walls, both ways."),
+                LessonText("The rewards are as follows:"),
+                LessonText(
+                    "- Reward #1: Add a negative reward of the distance between the car and the left wall, multiplied by a constant of value 0.1."),
+                LessonText(
+                    "- Reward #2: Add a negative reward of the distance between the car and the right wall, multiplied by a constant of value 0.1."),
+                LessonText(
+                    "- Reward #3: Add a positive reward of the absolute value of the difference between the length of the left and right rays. A constant value of 0.25 is divided by this difference, in a inversionally proportional manner. The lesser the difference is, the bigger the reward will be, because it means that the car will be located more at the center of the road."),
+                LessonText(
+                    "- Reward #4: Add a positive reward of the velocity of the car's rigidbody multiplied by a constant of 0.75."),
+                LessonText(
+                    "- Reward #5: Add a negative reward of -0.75 when colliding with a wall. Furthermore, the current episode shall be restarted upon collision."),
+                LessonText(
+                    "- Reward #6: Add a negative reward of 0.1 if the car keeps colliding with a wall."),
+                LessonText(
+                    "- Reward #7: Add a positive reward of a constant value of 0.25 if the car collides with a speed zone."),
+                LessonText(
+                    "The values of each reward are easily tweakable; by changing them over time, a better balance will appear, and thus a faster training. It can be quite hard for the car to follow the right path, as there are no checkpoints, but because of the initial orientation, the car can identify the correct way."),
                 LessonSubtitleSmall("Actions"),
                 LessonText(
                     "The actions of the agent are exactly the same as the ones in the previous lesson. As a recap, they are:"),
