@@ -302,199 +302,190 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "3. The car agent should be set to Heuristics when having a brain in the component.",
+      question:
+          "3. The car agent should be set to Heuristics when having a brain in the component.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "True. Heuristics are used when having an already trained agent.",
+          text:
+              "True. Heuristics are used when having an already trained agent.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "False. Inference should be used when having an already trained agent.",
+          text:
+              "False. Inference should be used when having an already trained agent.",
           isCorrect: true,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "4. This is the second question. Would you answer?",
+      question: "4. What is the purpose of using the GAIL and BC algorithms?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "To be able to drive the car manually.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "There is no point at all of using them in this case.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "To have a more diverse range of algorithms being used.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "To speed up the training process.",
           isCorrect: true,
         ),
       ],
       solution: "The correct response is answer D.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "5. A general max step of 1000 is good for the whole track. Do you agree?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "Yes, but it can also be a bit greater, like 1500, for instance.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "Yes, 1000 is the most adequate number for this case.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text:
+              "No, it should be a number higher than 1000. 10000 is enough for the car to travel the track.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text:
+              "No, it should be a number lower than 1000. 500 is enough for the car to travel the track.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "6. The reward of colliding with a wall should be equal to reaching a checkpoint, in absolute terms.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "False, it should be higher. Otherwise, the car will always collide with walls.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text:
+              "False, it should be lower. Otherwise, the car wouldn't go for the checkpoints.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text:
+              "True, not colliding with a wall is as important as reaching a checkpoint.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text:
+              "True, even though reaching a checkpoint is more important, they should be the same.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question:
+          "7. The agent has three action elements: the first for accelerating, the second for breaking, and the third one for turning.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text:
+              "True. All these actions are the most basic ones and, in total, the length of the Action Vector is 3.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          text:
+              "False. The Action Vector size is 2, and breaking is inside the accelerating branch of the agent.",
           isCorrect: true,
         ),
       ],
-      solution: "The correct response is answer D.",
+      solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "8. The checkpoint method is not very efficient, there are many good alternatives.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
-          isCorrect: true,
+          text:
+              "True. Using checkpoints don't help the car go the correct way.",
+          isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
-          isCorrect: false,
+          text:
+              "False. Even though using checkpoints is a bit handy, it is one of the best ways to train a car agent.",
+          isCorrect: true,
         ),
       ],
-      solution: "The correct response is answer A.",
+      solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "9. What is the purpose of using a configuration file?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "To ",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text:
+              "To train the agent more slowly, but obtaining a better final result.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text:
+              "To choose the algorithms used in the training such as PPO, SAC, GAIL, and BC. Also, more parameters can be changed, like the general max steps.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "To overcomplicate the training process.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question:
+          "10. The car agent needs the highest number of rays for better performance.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "True. The more, the better. If the number is too low, it won't work.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "False. The number needs to be balanced, according to the hardware used and the complexity of the environment.",
           isCorrect: true,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
-          isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
@@ -958,11 +949,13 @@ final questionLibrary = [
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "9. What difference there is between a reinforcement learning algorithm and an supervised/unsupervised algorithm?",
+      question:
+          "9. What difference there is between a reinforcement learning algorithm and an supervised/unsupervised algorithm?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "A reinforcement learning algorithm doesn't use rewards; instead, supervised and unsupervised learning algorithms do.",
+          text:
+              "A reinforcement learning algorithm doesn't use rewards; instead, supervised and unsupervised learning algorithms do.",
           isCorrect: false,
         ),
         CustomOption(
@@ -972,7 +965,8 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "C",
-          text: "A supervised learning algorithm uses labeled datasets, while an unsupervised learning algorithm doesn't.",
+          text:
+              "A supervised learning algorithm uses labeled datasets, while an unsupervised learning algorithm doesn't.",
           isCorrect: false,
         ),
         CustomOption(
