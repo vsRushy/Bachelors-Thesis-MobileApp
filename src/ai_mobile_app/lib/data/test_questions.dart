@@ -493,137 +493,127 @@ final questionLibrary = [
   ],
   [
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "1. What are the two main differences between this phase 3 and the phase 2?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "This phase uses the checkpoints method, and uses the SAC algorithm instead of the PPO.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "This phase doesn't use the checkpoints method, and uses the SAC algorithm instead of the PPO.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "This phase uses the checkpoints method, and uses the PPO algorithm instead of the SAC.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "This phase doesn't use the checkpoints method, and uses the PPO algorithm instead of the SAC.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "2. What is the purpose of increasing the num_layers and hidden_units hyperparameters?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "To allow the agent learn and accomplish more complex tasks.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "To reduce training time.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "The agent is overall more effective.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "It doesn't do anything relevant to the agent.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer A.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "3. Which are the most adequate observations for the agent to do?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "The turn value, the velocity, and the height of the car.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "The turn value, the velocity, and the weight of the car.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "The turn value, the velocity, and the angular velocity of the car.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "The turn value, the velocity, and the power of the car.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "4. A value of the hyperparameter time_horizon 32 is good for this phase.",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "True. The lower the value, the agent will be able to learn from actions that happened long time ago.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "C",
-          text: "This is the third question.",
-          isCorrect: false,
-        ),
-        CustomOption(
-          identifier: "D",
-          text: "This is the fourth question.",
+          text: "False. The higher the value, the agent will be able to learn from actions that happened long time ago.",
           isCorrect: true,
         ),
       ],
-      solution: "The correct response is answer D.",
+      solution: "The correct response is answer B.",
     ),
     CustomQuestion(
-      question: "This is the first question. Would you answer?",
+      question: "5. Why aren't GAIL and BC used in this phase?",
       options: [
         CustomOption(
           identifier: "A",
-          text: "This is the first question.",
+          text: "These algorithms are not useful for this phase.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "B",
-          text: "This is the second question.",
+          text: "It is hard to use them without checkpoints.",
           isCorrect: false,
         ),
         CustomOption(
           identifier: "C",
-          text: "This is the third question.",
+          text: "Because a car agent can also learn without using them, even though it's more adequate to do so for faster training.",
           isCorrect: true,
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "In fact, they are used in this phase too.",
           isCorrect: false,
         ),
       ],
       solution: "The correct response is answer C.",
     ),
     CustomQuestion(
-      question: "This is the second question. Would you answer?",
+      question: "6. This is the second question. Would you answer?",
       options: [
         CustomOption(
           identifier: "A",

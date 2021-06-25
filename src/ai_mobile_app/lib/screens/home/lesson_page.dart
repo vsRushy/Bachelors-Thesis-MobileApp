@@ -552,7 +552,8 @@ class LessonPage extends StatelessWidget {
                 LessonText(
                     "Remember that the actions can be used both for training and heuristics."),
                 LessonSubtitle("Conclusion"),
-                LessonText("Conclusion..."),
+                LessonText(
+                    "To end this lesson, it can be concluded that many and many methods can be used for training cars. In this case, the SAC algorithm is used, while also not using the checkpoints method. Even though it seems more comfortable to use this method, as it is not as handy as the previous one, it has big disadvantages like the total training time. Basically, the PPO with checkpoints method, being used in parallel the GAIL and BC algorithms, ourperforms the method used in this phase. Still, it is good practice to analyze and test any useful method for any type of traning."),
                 LessonSubtitle("Notes"),
                 LessonText(
                     "Here is the Behaviour Parameters with the new Vector Observation Space:"),
