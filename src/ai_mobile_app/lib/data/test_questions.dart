@@ -295,7 +295,7 @@ final questionLibrary = [
         ),
         CustomOption(
           identifier: "D",
-          text: "This is the fourth question.",
+          text: "Because PPO is very sample-efficient, unlike SAC.",
           isCorrect: false,
         ),
       ],
