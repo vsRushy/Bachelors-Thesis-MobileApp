@@ -463,7 +463,7 @@ final questionLibrary = [
         CustomOption(
           identifier: "C",
           text:
-              "To choose the algorithms used in the training such as PPO, SAC, GAIL, and BC. Also, more parameters can be changed, like the general max steps.",
+              "To choose the algorithms used in the training such as PPO, SAC, GAIL, and BC. Also, more parameters can be changed.",
           isCorrect: true,
         ),
         CustomOption(
